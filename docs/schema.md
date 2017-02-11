@@ -39,7 +39,7 @@ video_id      | integer   | not null, foreign key (references videos), indexed
 column name     | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer	  | not null, primary key
-user_id         | integer   | not null, foreign key (users), indexed
+user_id         | integer   | not null, foreign key (references users), indexed
 playlist_title  | integer	  | not null
 description     | integer	  | not null
 
@@ -47,5 +47,5 @@ description     | integer	  | not null
 column name     | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer	  | not null, primary key
-playlist_id     | integer	  | not null, foreign_key (playlists)
-mv_id           | integer	  | not null, foreign_key (music_videos)
+playlist_id     | integer	  | not null, foreign_key (references playlists), indexed
+mv_id           | integer	  | not null, foreign_key (references music_videos), indexed
