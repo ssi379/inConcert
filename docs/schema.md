@@ -7,6 +7,7 @@ id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
+avatar_url      | string    |
 admin           | boolean   | not null, default: false
 
 ## videos
@@ -43,7 +44,7 @@ user_id         | integer   | not null, foreign key (references users), indexed
 playlist_title  | integer	  | not null
 description     | integer	  | not null
 
-## playlist_music_videos(bonus)
+## playlist_videos(bonus)
 column name     | data type |	 details
 ----------------|-----------|---------------------------
 id	            | integer	  | not null, primary key
