@@ -52,7 +52,7 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 * [Sample State][sample-state]
 
 [wireframes]: wireframes
-[components]: component-heirarchy.md
+[components]: component-hierarchy.md
 [sample-state]: sample-state.md
 [api-endpoints]: api-endpoints.md
 [schema]: schema.md
