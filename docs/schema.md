@@ -18,6 +18,7 @@ title       | string    | not null
 description | text      | not null
 user_id     | integer   | not null, foreign key (references users), indexed
 views       | integer   | not null, default: 1
+file_size_mb| integer   | not null, default: 0
 video_url   | string    | not null
 thumb_url   | string    | not null
 

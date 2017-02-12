@@ -20,10 +20,11 @@
   - SearchResults
     - SearchResultItem
 
-**VideoUploadContainer**
-  - VideoUpload
+**VideoFormContainer**
+  - VideoForm
     + FileUpload
-    + UploadForm
+    + VideoInfoForm
+    + UploadQuotaBar
 
 **VideoShowContainer**
   - VideoPlayer
@@ -53,6 +54,7 @@
 | `/sign-up` | `SessionFormContainer` |
 | `/sign-in` | `SessionFormContainer` |
 | `/results` | `SearchContainer`      |
-| `/upload` | `VideoUploadContainer`  |
+| `/video/new` |   `VideoFormContainer`  |
+| `/video/:videoId/edit` | `VideoFormContainer`|
 | `/video/:videoId` | `VideoShowContainer` |
 | `/user/:userId` | `UserHomeContainer` (bonus) |
