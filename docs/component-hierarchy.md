@@ -2,22 +2,23 @@
 
 **SessionFormContainer**
   - SessionForm
+    -Log In/Sign Up Errors
 
-**HeaderContainer**
-  - Header
+**NavBarContainer**
+  - NavBar
     + Searchbar
       - SearchbarForm
-    + User profile dropdown
-  - AppBar
+    + User Icon
+      - User dropdown menu
 
 **HomeIndexContainer**
   - Home
     + HomeIndex
+      - HomeVideoItem
 
 **SearchContainer**
-  - SearchBar
-    + SearchBarResult
   - SearchResults
+    - SearchResultItem
 
 **VideoUploadContainer**
   - VideoUpload
@@ -34,6 +35,7 @@
 
 ## Bonus Features
 **UserProfileContainer**
+  - UserDetail
   - UserVideos
   - UserVideoLikes
   - UserPlaylists
@@ -47,7 +49,7 @@
 ## Routes
 | Path | Component |
 |------|-----------|
-| `/`        | `HomeContainer`        |
+| `/`        | `HomeIndexContainer`        |
 | `/sign-up` | `SessionFormContainer` |
 | `/sign-in` | `SessionFormContainer` |
 | `/results` | `SearchContainer`      |

@@ -1,4 +1,4 @@
-# inConcert
+ # inConcert
 
 Heroku Link: [inConcert]
 
@@ -14,7 +14,7 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 - [ ] Videos
   * Users should also have the ability to upload videos
   * Splash page with global video index
-    - [ ] "Staff Picks"
+    - [ ] "Staff" Picks
     - [ ] Most Watched (views),
     - [ ] Most Popular (likes),
     - [ ] Sideways scrolling on each video list on the splash
@@ -31,8 +31,8 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 
 
 ### Bonus Features
-- [ ] Stylize video player components
-- [ ] User created Libraries
+- [ ] Stylized video player components
+- [ ] User created playlists
 - [ ] User Show Page
     - [ ] User's uploaded videos
     - [ ] User's likes
@@ -40,6 +40,7 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
     - [ ] Recommended
 - [ ] Nested Comments (Can reply to comments)
 - [ ] Option to assign categories to videos
+- [ ] Assign video production credits to other users
 - [ ] Responsive layout
 
 
@@ -64,7 +65,7 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 - [X] Initialize git repository
 - [X] Install figaro, paperclip video gems
 - [X] Install videojs package
-- [ ] Get up and running with Amazon Web Services
+- [X] Get up and running with Amazon Web Services
 
 ### Phase 1: Backend Setup and Front End User Authentication (1 Day)
 
