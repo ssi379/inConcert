@@ -8,6 +8,8 @@ username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
++ avatar attachment via paperclip (image)
+
 ## videos
 column name | data type | details
 ------------|-----------|-----------------------
@@ -16,9 +18,8 @@ title       | string    | not null
 description | text      | not null
 user_id     | integer   | not null, foreign key (references users), indexed
 views       | integer   | not null, default: 1
-file_size_mb| integer   | not null, default: 0
-video_url   | string    | not null
-thumb_url   | string    | not null
+
++ video & thumbnail attachment via paperclip
 
 ## comments
 column name | data type | details

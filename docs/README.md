@@ -72,14 +72,14 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 **Objective:** Functioning user authentication
 
 - [X] New Rails Project
-- [ ] User model/migration
-- [ ] Back end Authentication
-- [ ] 'StaticPages' Controller and Root View
+- [X] User model/migration
+- [X] Back end Authentication
+- [X] 'StaticPages' Controller and Root View
 - [X] 'Webpack' and react/redux modules
-- [ ] APIUtil setup to interact with the backend API
-- [ ] Redux cycle for frontend authentication
-- [ ] User signup/signin components
-- [ ] Blank landing component after signup/signin
+- [X] APIUtil setup to interact with the backend API
+- [X] Redux cycle for frontend authentication
+- [X] User signup/signin components
+- [X] Blank landing component after signup/signin
 - [ ] Style signup/signin components
 - [ ] User Seed
 
@@ -143,7 +143,7 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
     - Description
     - View Count
     - Date posted
-  - [ ] Paginate videos for every 18 links
+  - [ ] Paginate videos for every 12 links
 
 ### Bonus Phase 1: User Profile Page
 **Objective:** Add user profile page displaying their uploaded videos, liked videos and playlists.

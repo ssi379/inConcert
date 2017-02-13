@@ -9,11 +9,13 @@ export default class Navbar extends React.Component {
       return(
         <ul id="nav-dropdown">
           <li><h2>{currentUser.username}</h2></li>
+          <img src={currentUser.avatar_url} />
           <li>
             <form onSubmit={logout}>
               <input type="submit" value="Sign Out" />
             </form>
           </li>
+
         </ul>
       );
     } else {
