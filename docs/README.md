@@ -1,9 +1,8 @@
  # inConcert
 
 Heroku Link: [inConcert]
-Trello Link: [trelloBoard]
+Trello Link: [trelloBoard](https://trello.com/b/4SNQRXjd/inconcert)
 
-[trelloBoard]: "https://trello.com/b/4SNQRXjd/inconcert"
 [inConcert]: #;
 
 ## Minimum Viable Product
