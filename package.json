@@ -7,6 +7,7 @@
     "test": "test"
   },
   "dependencies": {
+    "redux-thunk": "^2.2.0",
     "video.js": "^5.16.0"
   },
   "devDependencies": {

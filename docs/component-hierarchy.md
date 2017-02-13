@@ -24,7 +24,7 @@
   - VideoForm
     + FileUpload
     + VideoInfoForm
-    + UploadQuotaBar
+    + UploadQuotaBar(bonus)
 
 **VideoShowContainer**
   - VideoPlayer
@@ -33,6 +33,9 @@
     + Add to Playlist (bonus)
   - VerticalFeed
   - Comments
+    + CommentIndex
+    + CommentItem
+    + CommentForm
 
 ## Bonus Features
 **UserProfileContainer**

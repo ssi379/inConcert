@@ -4,7 +4,7 @@ import * as APIUtil from '../util/session_api_util';
 
 export const login = user => dispatch => {
   return APIUtil.login(user)
-  .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON));
+  .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)));
 }
 
 export const logout = () => dispatch => {
