@@ -14,11 +14,11 @@
 **HomeIndexContainer**
   - Home
     + HomeIndex
-      - HomeVideoItem
+      - VideoListItem
 
 **SearchContainer**
   - SearchResults
-    - SearchResultItem
+    - VideoIndexItem
 
 **VideoFormContainer**
   - VideoForm
@@ -57,4 +57,4 @@
 | `/video/new` |   `VideoFormContainer`  |
 | `/video/:videoId/edit` | `VideoFormContainer`|
 | `/video/:videoId` | `VideoShowContainer` |
-| `/user/:userId` | `UserHomeContainer` (bonus) |
+| `/user/:userId` | `UserProfileContainer` (bonus) |
