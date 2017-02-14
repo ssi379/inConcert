@@ -3,8 +3,7 @@ import NavbarContainer from './navbar/navbar_container';
 
 const App = ({children}) => (
   <div>
-    <h1>inConcert</h1>
-    <NavbarContainer />
+    <NavbarContainer className="nav-bar" />
     { children }
   </div>
 )

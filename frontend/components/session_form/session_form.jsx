@@ -18,7 +18,7 @@ export default class SessionForm extends React.Component {
   handleSubmit(e) {
      e.preventDefault();
      const user = Object.assign({}, this.state);
-     this.props.processForm(user).then(() => this.redirect());
+     this.props.processForm(user);
   }
 
   render(){
@@ -27,10 +27,13 @@ export default class SessionForm extends React.Component {
     const header = formType === 'signup' ? "Sign Up" : "Log In";
     const linkRoute = formType === 'signup' ? "/login" : "/signup";
     const linkText = formType === 'signup' ? "Login" : "Signup";
+    let errorMessages = [];
+    if(errors.length > 0){
+      errorMessages = errors.map( (error, idx) => {
+        return <li key={idx}>{error}</li>
+      });
+    }
 
-    const errorMessages = errors.map( (error, idx) => {
-      return <li key={idx}>{error}</li>
-    });
 
       if(!loggedIn){
         return (

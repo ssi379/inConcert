@@ -7,22 +7,37 @@ export default class Navbar extends React.Component {
     const { currentUser, logout } = this.props;
     if(currentUser){
       return(
-        <ul id="nav-dropdown">
-          <li><h2>{currentUser.username}</h2></li>
-          <img src={currentUser.avatar_url} />
-          <li>
-            <form onSubmit={logout}>
-              <input type="submit" value="Sign Out" />
+        <div id="nav-bar-logged-in">
+          <img className="logo" src="https://s3.amazonaws.com/inconcert-dev/inConcert+logo_2.png" />
+          <form onSubmit={logout}>
+            <input type="submit" className="signout-button" value="Sign Out" />
+          </form>
+          <ul className="nav-right">
+            <form>
+              <input type="text" className="search-bar" value ="Search videos, artists and more"/>
+              <span><i className="fa fa-search search-logged-in" aria-hidden="true"></i></span>
             </form>
-          </li>
+            <li><img className="nav-avatar" src={currentUser.avatar_url} /></li>
+            <li><button className="upload-button"><i className="fa fa-upload" aria-hidden="true"></i>Upload</button></li>
+            <li>
+            </li>
 
-        </ul>
+          </ul>
+
+        </div>
       );
     } else {
       return (
-        <div id="session-buttons">
-          <li><Link to="/signup">Sign Up</Link></li>
-          <li><Link to="/login">Log In</Link></li>
+        <div id="nav-bar-logged-out">
+          <div className="nav-left">
+            <img className="logo" src="https://s3.amazonaws.com/inconcert-dev/inConcert+logo_2.png" />
+            <li><Link to="/signup" className="join-button">Join</Link></li>
+            <li><Link to="/login" className="login-button">Log In</Link></li>
+        </div>
+          <form className="search-input">
+            <input type="text" className="search-bar" value ="Search videos, artists and more"/>
+            <span><i className="fa fa-search" aria-hidden="true"></i></span>
+          </form>
         </div>
       )
     }

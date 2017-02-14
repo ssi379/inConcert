@@ -1,0 +1,153 @@
+.logo{
+  height: 31px;
+  width: 146px;
+  margin: 0px 40px;
+}
+
+#nav-bar-logged-in{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 42px;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #EEF1F2;
+}
+
+#nav-bar-logged-out{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 42px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #EEF1F2;
+}
+
+.nav-left > li{
+  list-style: none;
+}
+
+.nav-left > li{
+  list-style: none;
+}
+
+.nav-left{
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-right{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-right > li{
+  margin-right: 25px;
+}
+
+.nav-avatar{
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 15px;
+  top: 5px;
+
+}
+
+.join-button{
+  text-decoration: none;
+  margin-right: 20px;
+  padding: 5px 10px;
+  background: #7FC400;
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+}
+
+.join-button:hover{
+  background: #8aac42;
+}
+
+.login-button{
+  text-decoration: none;
+  margin-right: 20px;
+  font-family: "Helvetica Neue";
+  font-weight: 400;
+  font-size: 15px;
+  color: #607680
+}
+
+.login-button:hover{
+  color: #000;
+  transition: 0.5s;
+}
+
+.upload-button{
+  background-color: #657987;
+  padding: 1px 10px;
+  line-height: 32px;
+  font-size: 14px;
+  white-space: nowrap;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  font-weight: 900;
+  font-family: inherit;
+  top: -2px;
+  margin-left: -9px;
+  position: relative;
+}
+
+.search-input{
+  display: flex;
+  justify-content: center;
+  top: 4px;
+  right: 20px;
+  position: relative;
+}
+
+.fa-upload{
+  height: 5px;
+  width: 5px;
+  margin-right: 14px;
+}
+
+.fa-search{
+  height: 32px;
+  top: -12px;
+  right: 10px;
+  margin: 0;
+  margin-top: 1px;
+  padding: 0 10px;
+  border: 1px solid #D0D8DB;
+  border-left-width: 0;
+  border-radius: 0 5px 5px 0;
+  color: #8A9599;
+  background-color: #fff;
+  position: relative;
+  vertical-align: center;
+}
+
+.search-logged-in{
+  top: -7px;
+}
+
+.search-bar{
+  position: relative;
+  font-family: inherit;
+  font-size: 14px;
+  margin-right: 10px;
+  color: gray;
+  line-height: 1;
+  font-weight: 400;
+  border: 1px solid #D0D8DB;
+  width: 221px;
+  height: 32px;
+  border-radius: 5px 0 0 5px;
+  padding: 0 0 0 10px;
+}
