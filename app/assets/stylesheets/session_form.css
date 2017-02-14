@@ -1,0 +1,93 @@
+#session-form{
+  position: absolute;
+  z-index: 999;
+  text-align: center;
+  background: white;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 367px;
+  font-size: 20px;
+  padding: 50px 70px 50px 50px;;
+  border-radius: 5px;
+  transform: translateX(-50%) translateY(-65%);
+}
+
+.modal-screen{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.session-form-header{
+  font-weight: 500;
+  font-size: 20px;
+  padding: 1.5625rem 3.125rem 1.5625rem 1.5625rem;
+  border-bottom: 1px solid #D0D8DB;
+  color: #40545C;
+  border-radius: .3215rem .3125rem 0 0;
+  background-color: #F2F4F5;
+  width: 113%;
+  left: -50px;
+  top: -50px;
+  position: relative;
+  text-align: center;
+}
+
+.session-input{
+  padding: .9375rem;
+  font-size: 1rem;
+  width: 350px;
+  height: 18px;
+  border-radius: .3125rem;
+  margin-bottom: 20px;
+  border: 1px solid #D0D8DB;
+}
+
+.submit-session{
+  background-color: #7FC400;
+  color: #fff;
+  padding: .5625em .875em .65em;
+  width: 350px;
+  position: relative;
+  left: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.submit-session:hover{
+  background-color: #45A600;
+  transition: 0.2s;
+}
+
+.submit-guest{
+  background-color: #4c70ba;
+  color: #fff;
+  padding: .5625em .875em .65em;
+  width: 350px;
+  margin-top: 10px;
+  position: relative;
+  left: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.submit-guest:hover{
+  background-color: #3b5998;
+  transition: 0.2s;
+}
+
+.change-form{
+  margin-top: 10px;
+  font-size: 13px;
+}
