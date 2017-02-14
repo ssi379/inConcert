@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "redux-thunk": "^2.2.0",
-    "video.js": "^5.16.0"
+    "video.js": "^5.16.0",
+    "webpack": "^2.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",
