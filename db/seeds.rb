@@ -6,4 +6,8 @@ users.push(User.create!({
   password: "football",
 }))
 
-users.first.avatar.url = "https://s3.amazonaws.com/inconcert-dev/avatars/demo-avatar.png"
+users.push(User.create!({
+  username: "test",
+  password: "seedwork",
+  avatar: File.open("app/assets/images/avatar_0.jpg")
+}))

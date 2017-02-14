@@ -10,6 +10,7 @@ export default class SessionForm extends React.Component {
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleInput = this.handleInput.bind(this);
+      this.exitForm = this.exitForm.bind(this);
   }
   handleInput(event){
    this.setState({ [event.currentTarget.id]: event.currentTarget.value });
@@ -21,6 +22,10 @@ export default class SessionForm extends React.Component {
      this.props.processForm(user);
   }
 
+  exitForm(e){
+    hashHistory.push("/");
+  }
+
   render(){
     const { loggedIn, formType, errors, processForm } = this.props;
 
@@ -28,10 +33,11 @@ export default class SessionForm extends React.Component {
     const linkRoute = formType === 'signup' ? "/login" : "/signup";
     const linkText = formType === 'signup' ? "Login" : "Signup";
     const linkPromptText = formType === 'signup' ? "Already have an account? " : "Don't have an account? "
+
     let errorMessages = [];
-    if(errors.length > 0){
-      errorMessages = errors.map( (error, idx) => {
-        return <li key={idx}>{error}</li>
+    if(Object.keys(errors).length > 0){
+      errorMessages = Object.keys(errors).map( (id, idx) => {
+        return <li className="error-modal" key={idx}>{errors[id]}</li>
       });
     }
 
@@ -57,7 +63,7 @@ export default class SessionForm extends React.Component {
                 <h3 className="change-form">  {linkPromptText}<Link className="change-form-link" to={linkRoute}>{linkText}</Link></h3>
               </form>
             </div>
-            <div className="modal-screen"></div>
+            <div className="modal-screen" onClick={this.exitForm}></div>
           </div>
         )} else { return null; }
       }

@@ -118,23 +118,22 @@
 }
 
 .fa-search{
-  height: 32px;
-  top: -12px;
+  height: 27px;
+  top: -1px;
   right: 10px;
   margin: 0;
   margin-top: 1px;
-  padding: 0 10px;
+  padding: 5px 10px 0px 10px;
   border: 1px solid #D0D8DB;
   border-left-width: 0;
   border-radius: 0 5px 5px 0;
   color: #8A9599;
   background-color: #fff;
   position: relative;
-  vertical-align: center;
 }
 
 .search-logged-in{
-  top: -7px;
+  top: -2px;
 }
 
 .search-bar{

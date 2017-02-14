@@ -36,7 +36,7 @@ export default class Navbar extends React.Component {
         </div>
           <form className="search-input">
             <input type="text" className="search-bar" value ="Search videos, artists and more"/>
-            <span><i className="fa fa-search" aria-hidden="true"></i></span>
+            <i className="fa fa-search" aria-hidden="true"></i>
           </form>
         </div>
       )
