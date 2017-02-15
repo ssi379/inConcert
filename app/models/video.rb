@@ -14,7 +14,7 @@
 class Video < ActiveRecord::Base
   validates :title, :description, :user_id, :views, presence: true
 
-  has_attached_file :thumbnail
+  has_attached_file :thumbnail, default_url: "default_thumbnail.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   has_attached_file :video, processors: [:transcoder]

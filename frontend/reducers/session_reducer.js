@@ -11,7 +11,9 @@ export default function sessionReducer(oldState = defaultState, action){
     case RECEIVE_CURRENT_USER:
       return merge({}, oldState, { currentUser: action.currentUser});
     case RECEIVE_ERRORS:
-      return merge ({}, oldState, { errors: action.errors });
+      let newState = merge({}, oldState)
+      newState.errors = action.errors;
+      return newState;
     default:
       return oldState;
   }

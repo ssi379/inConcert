@@ -17,6 +17,10 @@ export default class SessionForm extends React.Component {
    this.setState({ [event.currentTarget.id]: event.currentTarget.value });
  }
 
+ componentDidMount(){
+   this.props.clearErrors([]);
+ }
+
   handleSubmit(e) {
      e.preventDefault();
      const user = Object.assign({}, this.state);
@@ -28,6 +32,17 @@ export default class SessionForm extends React.Component {
     hashHistory.push("/");
   }
 
+  renderErrors(){
+
+    return(
+      <ul>
+        {this.props.errors.map( (error, idx) => (
+          <li key={`error-${idx}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
+
   render(){
     const { loggedIn, formType, errors, processForm } = this.props;
 
@@ -36,22 +51,20 @@ export default class SessionForm extends React.Component {
     const linkText = formType === 'signup' ? "Login" : "Signup";
     const linkPromptText = formType === 'signup' ? "Already have an account? " : "Don't have an account? "
 
-    if(Object.keys(errors).length > 0){
-      this.errorMessages = Object.keys(errors).map( (id, idx) => {
-        return <li className="error-modal" key={idx}>{errors[id]}</li>
-      });
-    }
+    // if(Object.keys(errors).length > 0){
+    //   this.errorMessages = Object.keys(errors).map( (id, idx) => {
+    //     return <li className="error-modal" key={idx}>{errors[id]}</li>
+    //   });
+    // }
 
-      
+
       if(!loggedIn){
         return (
           <div>
             <div id="session-form">
               <h1 className="session-form-header">{header} to inConcert</h1>
+                {this.renderErrors()}
 
-              <ul className="error-modal">
-                {this.errorMessages}
-              </ul>
               <form onSubmit={this.handleSubmit}>
 
                   <input className="session-input" id="username" type="text" onChange={this.handleInput} value={this.state.username}/>
