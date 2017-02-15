@@ -82,7 +82,7 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 - [X] User signup/signin components
 - [X] Blank landing component after signup/signin
 - [X] Style signup/signin components
-- [ ] User Seed
+- [X] User Seed
 
 ### Phase 2: Video Model, API, and Components (3 Days)
 **Objective:** Video can be created and updated through the API and by Users
