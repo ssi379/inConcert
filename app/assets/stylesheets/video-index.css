@@ -1,3 +1,12 @@
 .video-splash{
   height: 540px;
+  z-index: 998;
+}
+
+.fa-chevron-down{
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 999;
+  color: #fff;
 }

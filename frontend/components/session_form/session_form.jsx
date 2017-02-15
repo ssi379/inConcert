@@ -12,6 +12,7 @@ export default class SessionForm extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleInput = this.handleInput.bind(this);
       this.exitForm = this.exitForm.bind(this);
+      this.handleGuest = this.handleGuest.bind(this);
   }
   handleInput(event){
    this.setState({ [event.currentTarget.id]: event.currentTarget.value });
@@ -30,6 +31,13 @@ export default class SessionForm extends React.Component {
   exitForm(e){
     this.errorMessages = [];
     hashHistory.push("/");
+  }
+
+  handleGuest(e){
+    e.preventDefault();
+    this.setState({username: "Demo", password:"football"});
+    const guestUser = Object.assign({}, this.state);
+    this.props.processForm(guestUser);
   }
 
   renderErrors(){
@@ -73,7 +81,7 @@ export default class SessionForm extends React.Component {
                 <br />
 
                 <input className="submit-session" type="submit" value={header} />
-                <input className="submit-guest" type="submit" value="Guest Demo" />
+                <input className="submit-guest" type="submit" value="Guest Demo" onClick={this.handleGuest} />
                 <h3 className="change-form">  {linkPromptText}<Link className="change-form-link" to={linkRoute}>{linkText}</Link></h3>
               </form>
             </div>
