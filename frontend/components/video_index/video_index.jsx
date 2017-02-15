@@ -9,26 +9,26 @@ export default class VideoIndex extends React.Component {
     let videoSplash = $('.video-splash');
     let splashVideos = [
       `url(https://s3.amazonaws.com/inconcert-dev/yeasayer.gif)`,
-      // `url(https://s3.amazonaws.com/inconcert-dev/rubble.gif)`,
-      // `url(https://s3.amazonaws.com/inconcert-dev/dk.gif)`,
-      // `url(https://s3.amazonaws.com/inconcert-dev/youbred.gif)`,
-      // // `url(https://s3.amazonaws.com/inconcert-dev/silversun.gif)`,
-      // // `url(https://s3.amazonaws.com/inconcert-dev/yeasayer2.gif)`,
-      // // `url(https://s3.amazonaws.com/inconcert-dev/cityofthesun.gif)`
+      `url(https://s3.amazonaws.com/inconcert-dev/rubble.gif)`,
+      `url(https://s3.amazonaws.com/inconcert-dev/dk.gif)`,
+      `url(https://s3.amazonaws.com/inconcert-dev/youbred.gif)`,
+      `url(https://s3.amazonaws.com/inconcert-dev/silversun.gif)`,
+      `url(https://s3.amazonaws.com/inconcert-dev/yeasayer2.gif)`,
+      `url(https://s3.amazonaws.com/inconcert-dev/cityofthesun.gif)`
     ]
 
     let currentVideo = 0;
 
-    // function nextVideo(){
-    //   currentVideo = (currentVideo + 1) % splashVideos.length
-    //   videoSplash.css(
-    //     "background-image",
-    //     splashVideos[currentVideo]
-    //   )
-    //   setTimeout(nextVideo, 3000);
-    // }
+    function nextVideo(){
+      currentVideo = (currentVideo + 1) % splashVideos.length
+      videoSplash.css(
+        "background-image",
+        splashVideos[currentVideo]
+      )
+      setTimeout(nextVideo, 1500);
+    }
 
-    // setTimeout(nextVideo, 3000);
+    setTimeout(nextVideo, 1500);
     videoSplash.css("background-image", splashVideos[0])
 
   }
