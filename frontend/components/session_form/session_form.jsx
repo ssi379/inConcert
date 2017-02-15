@@ -8,6 +8,7 @@ export default class SessionForm extends React.Component {
           username: "Username",
           password: "Password"
       };
+      this.errorMessages = [];
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleInput = this.handleInput.bind(this);
       this.exitForm = this.exitForm.bind(this);
@@ -23,6 +24,7 @@ export default class SessionForm extends React.Component {
   }
 
   exitForm(e){
+    this.errorMessages = [];
     hashHistory.push("/");
   }
 
@@ -34,14 +36,13 @@ export default class SessionForm extends React.Component {
     const linkText = formType === 'signup' ? "Login" : "Signup";
     const linkPromptText = formType === 'signup' ? "Already have an account? " : "Don't have an account? "
 
-    let errorMessages = [];
     if(Object.keys(errors).length > 0){
-      errorMessages = Object.keys(errors).map( (id, idx) => {
+      this.errorMessages = Object.keys(errors).map( (id, idx) => {
         return <li className="error-modal" key={idx}>{errors[id]}</li>
       });
     }
 
-
+      
       if(!loggedIn){
         return (
           <div>
@@ -49,7 +50,7 @@ export default class SessionForm extends React.Component {
               <h1 className="session-form-header">{header} to inConcert</h1>
 
               <ul className="error-modal">
-                {errorMessages}
+                {this.errorMessages}
               </ul>
               <form onSubmit={this.handleSubmit}>
 
