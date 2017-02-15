@@ -10,8 +10,8 @@ Trello Link: [trelloBoard](https://trello.com/b/4SNQRXjd/inconcert)
 inConcert is a web application inspired by Vimeo built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at the minimum, satisfy the following criteria.
 
 ### Major Features
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and demo login
+- [X] Hosting on Heroku
+- [X] New account creation, login, and demo login
 - [ ] Videos
   * Users should also have the ability to upload videos
   * Splash page with global video index

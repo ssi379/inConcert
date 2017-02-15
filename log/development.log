@@ -8506,3 +8506,930 @@ Completed 200 OK in 130ms (Views: 129.2ms | ActiveRecord: 0.7ms)
 
 
 Started GET "/assets/session_form.self-d17c55aedac3734860c7e35b678309a7b941f2a96e8fc3a64635e7af8b4f34fd.css?body=1" for ::1 at 2017-02-14 20:52:22 -0500
+
+
+Started GET "/" for ::1 at 2017-02-14 22:03:55 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 145ms (Views: 142.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/session_form.self-ac46c989bf4f76601318ef400dc9759ac57473b350bae361c83d8eb813c8aed2.css?body=1" for ::1 at 2017-02-14 22:03:55 -0500
+
+
+Started GET "/" for ::1 at 2017-02-14 23:37:39 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 87ms (Views: 86.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/session_form.self-828e0248dc3855f66ca294f2000df15a27fbb35c7dd374f2cb12b11e8b7898d1.css?body=1" for ::1 at 2017-02-14 23:37:39 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 00:06:34 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 166ms (Views: 165.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 01:15:31 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (29.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 497ms (Views: 450.8ms | ActiveRecord: 29.7ms)
+
+
+Started GET "/assets/bundle.self-885b1d7407ab44342c2c70fcd7a4128abfcdffcb90d88fa85ad1aa54bf4b20a1.js?body=1" for ::1 at 2017-02-15 01:15:31 -0500
+
+
+Started GET "/app/assets/images/concert_cut.mp4" for ::1 at 2017-02-15 01:15:32 -0500
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/images/concert_cut.mp4"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (43.2ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (155.1ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (73.9ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (160.9ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 01:15:33 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 39ms (Views: 38.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/app/assets/images/concert_cut.mp4" for ::1 at 2017-02-15 01:15:33 -0500
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/images/concert_cut.mp4"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (79.0ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (134.0ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 01:15:39 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 01:16:32 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 406ms (Views: 405.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bundle.self-eba0d159bc943f104245f3c9e53eb3991166d44bf20d752587aad3f6ceeb5054.js?body=1" for ::1 at 2017-02-15 01:16:33 -0500
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 01:16:33 -0500
+
+
+Started GET "/app/assets/images/concert_cut.mp4" for ::1 at 2017-02-15 01:16:33 -0500
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/images/concert_cut.mp4"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (136.6ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.7ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.2ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (174.6ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.6ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (282.8ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 01:16:34 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 31ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 01:16:35 -0500
+
+
+Started GET "/app/assets/images/concert_cut.mp4" for ::1 at 2017-02-15 01:16:35 -0500
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/images/concert_cut.mp4"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.0ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (212.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (74.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (220.9ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 01:16:37 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 21.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/app/assets/images/concert_cut.mp4" for ::1 at 2017-02-15 01:16:37 -0500
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/images/concert_cut.mp4"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.0ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (88.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (53.0ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (137.4ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 01:17:03 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 27.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/app/assets/images/concert_cut.mp4" for ::1 at 2017-02-15 01:17:04 -0500
+
+ActionController::RoutingError (No route matches [GET] "/app/assets/images/concert_cut.mp4"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (100.8ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.5ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.7ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 01:17:09 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 01:52:22 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (6.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 505ms (Views: 496.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/bundle.self-26433ddd23412876e42f9a4ec06a21a7fe9ce14ef9d5048ddbad40bb641250e6.js?body=1" for ::1 at 2017-02-15 01:52:23 -0500
+
+
+Started GET "/dk.gif" for ::1 at 2017-02-15 01:52:23 -0500
+
+ActionController::RoutingError (No route matches [GET] "/dk.gif"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.5) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.5) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.5) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.5) lib/rack/lock.rb:17:in `call'
+  rack (1.6.5) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.5) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (184.0ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.2ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (103.4ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.5ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/matthewgoldman/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (231.1ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 01:52:24 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 01:56:26 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 339ms (Views: 338.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bundle.self-d5db293b811f053d92e3a1c538f390155525140ff4770f2e86432e1e0658789a.js?body=1" for ::1 at 2017-02-15 01:56:26 -0500
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 01:56:26 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 01:57:11 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 553ms (Views: 552.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bundle.self-3d58c2c9c3990153c648ced019313af73048afd83b2123520daa30d1b2f841c7.js?body=1" for ::1 at 2017-02-15 01:57:12 -0500
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 01:57:24 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 01:58:08 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (6.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 1047ms (Views: 1039.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/bundle.self-5e6c7065b2d1a4933fb431bbf15ca1ed699ed76f27d509db8a8e4a1897dfc602.js?body=1" for ::1 at 2017-02-15 01:58:09 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 01:58:23 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 368ms (Views: 367.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bundle.self-f82b44a53d22a1a5a7ddcb4bb93a27846a4e86e65cb53310c604b71cca649bba.js?body=1" for ::1 at 2017-02-15 01:58:24 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 01:58:25 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 01:58:26 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 34.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 01:59:01 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 01:59:02 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 360ms (Views: 359.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bundle.self-de905c203a91ceccad481c43499c7414f56bd0e9443f6c6df58ca6b0e579a8af.js?body=1" for ::1 at 2017-02-15 01:59:02 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 01:59:04 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 01:59:06 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 02:00:32 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 355ms (Views: 354.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-81781bcbad5347f4dcee2b50b1a159a5904ffbe7a7c13a063b875de6d5a451e4.css?body=1" for ::1 at 2017-02-15 02:00:33 -0500
+
+
+Started GET "/assets/bundle.self-8cb0a776be8767c063f6f7041f13aed4ea5660e8104cff5a4b4bd40a0e089cf1.js?body=1" for ::1 at 2017-02-15 02:00:33 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 02:00:34 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 38ms (Views: 37.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 02:00:42 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.self-de9820925ce21777b8ad2473a777d2ea76bc9d3933fe8dde0473f21460339ff7.css?body=1" for ::1 at 2017-02-15 02:00:42 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 02:00:43 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 02:00:50 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 48ms (Views: 47.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.self-b2ced213b8c47e578ea87304f6a10eb5e6c42aba03596571e5eff9bf2a6f2eb2.css?body=1" for ::1 at 2017-02-15 02:00:50 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 02:00:51 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 31ms (Views: 30.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 02:00:56 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 68ms (Views: 66.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.self-c38c5b0b5654551a83041cd432edb6c4ac8c4bc074e0cf9e8b0575d75f95febb.css?body=1" for ::1 at 2017-02-15 02:00:56 -0500
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 02:01:00 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 02:01:58 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 52ms (Views: 51.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-f5f4af913f507117ad849de368880c12a96f28c7a0a632f6723e9a85594f2c2e.css?body=1" for ::1 at 2017-02-15 02:01:58 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 02:02:00 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 43ms (Views: 42.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 02:02:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (12.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (17.9ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (25.5ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 17]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+[paperclip] deleting /users/avatars/000/000/017/original/avatar_0.jpg
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.2ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (26.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "Demo"], ["password_digest", "$2a$10$Mu7ihviwM..sUJUVMd4fCumB7N/YSxgySj0ez9QHJ330ag.ZPxAc."], ["session_token", "7q9dWxbKPVzO_nNpLbk8TQ"], ["created_at", "2017-02-15 07:07:45.729221"], ["updated_at", "2017-02-15 07:07:45.729221"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/5edd38114798224076ecab75730e002520170215-16842-yyf1fu.jpeg'
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/5edd38114798224076ecab75730e002520170215-16842-ptc3ta.jpeg'
+  [1m[36mSQL (11.1ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "Mogo"], ["password_digest", "$2a$10$S7MdAdwy48wwRjm1byiD/em8/41PLYT80eAMTFxb3VkgSMPvwghUS"], ["avatar_file_name", "avatar_7.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 15627], ["avatar_updated_at", "2017-02-15 07:07:46.213799"], ["session_token", "MKzsZLtqjt4Hb5jxJCrN8w"], ["created_at", "2017-02-15 07:07:46.250412"], ["updated_at", "2017-02-15 07:07:46.250412"]]
+[paperclip] saving /users/avatars/000/000/019/original/avatar_7.jpeg
+  [1m[35m (6.2ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/93bef703d6907dbc5848bc0e8874493f20170215-16842-zsllye.jpeg'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/93bef703d6907dbc5848bc0e8874493f20170215-16842-waam1j.jpeg'
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["username", "Giant Deadshot Dragon"], ["password_digest", "$2a$10$GrMPD88VKDKa06CruZR4hesgf8hT59/OCpjAGObCuFKlandGscraW"], ["avatar_file_name", "avatar_14.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 7772], ["avatar_updated_at", "2017-02-15 07:07:46.440913"], ["session_token", "OozTtxPLqhggD64ANRUBiw"], ["created_at", "2017-02-15 07:07:46.456621"], ["updated_at", "2017-02-15 07:07:46.456621"]]
+[paperclip] saving /users/avatars/000/000/020/original/avatar_14.jpeg
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/996b0f43abc4818bee7830929e9f765e20170215-16842-ny4u30.jpeg'
+  [1m[35m (0.2ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/996b0f43abc4818bee7830929e9f765e20170215-16842-1yzpyys.jpeg'
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "Agent Metron"], ["password_digest", "$2a$10$STsiTaDhftuKUv.7.ov4lux8Jq8u2kE1OOVgxql1jlor9myOGanry"], ["avatar_file_name", "avatar_15.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 6037], ["avatar_updated_at", "2017-02-15 07:07:46.596207"], ["session_token", "b0SKY6kB-TfdP4_fcRgFjA"], ["created_at", "2017-02-15 07:07:46.615145"], ["updated_at", "2017-02-15 07:07:46.615145"]]
+[paperclip] saving /users/avatars/000/000/021/original/avatar_15.jpeg
+  [1m[35m (6.3ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/718f0257e634a2723ae78678c06ec2f220170215-16842-ic0t8v.jpeg'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/718f0257e634a2723ae78678c06ec2f220170215-16842-16uohv5.jpeg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["username", "Cyborg Zoom II"], ["password_digest", "$2a$10$oGvlPrxoG4TEMGxcjljXbOVprO2/CjHrCGiCnHPa93KpBcVfuB28u"], ["avatar_file_name", "avatar_17.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 4021], ["avatar_updated_at", "2017-02-15 07:07:46.830245"], ["session_token", "YP2eLlx_zqJqqbl82Z_a9g"], ["created_at", "2017-02-15 07:07:46.850259"], ["updated_at", "2017-02-15 07:07:46.850259"]]
+[paperclip] saving /users/avatars/000/000/022/original/avatar_17.jpeg
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/1f48751d02f862948ca4bf3b6214868320170215-16842-1oebad6.jpeg'
+  [1m[35m (0.2ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/1f48751d02f862948ca4bf3b6214868320170215-16842-wpc5f7.jpeg'
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "Magnificent Isis"], ["password_digest", "$2a$10$PuB57sBKLnrE.nMEY63ZTOAYASuBZkyGSFEIg92JoIlZaC5N0mxcK"], ["avatar_file_name", "avatar_19.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 4933], ["avatar_updated_at", "2017-02-15 07:07:46.987262"], ["session_token", "E838ElQLPEIUaFUdyqSqJQ"], ["created_at", "2017-02-15 07:07:47.003009"], ["updated_at", "2017-02-15 07:07:47.003009"]]
+[paperclip] saving /users/avatars/000/000/023/original/avatar_19.jpeg
+  [1m[35m (6.3ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/30498e4ad6dfc5d651861a6a3ab9537520170215-16842-1ijzez2.jpeg'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/30498e4ad6dfc5d651861a6a3ab9537520170215-16842-1w4k4np.jpeg'
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 18]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 19]]
+  [1m[35m (1.3ms)[0m  COMMIT
+[paperclip] deleting /users/avatars/000/000/019/original/avatar_7.jpeg
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 20]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+[paperclip] deleting /users/avatars/000/000/020/original/avatar_14.jpeg
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 21]]
+  [1m[35m (1.1ms)[0m  COMMIT
+[paperclip] deleting /users/avatars/000/000/021/original/avatar_15.jpeg
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "users" WHERE "users"."id" = $1  [["id", 22]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+[paperclip] deleting /users/avatars/000/000/022/original/avatar_17.jpeg
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 23]]
+  [1m[35m (1.4ms)[0m  COMMIT
+[paperclip] deleting /users/avatars/000/000/023/original/avatar_19.jpeg
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["username", "Demo"], ["password_digest", "$2a$10$OV/3DK87Mu5bCqpcGPt8..0exRYBFXO/nRncoX8v8IAbsm53wsOsu"], ["session_token", "XSfNsGtXoVzSxtjlw_i3Nw"], ["created_at", "2017-02-15 07:11:26.695248"], ["updated_at", "2017-02-15 07:11:26.695248"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/5edd38114798224076ecab75730e002520170215-16954-4u6unk.jpeg'
+  [1m[35m (0.2ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/5edd38114798224076ecab75730e002520170215-16954-1wiej8b.jpeg'
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "Green Binary"], ["password_digest", "$2a$10$29x5qdi0XGjP9TF2GopOeeWmgoPx4oknj.qaRzeYhAtJlMGcqDRfe"], ["avatar_file_name", "avatar_7.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 15627], ["avatar_updated_at", "2017-02-15 07:11:27.154088"], ["session_token", "hwPPA0ijKJ0OsfF52t6-rQ"], ["created_at", "2017-02-15 07:11:27.178435"], ["updated_at", "2017-02-15 07:11:27.178435"]]
+[paperclip] saving /users/avatars/000/000/025/original/avatar_7.jpeg
+  [1m[35m (6.2ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/93bef703d6907dbc5848bc0e8874493f20170215-16954-1k1k9mj.jpeg'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/93bef703d6907dbc5848bc0e8874493f20170215-16954-1ueldxe.jpeg'
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["username", "General Meltdown IX"], ["password_digest", "$2a$10$p8rB6KTVsNPDoXQWXbEhDeJJl95IPgBJbCYz3XRR93.ELqzEnAbVa"], ["avatar_file_name", "avatar_14.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 7772], ["avatar_updated_at", "2017-02-15 07:11:27.388120"], ["session_token", "yBtrnFk3WKC_UxmpbyqVyA"], ["created_at", "2017-02-15 07:11:27.404607"], ["updated_at", "2017-02-15 07:11:27.404607"]]
+[paperclip] saving /users/avatars/000/000/026/original/avatar_14.jpeg
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/996b0f43abc4818bee7830929e9f765e20170215-16954-1gw5m9t.jpeg'
+  [1m[35m (0.2ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/996b0f43abc4818bee7830929e9f765e20170215-16954-l8928q.jpeg'
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "Martian Manhunter I"], ["password_digest", "$2a$10$eeoLg8FqR7CKFaT6OWwI0u.F1/96G0aXJJnsh2PM2zo5Bql2Ojhb2"], ["avatar_file_name", "avatar_15.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 6037], ["avatar_updated_at", "2017-02-15 07:11:27.542120"], ["session_token", "WIVJy_5KCFZvzg_Say0afw"], ["created_at", "2017-02-15 07:11:27.561567"], ["updated_at", "2017-02-15 07:11:27.561567"]]
+[paperclip] saving /users/avatars/000/000/027/original/avatar_15.jpeg
+  [1m[35m (6.4ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/718f0257e634a2723ae78678c06ec2f220170215-16954-1735uhv.jpeg'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/718f0257e634a2723ae78678c06ec2f220170215-16954-1mlom6i.jpeg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["username", "Doc Samson"], ["password_digest", "$2a$10$MWDsVwY94gDVV17d8V7aBe0s1UiHMwPEC8cbJx4SvlWJerCNQokeG"], ["avatar_file_name", "avatar_17.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 4021], ["avatar_updated_at", "2017-02-15 07:11:27.782079"], ["session_token", "GW031MKhDUvKVCqehMw1nA"], ["created_at", "2017-02-15 07:11:27.798529"], ["updated_at", "2017-02-15 07:11:27.798529"]]
+[paperclip] saving /users/avatars/000/000/028/original/avatar_17.jpeg
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/1f48751d02f862948ca4bf3b6214868320170215-16954-k797z1.jpeg'
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/1f48751d02f862948ca4bf3b6214868320170215-16954-4iyhp6.jpeg'
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "Songbird"], ["password_digest", "$2a$10$t3okFJ3t7aF1KCL322O70.yjvBWjDfPFBQTKhWw8vgiQf0x/Z2.DS"], ["avatar_file_name", "avatar_19.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 4933], ["avatar_updated_at", "2017-02-15 07:11:27.931231"], ["session_token", "Lk0ICjC20kKoNf7JmITCBg"], ["created_at", "2017-02-15 07:11:27.947163"], ["updated_at", "2017-02-15 07:11:27.947163"]]
+[paperclip] saving /users/avatars/000/000/029/original/avatar_19.jpeg
+  [1m[35m (6.0ms)[0m  COMMIT
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/30498e4ad6dfc5d651861a6a3ab9537520170215-16954-1xawqot.jpeg'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/30498e4ad6dfc5d651861a6a3ab9537520170215-16954-1c6redb.jpeg'
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["username", "Doctor Niki Sanders Knight"], ["password_digest", "$2a$10$rgtkLr9zcbCCJMORW7vkpehAOziGDBI4PkN8rQ3DtIjtBXCJrs10a"], ["avatar_file_name", "avatar_20.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 4855], ["avatar_updated_at", "2017-02-15 07:11:28.087025"], ["session_token", "q7ZroHo6WZ-f9lnMYg5Gow"], ["created_at", "2017-02-15 07:11:28.103045"], ["updated_at", "2017-02-15 07:11:28.103045"]]
+[paperclip] saving /users/avatars/000/000/030/original/avatar_20.jpeg
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/3bef5be935a3947b4fce72bfc68e545520170215-16954-1944jyv.jpeg'
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/_m/88db7gf53r120f4kvfhv2zpm0000gn/T/3bef5be935a3947b4fce72bfc68e545520170215-16954-jjiz8q.jpeg'
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "avatar_file_name", "avatar_content_type", "avatar_file_size", "avatar_updated_at", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "Cannonball"], ["password_digest", "$2a$10$jq1xlv2/usHUgRuKTFeTVOCLJ8.WJW2.cZBKdZkKegs407GxvBiNC"], ["avatar_file_name", "avatar_21.jpeg"], ["avatar_content_type", "image/jpeg"], ["avatar_file_size", 18971], ["avatar_updated_at", "2017-02-15 07:11:28.238655"], ["session_token", "uKOLJlSVDS3KEE4Mkj3xCQ"], ["created_at", "2017-02-15 07:11:28.254716"], ["updated_at", "2017-02-15 07:11:28.254716"]]
+[paperclip] saving /users/avatars/000/000/031/original/avatar_21.jpeg
+  [1m[35m (6.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/" for ::1 at 2017-02-15 08:59:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (7.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 1093ms (Views: 1083.7ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/assets/api/session.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/application.self-f5f4af913f507117ad849de368880c12a96f28c7a0a632f6723e9a85594f2c2e.css?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/navbar.self-068a22d12a284048c9dd6083053d0832e82483218a991ae1d598da5547a2a96f.css?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/api/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/reset.self-2c3db95ac91a81e07a6e52496a88ddc463f6608e3029b3f4555cabb07932e1d7.css?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/static_pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/session_form.self-828e0248dc3855f66ca294f2000df15a27fbb35c7dd374f2cb12b11e8b7898d1.css?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/api/session.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/api/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/bundle.self-8cb0a776be8767c063f6f7041f13aed4ea5660e8104cff5a4b4bd40a0e089cf1.js?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/static_pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/assets/application.self-2b00c68320848afe54cf9919a7a76ed257f93bdb6e12dc2160d07a8b1fe5e9f4.js?body=1" for ::1 at 2017-02-15 08:59:28 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 08:59:51 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 29ms (Views: 27.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 10:16:40 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 392ms (Views: 390.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 10:16:40 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/video-index.self-e1f34c9b6f6acce585618607a5277e1ea16f0611a9048abc3e2cc5089587a2d9.css?body=1" for ::1 at 2017-02-15 10:16:40 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:16:46 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 10:16:49 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:18:06 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 389ms (Views: 386.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bundle.self-0de4dd072c2f7178d7dfba0127cd639a6430a219e440946ce837c0135839dc91.js?body=1" for ::1 at 2017-02-15 10:18:07 -0500
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 10:18:09 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:18:35 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 324ms (Views: 323.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bundle.self-118dfe5448b6fee684f860e2f083515c6d24d7e02d6824ff09ed7765aae06184.js?body=1" for ::1 at 2017-02-15 10:18:36 -0500
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 10:18:36 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:21:56 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 346ms (Views: 345.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 10:21:56 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bundle.self-a582c007c7debbd8d1e0c07950003eae26cce7a2151af60a88a216e7ccd64abb.js?body=1" for ::1 at 2017-02-15 10:21:56 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:22:32 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 525ms (Views: 522.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/bundle.self-27bd3fb1ab03401484a6d9130166d20063268cf513eaf28bee952b2d8cbf5762.js?body=1" for ::1 at 2017-02-15 10:22:33 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:22:40 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 93ms (Views: 91.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 10:22:54 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:24:24 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 452ms (Views: 451.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 10:24:24 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bundle.self-9e799a517d7d82a480616a69ceb8c2a0dc30d4c1cfbf5b0ac9cf3617a6e14113.js?body=1" for ::1 at 2017-02-15 10:24:24 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:24:54 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 507ms (Views: 506.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-02-15 10:24:55 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bundle.self-00542040a43abf545aa79c314606f72914947d6e7284a65acbdc5b0e746eee0c.js?body=1" for ::1 at 2017-02-15 10:24:55 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:25:19 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 531ms (Views: 530.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bundle.self-657ea0a4cbc51d2b319e481a6ad65db9cf5384aa732d4836d480a56d8ac49387.js?body=1" for ::1 at 2017-02-15 10:25:20 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:25:23 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 10:25:24 -0500
+
+
+Started GET "/" for ::1 at 2017-02-15 10:25:34 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "JOXwPL-E3vDr12VvG8b2pQ"]]
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 487ms (Views: 485.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bundle.self-157aeee7d94cb446c29af9e04ca3f31af548a86f8443be549ad8d8e17c947de1.js?body=1" for ::1 at 2017-02-15 10:25:35 -0500
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-15 10:25:35 -0500

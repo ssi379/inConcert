@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .splash-image{
+   padding: 0px 20px;
+   background-color: black;
+ }
