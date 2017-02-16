@@ -10,3 +10,47 @@
   z-index: 999;
   color: #fff;
 }
+
+.video-index-row{
+  margin: 0 auto;
+  padding: 30px 0 40px 0;
+  max-width: 1720px;
+  width: 100%;
+  margin-left: 40px;
+  border-bottom: 1px solid #D0D8DB;
+}
+
+
+.row-title{
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.189;
+  color: #40545C;
+}
+
+.row-title:hover{
+  color: #000;
+  transition: 0.75s;
+}
+
+.video-bar{
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.video-index-item-container{
+  padding: 0 10px;
+}
+
+.video-index-uploader-info{
+
+}
+
+.index-uploader-avatar{
+  width: 16px;
+  height: 16px;
+  border-radius: 25px;
+}

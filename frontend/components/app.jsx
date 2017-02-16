@@ -20,8 +20,8 @@ class App extends React.Component{
     return(
       <div>
         <NavbarContainer />
-        { this.props.children }
         {this.determineSplash()}
+        { this.props.children }
       </div>
     )
   }
