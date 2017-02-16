@@ -47,7 +47,7 @@ export default class VideoShow extends React.Component{
               controls={true}
               autoPlay={true}
               height={540}
-              width={960}
+              width={"100%"}
             />
           </div>
 
@@ -81,11 +81,11 @@ export default class VideoShow extends React.Component{
               </div>
             </div>
 
+
             <div className="sidebar-wrapper">
               <h1 className="sidebar-header">See more performances</h1>
               {this.renderSidebarVideos(this.props.listed_videos)}
             </div>
-
           </div>
 
       </div>
