@@ -34,6 +34,7 @@ gem 'faker'
 
 group :production do
   gem 'rails_12factor'
+  gem 'pry-rails'
 end
 
 

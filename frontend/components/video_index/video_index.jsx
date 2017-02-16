@@ -33,11 +33,11 @@ export default class VideoIndex extends React.Component {
       <div className="video-index">
         <div className="video-index-row">
           <h1 className="row-title">Watch musician-curated Staff Picks</h1>
-          <Carousel>
-            <ul className="video-bar">
-              {this.renderRow()}
-            </ul>
-          </Carousel>
+          <ul className="video-bar">
+            <Carousel cellAlign="center" slidesToShow={3}>
+                {this.renderRow()}
+            </Carousel>
+          </ul>
         </div>
         <div className="video-index-row">
           <h1 className="row-title">Highly Acclaimed Performances</h1>
