@@ -8,7 +8,7 @@ export default class Navbar extends React.Component {
     if(currentUser){
       return(
         <div id="nav-bar-logged-in">
-          <img className="logo" src="https://s3.amazonaws.com/inconcert-dev/inConcert+logo_2.png" />
+          <Link to="/"><img className="logo" src="https://s3.amazonaws.com/inconcert-dev/inConcert+logo_2.png" /></Link>
           <form onSubmit={logout}>
             <input type="submit" className="signout-button" value="Sign Out" />
           </form>
@@ -30,7 +30,7 @@ export default class Navbar extends React.Component {
       return (
         <div id="nav-bar-logged-out">
           <div className="nav-left">
-            <img className="logo" src="https://s3.amazonaws.com/inconcert-dev/inConcert+logo_2.png" />
+            <Link to="/"><img className="logo" src="https://s3.amazonaws.com/inconcert-dev/inConcert+logo_2.png" /></Link>
             <li><Link to="/signup" className="join-button">Join</Link></li>
             <li><Link to="/login" className="login-button">Log In</Link></li>
         </div>

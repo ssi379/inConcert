@@ -6,12 +6,16 @@ const defaultVideoState = {
 }
 
 const VideoReducer = (oldState = defaultVideoState, action) => {
+  Object.freeze(oldState);
 
+  let newState = merge({}, oldState);
   switch(action.type){
     case RECEIVE_VIDEO:
-      return merge({}, oldState, {currentVideo: action.video});
+      newState.currentVideo = action.video;
+      return newState;
     case RECEIVE_VIDEOS:
-      return merge({}, oldState, action.videos);
+      newState.listed_videos = action.videos.listed_videos;
+      return newState;
     default:
       return oldState;
   }

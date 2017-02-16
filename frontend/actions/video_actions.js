@@ -25,13 +25,13 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
-export const fetchVideos = () => dispatch => {
+export const fetchManyVideos = () => dispatch => {
   return VideoAPIUtil.fetchVideos()
   .then((videos) => dispatch(receiveVideos(videos)),
   (err) => dispatch(receiveErrors(err.responseJSON)));
 }
 
-export const fetchVideo = (id) => dispatch => {
+export const fetchSingleVideo = (id) => dispatch => {
   return VideoAPIUtil.fetchVideo(id)
   .then((video) => dispatch(receiveVideo(video)),
   (err) => dispatch(receiveErrors(err.responseJSON)));

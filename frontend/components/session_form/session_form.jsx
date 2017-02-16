@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory } from 'react-router';
+import VideoSplash from '../video_index/video_splash';
 
 export default class SessionForm extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ export default class SessionForm extends React.Component {
      e.preventDefault();
      const user = Object.assign({}, this.state);
      this.props.processForm(user);
+     hashHistory.push("/");
   }
 
   exitForm(e){
@@ -35,9 +37,32 @@ export default class SessionForm extends React.Component {
 
   handleGuest(e){
     e.preventDefault();
-    this.setState({username: "Demo", password:"football"});
-    const guestUser = Object.assign({}, this.state);
-    this.props.processForm(guestUser);
+    e.persist();
+    let that = this;
+    const creds = { "username": "Demo", "password": "football" };
+    let triggerGuest = () => { this.handleSubmit(e) };
+    const fields = ["password", "username"];
+    for(let i = 0; i < fields.length; i++){
+      let currentField = fields[i];
+      let inputArray = creds[currentField].split("");
+      let that2 = that;
+
+      while(inputArray.length > 0){
+        let currentField2 = currentField.slice(0);
+        let inputArray2 = inputArray.slice(0);
+        let triggerGuest2 = triggerGuest;
+        let that3 = that2;
+        triggerGuest = () => {
+          setTimeout(() =>{
+            that3.setState({[currentField2]: inputArray2.join("")});
+            triggerGuest2();
+          }, 70);
+        };
+
+        inputArray.pop();
+      }
+    }
+    triggerGuest();
   }
 
   renderErrors(){
