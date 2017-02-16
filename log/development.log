@@ -15736,3 +15736,409 @@ Processing by Api::VideosController#show as JSON
   Rendered api/videos/_video.json.jbuilder (8.8ms)
   Rendered api/videos/show.json.jbuilder (10.9ms)
 Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 00:46:53 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "iJy5hQu1y3rze7HyZJzBMg"]]
+  Rendered api/users/_user.json.jbuilder (5.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 66ms (Views: 65.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2017-02-16 00:46:55 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "iJy5hQu1y3rze7HyZJzBMg"]]
+  [1m[35m (2.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Ev8XjMTmS1Qev-QT7sa75Q"], ["updated_at", "2017-02-16 05:46:55.486647"], ["id", 34]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 00:46:55 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "iJy5hQu1y3rze7HyZJzBMg"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 46ms (Views: 45.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:47:08 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Username", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Username"]]
+Completed 422 Unprocessable Entity in 72ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:47:13 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", ""]]
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:47:17 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Demo", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Demo"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session_token", "ntMS_WNvjgONCWniyprzXw"], ["updated_at", "2017-02-16 05:47:17.598150"], ["id", 35]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/api/users/35
+Completed 302 Found in 73ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/api/users/35" for ::1 at 2017-02-16 00:47:17 -0500
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"35"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 35]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  Rendered api/users/show.json.jbuilder (2.9ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2017-02-16 00:47:18 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "ntMS_WNvjgONCWniyprzXw"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "0P9nxE3UFZcz_FCO8T8FeA"], ["updated_at", "2017-02-16 05:47:18.792642"], ["id", 35]]
+  [1m[35m (2.5ms)[0m  COMMIT
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:47:21 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Username", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Username"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "UVhHEVQxj7ACQHr2jkWbRQ"], ["updated_at", "2017-02-16 05:47:21.488808"], ["id", 32]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/api/users/32
+Completed 302 Found in 81ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/api/users/32" for ::1 at 2017-02-16 00:47:21 -0500
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered api/users/show.json.jbuilder (2.2ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2017-02-16 00:47:23 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "UVhHEVQxj7ACQHr2jkWbRQ"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session_token", "Y0nW58P5Etrpx_I9Xh2PRQ"], ["updated_at", "2017-02-16 05:47:23.078490"], ["id", 32]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:47:31 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"scascacaewefwef", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "scascacaewefwef"]]
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-16 00:47:35 -0500
+
+
+Started GET "/" for ::1 at 2017-02-16 00:48:49 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-16 00:48:54 -0500
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:48:55 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", ""]]
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:48:59 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Username", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Username"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "072SIdqAbycQCUnkqTXUUQ"], ["updated_at", "2017-02-16 05:48:59.808341"], ["id", 32]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/api/users/32
+Completed 302 Found in 75ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/api/users/32" for ::1 at 2017-02-16 00:48:59 -0500
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 32]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered api/users/show.json.jbuilder (3.2ms)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2017-02-16 00:49:01 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "072SIdqAbycQCUnkqTXUUQ"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session_token", "VB34_OxQFG6ncU4BbKJ7XQ"], ["updated_at", "2017-02-16 05:49:01.607785"], ["id", 32]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:49:06 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Username", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Username"]]
+Completed 422 Unprocessable Entity in 71ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 00:50:35 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-16 00:50:36 -0500
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:50:41 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", ""]]
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 00:51:27 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-16 00:51:28 -0500
+
+
+Started GET "/" for ::1 at 2017-02-16 00:51:29 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 45ms (Views: 44.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-16 00:51:29 -0500
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:51:33 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Username", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Username"]]
+Completed 422 Unprocessable Entity in 84ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 00:52:09 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 359ms (Views: 357.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bundle.self-5f46b6d79ab28eb208a2d80a3fbdcb03bf2947d4bf5a41860b73ba333c30da00.js?body=1" for ::1 at 2017-02-16 00:52:10 -0500
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-16 00:52:10 -0500
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:52:14 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", ""]]
+Completed 422 Unprocessable Entity in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:53:16 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", ""]]
+Completed 422 Unprocessable Entity in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:53:35 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", ""]]
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:55:48 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Username", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Username"]]
+Completed 422 Unprocessable Entity in 100ms (Views: 0.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:56:38 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Username", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Username"]]
+Completed 422 Unprocessable Entity in 71ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 00:57:13 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 355ms (Views: 354.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bundle.self-4f15c557e3d1adcc5bc0828b42b883d565340774c92a30472e208b1060fbad9b.js?body=1" for ::1 at 2017-02-16 00:57:13 -0500
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-16 00:57:14 -0500
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:57:20 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Username", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Username"]]
+Completed 422 Unprocessable Entity in 66ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:57:25 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Demo", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Demo"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session_token", "yS8522QQDryzliZYLzj1qA"], ["updated_at", "2017-02-16 05:57:25.966231"], ["id", 24]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/api/users/24
+Completed 302 Found in 71ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/api/users/24" for ::1 at 2017-02-16 00:57:25 -0500
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 24]]
+  Rendered api/users/_user.json.jbuilder (1.4ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 00:57:34 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "yS8522QQDryzliZYLzj1qA"]]
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 400ms (Views: 399.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bundle.self-b27796bca60ceb7d90d40e271b1f1c2e871a2d0ece805b3097bd34b0659cabe4.js?body=1" for ::1 at 2017-02-16 00:57:34 -0500
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-16 00:57:35 -0500
+
+
+Started DELETE "/api/session" for ::1 at 2017-02-16 00:57:36 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "yS8522QQDryzliZYLzj1qA"]]
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session_token", "DSufvTuigJDdTQgz-3RmPg"], ["updated_at", "2017-02-16 05:57:36.349465"], ["id", 24]]
+  [1m[36m (8.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 00:58:12 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-16 00:58:13 -0500
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:58:16 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Demo", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", "Demo"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "w6NCa4SzVQ-pLTRMrrK1nA"], ["updated_at", "2017-02-16 05:58:16.861127"], ["id", 34]]
+  [1m[35m (1.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/api/users/34
+Completed 302 Found in 70ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/api/users/34" for ::1 at 2017-02-16 00:58:16 -0500
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 34]]
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2017-02-16 00:58:17 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "w6NCa4SzVQ-pLTRMrrK1nA"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session_token", "vz6PPtTj-sgYSq3iyt1YCg"], ["updated_at", "2017-02-16 05:58:17.910551"], ["id", 34]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-16 00:58:17 -0500
+Processing by StaticPagesController#root as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1  [["session_token", "w6NCa4SzVQ-pLTRMrrK1nA"]]
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 43ms (Views: 42.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bundle.js.map" for ::1 at 2017-02-16 00:58:18 -0500
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:58:24 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", ""]]
+Completed 422 Unprocessable Entity in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:58:30 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"Demo", "password"=>"[FILTERED]"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1  [["username", "Demo"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3  [["session_token", "WNzw3b1FaXC8pqKKXgWdcg"], ["updated_at", "2017-02-16 05:58:30.108004"], ["id", 35]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/api/users/35
+Completed 302 Found in 74ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/api/users/35" for ::1 at 2017-02-16 00:58:30 -0500
+Processing by Api::UsersController#show as JSON
+  Parameters: {"id"=>"35"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 35]]
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered api/users/show.json.jbuilder (2.5ms)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/api/session" for ::1 at 2017-02-16 00:58:31 -0500
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT 1[0m  [["session_token", "WNzw3b1FaXC8pqKKXgWdcg"]]
+  [1m[35m (1.3ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "DBV27AYDft-g6yowEAMh0A"], ["updated_at", "2017-02-16 05:58:31.540784"], ["id", 35]]
+  [1m[35m (2.1ms)[0m  COMMIT
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/api/session" for ::1 at 2017-02-16 00:58:43 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT 1[0m  [["username", ""]]
+Completed 422 Unprocessable Entity in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
