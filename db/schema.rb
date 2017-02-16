@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170215160745) do
+ActiveRecord::Schema.define(version: 20170216134654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,12 +32,12 @@ ActiveRecord::Schema.define(version: 20170215160745) do
   add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
   create_table "videos", force: :cascade do |t|
-    t.string   "title",                              null: false
-    t.text     "description",                        null: false
-    t.integer  "user_id",                            null: false
-    t.integer  "views",                  default: 1, null: false
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.string   "title",                                  null: false
+    t.text     "description",                            null: false
+    t.integer  "user_id",                                null: false
+    t.integer  "views",                  default: 1,     null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "videoitem_file_name"
     t.string   "videoitem_content_type"
     t.integer  "videoitem_file_size"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170215160745) do
     t.string   "thumbnail_content_type"
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
+    t.boolean  "seeded",                 default: false
   end
 
   add_index "videos", ["user_id"], name: "index_videos_on_user_id", using: :btree

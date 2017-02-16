@@ -30,4 +30,15 @@ class Video < ActiveRecord::Base
   validates :title, :description, :user_id, :views, presence: true
 
   belongs_to :user
+
+  def self.destroy_nonseeds
+    destroy_these_ids = []
+    destroy_these_videos = Video.select(:id).where(seeded: false)
+
+    destroy_these_videos.each do |video|
+      destroy_these_ids << video.id
+    end
+
+    Video.destroy(destroy_these_ids)
+  end
 end
