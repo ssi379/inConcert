@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoSplash from './video_splash';
 import VideoIndexItem from './video_index_item';
+import Carousel from 'nuka-carousel';
 
 export default class VideoIndex extends React.Component {
   constructor (props){
@@ -32,9 +33,11 @@ export default class VideoIndex extends React.Component {
       <div className="video-index">
         <div className="video-index-row">
           <h1 className="row-title">Watch musician-curated Staff Picks</h1>
-          <ul className="video-bar">
-            {this.renderRow()}
-          </ul>
+          <Carousel>
+            <ul className="video-bar">
+              {this.renderRow()}
+            </ul>
+          </Carousel>
         </div>
         <div className="video-index-row">
           <h1 className="row-title">Highly Acclaimed Performances</h1>
