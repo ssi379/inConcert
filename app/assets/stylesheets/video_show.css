@@ -91,10 +91,23 @@
   text-decoration: none;
 }
 
+.comments-show{
+  margin: 20px 0 20px 20px;
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #40545C;
+}
+
 
 .sidebar-wrapper{
   width: 350px;
   height: 720px;
   background-color: #f6f7f8;
   border-left: 1px solid #D0D8DB;
+}
+
+.sidebar-header{
+  font-family: inherit;
+  border-bottom: 1px solid #D0D8DB
 }

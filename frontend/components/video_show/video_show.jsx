@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import {ReadMore} from 'react-read-more'
+import {ReadMore} from 'react-read-more';
+import SidebarItem from './sidebar_item';
 
 export default class VideoShow extends React.Component{
   constructor(props){
@@ -19,6 +20,15 @@ export default class VideoShow extends React.Component{
     if(this.props.id !== nextProps.id){
       this.props.fetchSingleVideo(nextProps.id);
     }
+    // this.setState({sideVideos})
+  }
+
+  renderSidebarVideos(sideVideos){
+    if(typeof sideVideos === "undefined"){ return null };
+
+    return sideVideos.map((videoItem, idx) => {
+      return <SidebarItem video={videoItem} key={idx} />
+    })
   }
 
   render(){
@@ -63,15 +73,21 @@ export default class VideoShow extends React.Component{
                     children={<p className="video-description">{video.description.slice(2, -2)}</p>}
                     lines={3} />
                 </div>
+
               </div>
 
+              <div className="comments-show">
+                <h1>16 Comments</h1>
+              </div>
             </div>
 
             <div className="sidebar-wrapper">
-
+              <h1 className="sidebar-header">See more performances</h1>
+              {this.renderSidebarVideos(this.props.listed_videos)}
             </div>
 
           </div>
+
       </div>
     )
   }
