@@ -1,0 +1,10 @@
+.video-player{
+  padding: 0 106px;
+  background-color: #000;
+}
+
+.uploader-avatar{
+  height: 40px;
+  width: 40px;
+  border-radius: 25px;
+}

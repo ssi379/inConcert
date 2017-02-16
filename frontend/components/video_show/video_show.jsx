@@ -27,7 +27,19 @@ export default class VideoShow extends React.Component{
       <div className="video-show-container">
         <div className="video-detail-container">
           <div className="video-player">
-            <ReactPlayer url={video.video_url} controls={true} autoPlay={true}/>
+            <ReactPlayer
+              url={video.video_url}
+              controls={true}
+              autoPlay={true}
+              height={540}
+              width={960}
+            />
+          </div>
+
+          <div className="base-video-info">
+            <h1>{video.user.username}</h1>
+            <h1>{video.title}</h1>
+            <span><img className="uploader-avatar" src={video.user.avatar_url}/></span>
           </div>
         </div>
       </div>
