@@ -1,10 +1,10 @@
-# User.destroy_all
-users = []
-
-users.push(User.create!({
-  username: "Demo",
-  password: "football",
-}))
+# # User.destroy_all
+# users = []
+#
+# users.push(User.create!({
+#   username: "Demo",
+#   password: "football",
+# }))
 
 
 # users.push(User.create!({
@@ -106,7 +106,7 @@ Video.create!({
     description: Faker::Hipster.paragraphs,
     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/rubblebucket_cameoutofalady_video.mp4"),
     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/rubblebucket_cameoutofalady_thumbnail.png"),
-    user_id: 11
+    user_id: 11,
     views: rand(100000),
     seeded: true
 })
