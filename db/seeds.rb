@@ -7,88 +7,88 @@ users.push(User.create!({
 }))
 
 
-users.push(User.create!({
-  username: Faker::Superhero.name,
-  password: Faker::Hipster.words(2).join(""),
-  avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_0.jpg")
-}))
-users.push(User.create!({
-  username: Faker::Superhero.name,
-  password: Faker::Hipster.words(2).join(""),
-  avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_14.jpeg")
-}))
-users.push(User.create!({
-  username: Faker::Superhero.name,
-  password: Faker::Hipster.words(2).join(""),
-  avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_15.jpeg")
-}))
-users.push(User.create!({
-  username: Faker::Superhero.name,
-  password: Faker::Hipster.words(2).join(""),
-  avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_17.jpeg")
-}))
-users.push(User.create!({
-  username: Faker::Superhero.name,
-  password: Faker::Hipster.words(2).join(""),
-  avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_19.jpeg")
-}))
-users.push(User.create!({
-  username: Faker::Superhero.name,
-  password: Faker::Hipster.words(2).join(""),
-  avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_20.jpeg")
-}))
-users.push(User.create!({
-  username: Faker::Superhero.name,
-  password: Faker::Hipster.words(2).join(""),
-  avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_7.jpeg")
-}))
+# users.push(User.create!({
+#   username: Faker::Superhero.name,
+#   password: Faker::Hipster.words(2).join(""),
+#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_0.jpg")
+# }))
+# users.push(User.create!({
+#   username: Faker::Superhero.name,
+#   password: Faker::Hipster.words(2).join(""),
+#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_14.jpeg")
+# }))
+# users.push(User.create!({
+#   username: Faker::Superhero.name,
+#   password: Faker::Hipster.words(2).join(""),
+#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_15.jpeg")
+# }))
+# users.push(User.create!({
+#   username: Faker::Superhero.name,
+#   password: Faker::Hipster.words(2).join(""),
+#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_17.jpeg")
+# }))
+# users.push(User.create!({
+#   username: Faker::Superhero.name,
+#   password: Faker::Hipster.words(2).join(""),
+#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_19.jpeg")
+# }))
+# users.push(User.create!({
+#   username: Faker::Superhero.name,
+#   password: Faker::Hipster.words(2).join(""),
+#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_20.jpeg")
+# }))
+# users.push(User.create!({
+#   username: Faker::Superhero.name,
+#   password: Faker::Hipster.words(2).join(""),
+#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_7.jpeg")
+# }))
 
 Video.destroy_nonseeds
 
-Video.create!({
-    title: "Silversun Pickups - Circadian Rhythm",
-    description: Faker::Hipster.paragraphs,
-    videoitem: open("https://s3.amazonaws.com/seed-middle/720p/silversunpickups_circadianrhythm_video.mp4"),
-    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/silversunpickups_circadianrhythm_thumbnail.png"),
-    user_id: 1,
-    views: rand(100000),
-    seeded: true
-})
-
-Video.create!({
-    title: "Yeasayer - I Am Chemistry",
-    description: Faker::Hipster.paragraphs,
-    videoitem: open("https://s3.amazonaws.com/seed-middle/720p/yeasayer_iamchemistry_video.mp4"),
-    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/yeasayer_iamchemistry_thumbnail.png"),
-    user_id: users.sample.id,
-    views: rand(100000),
-    seeded: true
-})
-
-Video.create!({
-    title: "Third Story - Death With Dignity",
-    description: Faker::Hipster.paragraphs,
-    videoitem: open("https://s3.amazonaws.com/seed-middle/720p/thirdstory_deathwithdignity_video.mp4"),
-    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/thirdstory_deathwithdignity_thumbnail.png"),
-    user_id: users.sample.id,
-    views: rand(100000),
-    seeded: true
-})
-Video.create!({
-    title: "The Naked and Famous - Higher",
-    description: Faker::Hipster.paragraphs,
-    videoitem: open("https://s3.amazonaws.com/seed-middle/720p/tnaf_higher_video.mp4"),
-    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/tnaf_higher_thumbnail.png"),
-    user_id: users.sample.id,
-    views: rand(100000),
-    seeded: true
-})
+# Video.create!({
+#     title: "Silversun Pickups - Circadian Rhythm",
+#     description: Faker::Hipster.paragraphs,
+#     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/silversunpickups_circadianrhythm_video.mp4"),
+#     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/silversunpickups_circadianrhythm_thumbnail.png"),
+#     user_id: 1,
+#     views: rand(100000),
+#     seeded: true
+# })
+#
+# Video.create!({
+#     title: "Yeasayer - I Am Chemistry",
+#     description: Faker::Hipster.paragraphs,
+#     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/yeasayer_iamchemistry_video.mp4"),
+#     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/yeasayer_iamchemistry_thumbnail.png"),
+#     user_id: users.sample.id,
+#     views: rand(100000),
+#     seeded: true
+# })
+#
+# Video.create!({
+#     title: "Third Story - Death With Dignity",
+#     description: Faker::Hipster.paragraphs,
+#     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/thirdstory_deathwithdignity_video.mp4"),
+#     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/thirdstory_deathwithdignity_thumbnail.png"),
+#     user_id: users.sample.id,
+#     views: rand(100000),
+#     seeded: true
+# })
+# Video.create!({
+#     title: "The Naked and Famous - Higher",
+#     description: Faker::Hipster.paragraphs,
+#     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/tnaf_higher_video.mp4"),
+#     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/tnaf_higher_thumbnail.png"),
+#     user_id: users.sample.id,
+#     views: rand(100000),
+#     seeded: true
+# })
 Video.create!({
     title: "Solo Woods - Come Again",
     description: Faker::Hipster.paragraphs,
     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/solowoods_comeagain_video.mp4"),
-    thumbnail: open("../video_assets/thumbnails/solowoods_comeagain_thumbnail.png"),
-    user_id: users.sample.id,
+    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/solowoods_comeagain_thumbnail.png"),
+    user_id: 9,
     views: rand(100000),
     seeded: true
 })
@@ -97,7 +97,7 @@ Video.create!({
     description: Faker::Hipster.paragraphs,
     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/youbredraptors_lagoon_video.mp4"),
     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/solowoods_comeagain_thumbnail.png"),
-    user_id: users.sample.id,
+    user_id: 10,
     views: rand(100000),
     seeded: true
 })
@@ -106,7 +106,7 @@ Video.create!({
     description: Faker::Hipster.paragraphs,
     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/rubblebucket_cameoutofalady_video.mp4"),
     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/rubblebucket_cameoutofalady_thumbnail.png"),
-    user_id: users.sample.id,
+    user_id: 11
     views: rand(100000),
     seeded: true
 })
@@ -115,7 +115,7 @@ Video.create!({
     description: Faker::Hipster.paragraphs,
     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/cityofthesun_thosedaysarenow_video.mp4"),
     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/cityofthesun_thosedaysarenow_thumbnail.png"),
-    user_id: users.sample.id,
+    user_id: 11,
     views: rand(100000),
     seeded: true
 })
@@ -124,7 +124,7 @@ Video.create!({
     description: Faker::Hipster.paragraphs,
     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/zuli_forgetmyname_video.mp4"),
     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/zuli_forgetmyname_thumbnail.png"),
-    user_id: users.sample.id,
+    user_id: 11,
     views: rand(100000),
     seeded: true
 })
@@ -133,7 +133,7 @@ Video.create!({
     description: Faker::Hipster.paragraphs,
     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/yaelnaim_coward_video.mp4"),
     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/yaelnaim_coward_thumbnail.png"),
-    user_id: users.sample.id,
+    user_id: 11,
     views: rand(100000),
     seeded: true
 })
