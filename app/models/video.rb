@@ -25,7 +25,7 @@ class Video < ActiveRecord::Base
   validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\Z/
 
   has_attached_file :videoitem, processors: [:transcoder]
-  validates_attachment_content_type :videoitem, :content_type => /\Avideo\/.*\Z/
+  validates_attachment_content_type :videoitem, :content_type => ["video/mp4"]
 
   validates :title, :description, :user_id, :views, presence: true
 

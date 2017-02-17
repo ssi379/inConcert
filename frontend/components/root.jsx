@@ -6,6 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import VideoShowContainer from './video_show/video_show_container';
 import VideoIndexContainer from './video_index/video_index_container';
 import VideoSplash from './video_index/video_splash';
+
 function isLoggedIn(){
   return !!store.getState().session.currentUser;
 }

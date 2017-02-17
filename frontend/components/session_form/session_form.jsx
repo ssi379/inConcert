@@ -6,8 +6,8 @@ export default class SessionForm extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          username: "Username",
-          password: "Password"
+          username: "",
+          password: ""
       };
       this.errorMessages = [];
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,7 +26,10 @@ export default class SessionForm extends React.Component {
   handleSubmit(e) {
      e.preventDefault();
      const user = Object.assign({}, this.state);
-     this.props.processForm(user);
+     let results = this.props.processForm(user).then(() => {
+       hashHistory.push("/")
+     })
+
   }
 
   exitForm(e){
@@ -99,9 +102,9 @@ export default class SessionForm extends React.Component {
 
               <form onSubmit={this.handleSubmit}>
 
-                  <input className="session-input" id="username" type="text" onChange={this.handleInput} value={this.state.username}/>
+                  <input className="session-input" id="username" type="text" onChange={this.handleInput} value={this.state.username} placeholder="Username"/>
                 <br />
-                  <input className="session-input" id="password" type="password" onChange={this.handleInput} value={this.state.password}/>
+                  <input className="session-input" id="password" type="password" onChange={this.handleInput} value={this.state.password} placeholder="Password"/>
                 <br />
 
                 <input className="submit-session" type="submit" value={header} />

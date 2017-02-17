@@ -12,13 +12,16 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 ### Major Features
 - [X] Hosting on Heroku
 - [X] New account creation, login, and demo login
-- [ ] Videos
+- [X] Videos
   * Users should also have the ability to upload videos
   * Splash page with global video index
-    - [ ] "Staff" Picks
-    - [ ] Most Watched (views),
-    - [ ] Most Popular (likes),
-    - [ ] Sideways scrolling on each video list on the splash
+    - [X] "Staff" Picks
+      - [ ] Implement filters & sorting
+    - [X] Most Watched (views),
+      - [ ] Implement filters & sorting
+    - [X] Most Popular (likes),
+      - [ ] Implement filters & sorting
+    - [X] Sideways scrolling on each video list on the splash
 - [ ] Comments
   * Users should have the ability to comment on videos
 - [ ] Likes
@@ -92,16 +95,16 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 - [X] CRUD API for videos
 - [X] JBuilder views to format videos appropriately
 - Video components and respective Redux loops
-  - [ ] 'Video Index'
+  - [X] 'Video Index'
     - Main splash page with videos listed.
-  - [ ] 'Video Index Row'
+  - [X] 'Video Index Row'
     - Row of videos with Sideways Scrolling
   - [ ] 'Video Form'
     - Video upload form.
       - Upload spinner
       - With drag & drop!
     - Video edit form
-  - [ ] 'Video Show Page'
+  - [X] 'Video Show Page'
     - Watch a Video
     - View count updates for each render
 
