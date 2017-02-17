@@ -46,11 +46,11 @@ users = []
 Video.destroy_nonseeds
 
 Video.create!({
-    title: "Silversun Pickups - Circadian Rhythm",
+    title: "testingtesting",
     description: Faker::Hipster.paragraphs,
-    videoitem: File.open("https://s3.amazonaws.com/seed-middle/720p/silversunpickups_circadianrhythm_video.mp4"),
-    thumbnail: File.open("https://s3.amazonaws.com/seed-middle/thumbnails/silversunpickups_circadianrhythm_thumbnail.png"),
-    user_id: users.sample.id,
+    videoitem: URI.parse("https://s3.amazonaws.com/seed-middle/720p/silversunpickups_circadianrhythm_video.mp4"),
+    thumbnail: URI.parse("https://s3.amazonaws.com/seed-middle/thumbnails/silversunpickups_circadianrhythm_thumbnail.png"),
+    user_id: 1,
     views: rand(100000),
     seeded: true
 })

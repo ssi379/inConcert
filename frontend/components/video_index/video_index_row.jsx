@@ -1,10 +1,17 @@
 import React from 'react';
 import VideoIndexItem from './video_index_item';
-import Carousel from 'nuka-carousel';
+import Carousel from './carousel.jsx';
 
 export default class VideoIndexRow  extends React.Component{
   constructor(props){
     super(props);
+  }
+
+
+  handleCarousel(){
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'));
+    }, 0);
   }
 
   renderVideoIndexItems(){
@@ -17,45 +24,12 @@ export default class VideoIndexRow  extends React.Component{
 
   render(){
 
-    return(
-      <div className="carousel-container">
-        <Carousel
-          className="video-carousel"
-          dragging={false}
-          slidesToShow={4}
-          slidesToScroll={4}
-          height={"500px"}
-          decorators={[{
-          component: React.createClass({
-            render() {
-              return (
-                <button
-                  className="left-button"
-                  onClick={this.props.previousSlide}>
-                  {"<"}
-                </button>
-              );
-            }
-          }),
-          position: 'CenterLeft'
-        },{
-          component: React.createClass({
-            render() {
-              return (
-                <button
-                  className="right-button"
-                  onClick={this.props.nextSlide}>
-                  {">"}
-                </button>
-              );
-            },
-          }),
-          position: 'CenterRight'
-        }]}
-          width={"1200px"}>
-            {this.renderVideoIndexItems()}
-        </Carousel>
-      </div>
+    return (
+    <div className="carousel-container">
+      <div className="carousel">
+         <Carousel onLoad={this.handleCarousel()} videos={ this.renderVideoIndexItems() } numToSlide={ 4 }/>
+       </div>
+    </div>
     )
   }
 }

@@ -34,15 +34,15 @@ export default class VideoIndex extends React.Component {
       <div className="video-index">
         <div className="video-index-row">
           <h1 className="row-title">Watch musician-curated Staff Picks</h1>
-          <ul className="video-bar">
-            <VideoIndexRow videos={this.props.listed_videos} />
-          </ul>
+          <VideoIndexRow videos={this.props.listed_videos} />
         </div>
         <div className="video-index-row">
           <h1 className="row-title">Highly Acclaimed Performances</h1>
+          <VideoIndexRow videos={this.props.listed_videos} />
         </div>
         <div className="video-index-row">
           <h1 className="row-title">See What's Trending</h1>
+          <VideoIndexRow videos={this.props.listed_videos} />
         </div>
       </div>
     )
