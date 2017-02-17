@@ -5,7 +5,7 @@ import App from './app';
 import SessionFormContainer from './session_form/session_form_container';
 import VideoShowContainer from './video_show/video_show_container';
 import VideoIndexContainer from './video_index/video_index_container';
-import VideoSplash from './video_index/video_splash';
+import VideoFormContainer from './video_form/video_form_container';
 
 function isLoggedIn(){
   return !!store.getState().session.currentUser;
@@ -17,6 +17,17 @@ function redirectIfLoggedIn(nextState, replace) {
   }
 }
 
+function redirectIfLoggedOut(nextState, replace) {
+  if(!isLoggedIn()){
+    replace('/')
+  }
+}
+
+//NB: Write this when form is good to go!
+// function redirectIfNotOwnVideo(nextState, replace){
+//   if(store.getState().session.currentUser.id !== )
+// }
+
 const Root = ({ store }) => (
   <Provider store={ store }>
     <Router history={ hashHistory }>
@@ -25,6 +36,8 @@ const Root = ({ store }) => (
         <Route path="/login" component={ SessionFormContainer } onEnter={ redirectIfLoggedIn } />
         <Route path="/signup" component={ SessionFormContainer } onEnter={ redirectIfLoggedIn } />
         <Route path="/videos/:id" component={ VideoShowContainer } />
+        <Route path="/videos/:id/edit" component={ VideoFormContainer } onEnter={ redirectIfLoggedOut }/>
+        <Route path="/upload" component={ VideoFormContainer } onEnter={ redirectIfLoggedOut }
       </Route>
     </Router>
   </Provider>

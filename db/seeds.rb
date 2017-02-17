@@ -83,60 +83,60 @@ Video.destroy_nonseeds
 #     views: rand(100000),
 #     seeded: true
 # })
-Video.create!({
-    title: "Solo Woods - Come Again",
-    description: Faker::Hipster.paragraphs,
-    videoitem: open("https://s3.amazonaws.com/seed-middle/720p/solowoods_comeagain_video.mp4"),
-    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/solowoods_comeagain_thumbnail.png"),
-    user_id: 9,
-    views: rand(100000),
-    seeded: true
-})
-Video.create!({
-    title: "You Bred Raptors - Lagoon",
-    description: Faker::Hipster.paragraphs,
-    videoitem: open("https://s3.amazonaws.com/seed-middle/720p/youbredraptors_lagoon_video.mp4"),
-    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/solowoods_comeagain_thumbnail.png"),
-    user_id: 10,
-    views: rand(100000),
-    seeded: true
-})
-Video.create!({
-    title: "Rubble Bucket - Came Out of a Lady",
-    description: Faker::Hipster.paragraphs,
-    videoitem: open("https://s3.amazonaws.com/seed-middle/720p/rubblebucket_cameoutofalady_video.mp4"),
-    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/rubblebucket_cameoutofalady_thumbnail.png"),
-    user_id: 11,
-    views: rand(100000),
-    seeded: true
-})
-Video.create!({
-    title: "City of the Sun - These Days Are Now",
-    description: Faker::Hipster.paragraphs,
-    videoitem: open("https://s3.amazonaws.com/seed-middle/720p/cityofthesun_thosedaysarenow_video.mp4"),
-    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/cityofthesun_thosedaysarenow_thumbnail.png"),
-    user_id: 11,
-    views: rand(100000),
-    seeded: true
-})
-Video.create!({
-    title: "Zuli - Forget My Name",
-    description: Faker::Hipster.paragraphs,
-    videoitem: open("https://s3.amazonaws.com/seed-middle/720p/zuli_forgetmyname_video.mp4"),
-    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/zuli_forgetmyname_thumbnail.png"),
-    user_id: 11,
-    views: rand(100000),
-    seeded: true
-})
-Video.create!({
-    title: "Yael Naim - Coward",
-    description: Faker::Hipster.paragraphs,
-    videoitem: open("https://s3.amazonaws.com/seed-middle/720p/yaelnaim_coward_video.mp4"),
-    thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/yaelnaim_coward_thumbnail.png"),
-    user_id: 11,
-    views: rand(100000),
-    seeded: true
-})
+# Video.create!({
+#     title: "Solo Woods - Come Again",
+#     description: Faker::Hipster.paragraphs,
+#     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/solowoods_comeagain_video.mp4"),
+#     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/solowoods_comeagain_thumbnail.png"),
+#     user_id: 9,
+#     views: rand(100000),
+#     seeded: true
+# })
+# Video.create!({
+#     title: "You Bred Raptors - Lagoon",
+#     description: Faker::Hipster.paragraphs,
+#     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/youbredraptors_lagoon_video.mp4"),
+#     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/solowoods_comeagain_thumbnail.png"),
+#     user_id: 10,
+#     views: rand(100000),
+#     seeded: true
+# })
+# Video.create!({
+#     title: "Rubble Bucket - Came Out of a Lady",
+#     description: Faker::Hipster.paragraphs,
+#     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/rubblebucket_cameoutofalady_video.mp4"),
+#     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/rubblebucket_cameoutofalady_thumbnail.png"),
+#     user_id: 11,
+#     views: rand(100000),
+#     seeded: true
+# })
+# Video.create!({
+#     title: "City of the Sun - These Days Are Now",
+#     description: Faker::Hipster.paragraphs,
+#     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/cityofthesun_thosedaysarenow_video.mp4"),
+#     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/cityofthesun_thosedaysarenow_thumbnail.png"),
+#     user_id: 11,
+#     views: rand(100000),
+#     seeded: true
+# })
+# Video.create!({
+#     title: "Zuli - Forget My Name",
+#     description: Faker::Hipster.paragraphs,
+#     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/zuli_forgetmyname_video.mp4"),
+#     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/zuli_forgetmyname_thumbnail.png"),
+#     user_id: 11,
+#     views: rand(100000),
+#     seeded: true
+# })
+# Video.create!({
+#     title: "Yael Naim - Coward",
+#     description: Faker::Hipster.paragraphs,
+#     videoitem: open("https://s3.amazonaws.com/seed-middle/720p/yaelnaim_coward_video.mp4"),
+#     thumbnail: open("https://s3.amazonaws.com/seed-middle/thumbnails/yaelnaim_coward_thumbnail.png"),
+#     user_id: 11,
+#     views: rand(100000),
+#     seeded: true
+# })
 
 # Video.create!({
 #     title: "LANTRNS - Goldthread",
