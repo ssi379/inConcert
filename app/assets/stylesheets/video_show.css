@@ -132,6 +132,11 @@
   margin-top: 28px;
 }
 
+.sidebar-item:hover .sidebar-item-thumbnail{
+  opacity: 0.75;
+  transition: .1s;
+}
+
 .sidebar-title{
   text-decoration: none;
   font-size: .875rem;

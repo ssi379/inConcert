@@ -37,7 +37,7 @@ const Root = ({ store }) => (
         <Route path="/signup" component={ SessionFormContainer } onEnter={ redirectIfLoggedIn } />
         <Route path="/videos/:id" component={ VideoShowContainer } />
         <Route path="/videos/:id/edit" component={ VideoFormContainer } onEnter={ redirectIfLoggedOut }/>
-        <Route path="/upload" component={ VideoFormContainer } onEnter={ redirectIfLoggedOut }
+        <Route path="/upload" component={ VideoFormContainer } />
       </Route>
     </Router>
   </Provider>

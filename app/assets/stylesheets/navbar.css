@@ -103,6 +103,12 @@
   position: relative;
 }
 
+.upload-button:hover{
+  background-color: #4bf;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
 .search-input{
   display: flex;
   justify-content: center;

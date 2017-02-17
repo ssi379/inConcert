@@ -18,7 +18,7 @@ export default class Navbar extends React.Component {
               <span><i className="fa fa-search search-logged-in" aria-hidden="true"></i></span>
             </form>
             <li><img className="nav-avatar" src={currentUser.avatar_url} /></li>
-            <li><button className="upload-button"><i className="fa fa-upload" aria-hidden="true"></i>Upload</button></li>
+            <li><Link to="/upload"><button className="upload-button"><i className="fa fa-upload" aria-hidden="true"></i>Upload</button></Link></li>
             <li>
             </li>
 
