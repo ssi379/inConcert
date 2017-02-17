@@ -45,25 +45,25 @@ users = []
 
 Video.destroy_nonseeds
 
-Video.create!({
-    title: "testingtesting",
-    description: Faker::Hipster.paragraphs,
-    videoitem: URI.parse("https://s3.amazonaws.com/seed-middle/720p/silversunpickups_circadianrhythm_video.mp4"),
-    thumbnail: URI.parse("https://s3.amazonaws.com/seed-middle/thumbnails/silversunpickups_circadianrhythm_thumbnail.png"),
-    user_id: 1,
-    views: rand(100000),
-    seeded: true
-})
-
 # Video.create!({
-#     title: "Yeasayer - I Am Chemistry",
+#     title: "testingtesting",
 #     description: Faker::Hipster.paragraphs,
-#     videoitem: File.open("../video_assets/720p/yeasayer_iamchemistry_video.mp4"),
-#     thumbnail: File.open("../video_assets/thumbnails/yeasayer_iamchemistry_thumbnail.png"),
-#     user_id: users.sample.id,
+#     videoitem: URI.parse("https://s3.amazonaws.com/seed-middle/720p/silversunpickups_circadianrhythm_video.mp4"),
+#     thumbnail: URI.parse("https://s3.amazonaws.com/seed-middle/thumbnails/silversunpickups_circadianrhythm_thumbnail.png"),
+#     user_id: 1,
 #     views: rand(100000),
 #     seeded: true
 # })
+
+Video.create!({
+    title: "Yeasayer - I Am Chemistry",
+    description: Faker::Hipster.paragraphs,
+    videoitem: File.open("../video_assets/720p/yeasayer_iamchemistry_video.mp4"),
+    thumbnail: File.open("../video_assets/thumbnails/yeasayer_iamchemistry_thumbnail.png"),
+    user_id: users.sample.id,
+    views: rand(100000),
+    seeded: true
+})
 #
 # Video.create!({
 #     title: "Third Story - Death With Dignity",

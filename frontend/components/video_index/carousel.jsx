@@ -6,11 +6,7 @@ class App extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      window.dispatchEvent(new Event('resize'));
-    }, 0);
-  }
+
 
   render() {
     const { videos, numToSlide } = this.props;
@@ -20,8 +16,9 @@ class App extends React.Component {
         className="video-carousel"
         slidesToShow={numToSlide}
         slidesToScroll={numToSlide}
-        height={"350px"}
-        widht={"1265px"}
+        height={"300px"}
+        width={"1180px"}
+        slideWidth={0.75}
         dragging={false}
         decorators={[{
           component: React.createClass({
