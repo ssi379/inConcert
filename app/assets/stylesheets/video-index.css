@@ -15,7 +15,7 @@
   margin: 0 auto;
   padding: 30px 0 40px 0;
   max-width: 1720px;
-  width: 100%;
+  width: 80%;
   margin-left: 40px;
   border-bottom: 1px solid #D0D8DB;
 }
@@ -42,7 +42,7 @@
 }
 
 .video-index-item-container{
-  padding: 0 10px;
+  padding: 0 10px 0 0;
 }
 
 .video-index-item-title{

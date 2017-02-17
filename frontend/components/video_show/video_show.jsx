@@ -64,7 +64,7 @@ export default class VideoShow extends React.Component{
               <div className="video-description-wrapper">
 
                 <div className="video-stats">
-                  <span className="stat"><i className="fa fa-play stat-icon" aria-hidden="true"></i>{video.views}</span>
+                  <span className="stat"><i className="fa fa-play stat-icon" aria-hidden="true"></i>{video.views.toLocaleString()}</span>
                   <span className="stat"><i className="fa fa-heart stat-icon" aria-hidden="true"></i>100</span>
                 </div>
 

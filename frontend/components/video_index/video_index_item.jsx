@@ -26,7 +26,7 @@ export default class VideoIndexItem extends React.Component{
             <img className="index-uploader-avatar" src={video.user.avatar_url} />
             <span className="index-item-uploader">{video.user.username}</span>
           </Link>
-          <span className="index-item-views">{video.views} plays</span>
+          <span className="index-item-views">{video.views.toLocaleString()} plays</span>
         </div>
       </div>
     )
