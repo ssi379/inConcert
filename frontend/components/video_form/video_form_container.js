@@ -6,17 +6,13 @@ const mapStateToProps = (state, ownProps) => {
   let video = { title: "", description: "" };
   let formType = "edit";
 
-  if(ownProps.params.id){
 
-    if(state.video.currentVideo !== null){
-      video = state.video.currentVideo;
-    }
-  }
 
   if(ownProps.location.pathname === "/upload"){
     formType = "upload"
   } else {
     formType = "edit"
+    video = state.video.currentVideo;
   }
 
   return({formType, currentUser: state.session.currentUser, video})

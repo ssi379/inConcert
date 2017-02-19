@@ -25,19 +25,71 @@ export default class VideoForm extends React.Component{
   }
 
   componentDidMount(){
-    if(this.props.formType === "edit"){
-      let videoId = this.props.params.id
-      this.props.fetchSingleVideo(videoId);
+
+      if(this.props.router.location.pathname === "/upload"){
+        this.setState({title: "",
+          description: "",
+          user_id: this.props.currentUser.id,
+          videoFile: null,
+          videoUrl: null,
+          thumbUrl: null})
+      } else {
+        let videoId = this.props.params.id
+        this.props.fetchSingleVideo(videoId).then((video) => {
+          let fillVideo = video.video
+          this.setState({title: fillVideo.title,
+            description: fillVideo.description,
+            user_id: fillVideo.user_id,
+            videoFile: fillVideo.video_url,
+            thumbUrl: fillVideo.thumbnail_url})
+      })
     }
-  }
+}
 
   componentWillReceiveProps(nextProps){
-    let video = nextProps.video
-    this.setState({title: video.title,
-      description: video.description,
-      user_id: video.user_id,
-      videoFile: video.video_url})
+
+    if(nextProps.router.location.pathname === "/upload"){
+          this.setState({title: "",
+            description: "",
+            user_id: this.props.currentUser.id,
+            videoFile: null,
+            videoUrl: null,
+            thumbUrl: null})
+        }
+       else if(nextProps.router.location.pathname !== this.props.location.pathname) {
+        let videoId = nextProps.params.id
+        this.props.fetchSingleVideo(videoId).then((video) => {
+          let fillVideo = video.video
+          this.setState({title: video.title,
+            description: fillVideo.description,
+            user_id: fillVideo.user_id,
+            videoFile: fillVideo.video_url,
+            thumbUrl: fillVideo.thumbnail_url})
+      })
   }
+
+}
+//
+//   // componentWillMount(){
+//   //   if(this.props.router.location.pathname === "/upload"){
+//   //     this.setState({title: "",
+//   //       description: "",
+//   //       user_id: this.props.currentUser.id,
+//   //       videoFile: null,
+//   //       videoUrl: null,
+//   //       thumbUrl: null})
+//   //   } else {
+//   //     let videoId = this.props.params.id
+//   //     this.props.fetchSingleVideo(videoId).then((video) => {
+//   //       let fillVideo = video.video
+//   //       this.setState({title: fillVideo.title,
+//   //         description: fillVideo.description,
+//   //         user_id: fillVideo.user_id,
+//   //         videoFile: fillVideo.video_url,
+//   //         thumbUrl: fillVideo.thumbnail_url})
+//   //   })
+//   // }
+//   // }
 
   handleSubmit(e){
     e.preventDefault();
@@ -139,6 +191,7 @@ export default class VideoForm extends React.Component{
   }
 
   setThumbnail(){
+    debugger
     let thumbUrl = document.getElementById('preview-thumbnail').src;
     this.setState({ thumbUrl });
   }
@@ -205,7 +258,7 @@ export default class VideoForm extends React.Component{
           <canvas id="canvas"></canvas>
           <br />
           <input id="video-submit" type="submit" value={buttonText} />
-          <img onLoad={this.setThumbnail.bind(this)} id="preview-thumbnail" hidden={true} />
+          <img onLoad={this.setThumbnail} id="preview-thumbnail" hidden={true} />
 
         </form>
 
