@@ -16,8 +16,8 @@
   margin: 0 auto;
   padding: 30px 0 40px 0;
   max-width: 1720px;
-  width: 95%;
-  margin-left: 30px;
+  width: 91%;
+  margin-left: 58px;
   margin-bottom: 20px;
   border-bottom: 1px solid #D0D8DB;
 }
@@ -110,7 +110,7 @@
 
 .left-button{
   position: absolute;
-  right: 20px;
+  right: 30px;
   font-size: 24px;
   font-weight: 700;
   font-family: inherit;
@@ -130,12 +130,12 @@
 
 .right-button{
   position: absolute;
-  right: 30px;
+  right: 0px;
   font-size: 24px;
   font-weight: 700;
   font-family: inherit;
   border: none;
-  background-color: white;
+  background: none;
   color: #657987;
 }
 

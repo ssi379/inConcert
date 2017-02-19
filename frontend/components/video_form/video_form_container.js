@@ -9,8 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   if(ownProps.params.id){
 
     if(state.video.currentVideo !== null){
-      video.title = state.video.currentVideo.title;
-      video.description = state.video.currentVideo.description;
+      video = state.video.currentVideo;
     }
   }
 

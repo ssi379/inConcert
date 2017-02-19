@@ -33,7 +33,10 @@ export default class VideoForm extends React.Component{
 
   componentWillReceiveProps(nextProps){
     let video = nextProps.video
-    this.setState({title: video.title, description: video.description})
+    this.setState({title: video.title,
+      description: video.description,
+      user_id: video.user_id,
+      videoFile: video.video_url})
   }
 
   handleSubmit(e){
@@ -142,7 +145,7 @@ export default class VideoForm extends React.Component{
 
   handleDelete(e){
     let videoId = this.props.params.id;
-
+    let alertTitle = this.state.video;
     this.props.deleteVideo(videoId).then(() => {
       hashHistory.push("/")
     });

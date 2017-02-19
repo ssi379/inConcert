@@ -44,7 +44,7 @@ export const createVideo = (video) => dispatch => {
 }
 
 export const updateVideo = (id) => dispatch => {
-  return VideoAPIUtil.updateVideo(video)
+  return VideoAPIUtil.updateVideo(id)
   .then((video) => dispatch(receiveVideo(video)),
   (err) => dispatch(receiveErrors(err.responseJSON)));
 }
