@@ -50,7 +50,7 @@ export const updateVideo = (id) => dispatch => {
 }
 
 export const deleteVideo = (id) => dispatch => {
-  return VideoAPIUtil.deleteVideo
+  return VideoAPIUtil.deleteVideo(id)
   .then((video) => dispatch(removeVideo(video)),
   (err) => dispatch(receiveErrors(err.responseJSON)));
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
+import { hashHistory } from 'react-router';
 
 export default class VideoForm extends React.Component{
   constructor(props){
@@ -20,6 +21,19 @@ export default class VideoForm extends React.Component{
     this.setThumbnail = this.setThumbnail.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  componentDidMount(){
+    if(this.props.formType === "edit"){
+      let videoId = this.props.params.id
+      this.props.fetchSingleVideo(videoId);
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    let video = nextProps.video
+    this.setState({title: video.title, description: video.description})
   }
 
   handleSubmit(e){
@@ -126,6 +140,24 @@ export default class VideoForm extends React.Component{
     this.setState({ thumbUrl });
   }
 
+  handleDelete(e){
+    let videoId = this.props.params.id;
+
+    this.props.deleteVideo(videoId).then(() => {
+      hashHistory.push("/")
+    });
+  }
+
+  renderDelete(){
+    if(this.props.formType === "upload"){
+      return null;
+    } else {
+      return(
+        <input type="submit" id="video-delete" onClick={this.handleDelete} value="Delete Video"/>
+      )
+    }
+  }
+
   handleInput(event){
    this.setState({ [event.currentTarget.id]: event.currentTarget.value });
   }
@@ -157,7 +189,7 @@ export default class VideoForm extends React.Component{
                   Description
                   <br />
                   <textarea onChange={this.handleInput}
-                    value={this.state.value}
+                    value={this.state.description}
                     className="description-input"
                     id="description" />
                 </label>
@@ -174,6 +206,7 @@ export default class VideoForm extends React.Component{
 
         </form>
 
+        {this.renderDelete()}
 
       </div>
     )
