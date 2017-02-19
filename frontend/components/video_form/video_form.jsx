@@ -1,23 +1,24 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
-import request from 'superagent';
 
 export default class VideoForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      title: "test23423",
-      description: "testing",
+      title: "",
+      description: "",
       videoFile: null,
       videoUrl: null,
-
       thumbUrl: null,
       user_id: this.props.currentUser.id
     }
 
     this.updateFile = this.updateFile.bind(this);
     this.onDrop = this.onDrop.bind(this);
+    this.onDragEnter = this.onDragEnter.bind(this);
+    this.onDragLeave = this.onDragLeave.bind(this);
     this.setThumbnail = this.setThumbnail.bind(this);
+    this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -48,12 +49,21 @@ export default class VideoForm extends React.Component{
   }
 
   onDrop(files){
-    console.log("Received files: ", files[0]);
-    this.extractFrames(files);
+    $('.dropzone-video-upload').css("background-color", "white")
+    this.extractFrame(files);
     this.updateFile(files[0]);
   }
 
-  extractFrames(files) {
+
+  onDragEnter(){
+    $('.dropzone-video-upload').css("transition", "0.2s");
+    $('.dropzone-video-upload').css("background-color", "rgb(212, 215, 223)");
+  }
+  onDragLeave(){
+
+    $('.dropzone-video-upload').css("background-color", "white")
+  }
+  extractFrame(files) {
 
     let video = document.getElementById('video-preview')
     let canvas = document.getElementById('canvas')
@@ -68,6 +78,7 @@ export default class VideoForm extends React.Component{
       this.pause();
       ctx.drawImage(this, 0, 0);
       document.getElementById('preview-thumbnail').src = canvas.toDataURL();
+      $('#preview-thumbnail').css("height", "160")
     }
 
     video.autoplay = true;
@@ -82,24 +93,32 @@ export default class VideoForm extends React.Component{
 
 
 
+
   renderUploadThumbnail(){
+    if(this.state.thumbUrl === null){
+      return(
+        <div className="file-upload">
+          <Dropzone
+            className="dropzone-video-upload"
+            multiple={false}
+            accept="video/*"
+            onDragEnter={this.onDragEnter}
+            onDragLeave={this.onDragLeave}
+            onDrop={this.onDrop}>
+            <div>
+              <div className="placeholder">
+                <h1 className="dropzone-text">Drag video file here to upload</h1>
+              </div>
 
-    return(
-      <div className="file-upload">
-        <Dropzone
-          className="dropzone-video-upload"
-          multiple={false}
-          accept="video/*"
-          onDrop={this.onDrop}>
-          <div>
-            <div className="placeholder">
-              Drag a video or click here to upload
             </div>
-
-          </div>
-        </Dropzone>
-      </div>
-    )
+          </Dropzone>
+        </div>
+      )
+    } else {
+      return(
+        <img id="dropzone-preview"src={this.state.thumbUrl} />
+      )
+    }
   }
 
   setThumbnail(){
@@ -107,23 +126,52 @@ export default class VideoForm extends React.Component{
     this.setState({ thumbUrl });
   }
 
-  render(){
+  handleInput(event){
+   this.setState({ [event.currentTarget.id]: event.currentTarget.value });
+  }
 
+  render(){
+    const headerText = this.props.formType === "upload" ? "Upload your videos" : "Update video info"
+    const buttonText = this.props.formType === "upload" ? "Upload Video" : "Update Video"
     return(
       <div className="video-form-container">
-        <div className="video-form-title">
-          <h1>Video {this.props.formType}</h1>
-        </div>
+        <h1 className="video-form-title">{headerText}</h1>
 
         <form id="video-form" onSubmit={this.handleSubmit}>
-          {this.renderUploadThumbnail()}
+          <div className="video-inputs">
+            {this.renderUploadThumbnail()}
+
+              <div className="input-fields">
+                <label className="input-label">
+                  Title
+                  <br />
+                  <input type="text"
+                    onChange={this.handleInput}
+                    value={this.state.title}
+                    placeholder="Title"
+                    className="title-input"
+                    id="title" />
+                </label>
+                <br />
+                <label className="input-label">
+                  Description
+                  <br />
+                  <textarea onChange={this.handleInput}
+                    value={this.state.value}
+                    className="description-input"
+                    id="description" />
+                </label>
+              </div>
+
+
+          </div>
 
           <video id="video-preview"></video>
           <canvas id="canvas"></canvas>
-          <input type="submit" value={this.props.formType} />
-          <div id="output">
-            <img onLoad={this.setThumbnail.bind(this)} id="preview-thumbnail" />
-          </div>
+          <br />
+          <input id="video-submit" type="submit" value={buttonText} />
+          <img onLoad={this.setThumbnail.bind(this)} id="preview-thumbnail" hidden={true} />
+
         </form>
 
 
