@@ -1,7 +1,6 @@
 class Api::VideosController < ApplicationController
 
   def create
-    debugger
     @video = Video.new(video_params)
 
     if @video.save
@@ -46,6 +45,6 @@ class Api::VideosController < ApplicationController
 
   private
   def video_params
-    params.require(:video).permit(:title, :description, :user_id, :views, :videoitem)
+    params.require(:video).permit(:title, :description, :user_id, :views, :videoitem, :thumbnail)
   end
 end

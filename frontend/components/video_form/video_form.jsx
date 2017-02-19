@@ -6,7 +6,7 @@ export default class VideoForm extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      title: "test",
+      title: "test23423",
       description: "testing",
       videoFile: null,
       videoUrl: null,
@@ -30,6 +30,7 @@ export default class VideoForm extends React.Component{
     formData.append("video[title]", title);
     formData.append("video[description]", description);
     formData.append("video[videoitem]", videoFile);
+    formData.append("video[thumbnail]", thumbUrl);
     formData.append("video[user_id]", user_id);
     processVideoForm(formData);
   }
