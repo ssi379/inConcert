@@ -12,14 +12,14 @@ export const fetchVideo = (id) => {
   })
 }
 
-export const createVideo = (video) => {
+export const createVideo = (formData) => {
   return $.ajax({
     method: "POST",
     url: `api/videos`,
     processData: false,
     contentType: false,
     dataType: 'json',
-    data: { video }
+    data: formData
   })
 }
 

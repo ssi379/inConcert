@@ -9,9 +9,11 @@ export default class Navbar extends React.Component {
       return(
         <div id="nav-bar-logged-in">
           <Link to="/"><img className="logo" src="https://s3.amazonaws.com/inconcert-dev/inConcert+logo_2.png" /></Link>
+
           <form onSubmit={logout}>
             <input type="submit" className="signout-button" value="Sign Out" />
           </form>
+          
           <ul className="nav-right">
             <form>
               <input type="text" className="search-bar" value ="Search videos, artists and more"/>

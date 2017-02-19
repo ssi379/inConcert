@@ -1,0 +1,16 @@
+.dropzone-video-upload{
+  padding: 10px;
+  border: 1px dashed #000;
+}
+
+#video-preview{
+  display: none;
+}
+
+#canvas{
+  display: none;
+}
+
+#preview-thumbnail{
+  height: 240px;
+}
