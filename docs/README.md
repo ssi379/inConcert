@@ -91,7 +91,7 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 **Objective:** Video can be created and updated through the API and by Users
 
 - [X] Video Model
-- [ ] Seed database with video data.
+- [X] Seed database with video data. (never hurts to upload more!)
 - [X] CRUD API for videos
 - [X] JBuilder views to format videos appropriately
 - Video components and respective Redux loops
@@ -99,11 +99,11 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
     - Main splash page with videos listed.
   - [X] 'Video Index Row'
     - Row of videos with Sideways Scrolling
-  - [ ] 'Video Form'
+  - [X] 'Video Form'
     - Video upload form.
-      - Upload spinner
-      - With drag & drop!
-    - Video edit form
+      - [ ] Upload spinner
+      - [X] With drag & drop!
+    - [ ] Video edit form
   - [X] 'Video Show Page'
     - Watch a Video
     - View count updates for each render
