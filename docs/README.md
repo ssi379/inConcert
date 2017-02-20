@@ -111,7 +111,7 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 ### Phase 3: Comment Model, API, and Components (2 Days)
 **Objective:** Comments can be created and updated through the API and by Users. These comments are owned by a User and by a Video.
 
-- [ ] Comment Model
+- [X] Comment Model
 - [ ] Seed database with Comments
 - [ ] CRUD API for comments
 - [ ] JBuilder views to format the comment data appropriately

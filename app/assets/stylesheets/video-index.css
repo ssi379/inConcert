@@ -2,6 +2,7 @@
 .video-splash{
   height: 540px;
   z-index: 998;
+  width: 100%;
 }
 
 .fa-chevron-down{
