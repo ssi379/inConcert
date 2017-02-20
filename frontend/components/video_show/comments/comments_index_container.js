@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { createComment, deleteComment, updateComment } from '../../../actions/comment_actions';
 import CommentsIndex from './comments_index';
 
-export const mapStateToProps = ({video}) => ({
+export const mapStateToProps = ({video, session}) => ({
+  currentUser: session.currentUser,
   video: video.currentVideo,
   comments: video.currentVideo.comments
 })

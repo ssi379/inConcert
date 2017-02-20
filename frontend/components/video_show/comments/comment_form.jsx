@@ -35,7 +35,7 @@ export default class CommentForm extends React.Component{
   handleSubmit(event){
     event.preventDefault();
     const comment = Object.assign({}, this.state);
-    comment.user_id = currentUser.id;
+    comment.user_id = this.props.currentUser.id;
     comment.video_id = this.props.video.id;
     this.props.createComment(comment).then(() => {
       this.setState({body: ""})
@@ -47,7 +47,7 @@ export default class CommentForm extends React.Component{
     return(
       <div className="comment-form">
         <div className="current-commentor-info">
-          <img className="current-commentor-avatar" src={currentUser.avatar_url} />
+          <img className="current-commentor-avatar" src={this.props.currentUser.avatar_url} />
         </div>
 
         <form onSubmit={this.handleSubmit}>

@@ -3,6 +3,7 @@
   padding: 1.25rem 0;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .commentor-avatar{

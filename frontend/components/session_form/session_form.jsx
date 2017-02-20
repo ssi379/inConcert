@@ -23,6 +23,8 @@ export default class SessionForm extends React.Component {
    this.props.clearErrors([]);
  }
 
+
+
   handleSubmit(e) {
      e.preventDefault();
      const user = Object.assign({}, this.state);
@@ -68,7 +70,7 @@ export default class SessionForm extends React.Component {
   }
 
   renderErrors(){
-
+    
     return(
       <ul>
         {this.props.errors.map( (error, idx) => (
@@ -109,7 +111,7 @@ export default class SessionForm extends React.Component {
 
                 <input className="submit-session" type="submit" value={header} />
                 <input className="submit-guest" type="submit" value="Guest Demo" onClick={this.handleGuest} />
-                <h3 className="change-form">  {linkPromptText}<Link className="change-form-link" to={linkRoute}>{linkText}</Link></h3>
+                <h3 className="change-form">{linkPromptText}<Link className="change-form-link" to={linkRoute}>{linkText}</Link></h3>
               </form>
             </div>
             <div className="modal-screen" onClick={this.exitForm}></div>

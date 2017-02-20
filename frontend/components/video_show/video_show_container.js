@@ -2,8 +2,9 @@ import { connect } from 'react-redux';
 import { fetchManyVideos, fetchSingleVideo } from '../../actions/video_actions';
 import VideoShow from './video_show';
 
-const mapStateToProps = ({video}, ownProps) => ({
+const mapStateToProps = ({video, session}, ownProps) => ({
   id: ownProps.params.id,
+  currentUser: session.currentUser,
   video: video.currentVideo,
   listed_videos: video.listed_videos
 });

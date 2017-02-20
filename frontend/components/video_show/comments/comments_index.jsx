@@ -17,12 +17,23 @@ export default class CommentsIndex extends React.Component{
     })
   }
 
+  renderCommentForm(){
+    if(this.props.currentUser){
+      return(
+        <CommentForm currentUser={this.props.currentUser}
+          createComment={this.props.createComment}
+          video={this.props.video}/>
+      )
+    } else {
+      return null
+    }
+  }
+
   render(){
 
     return(
       <div>{this.renderCommentItems()}
-
-        <CommentForm createComment={this.props.createComment} video={this.props.video}/>
+        {this.renderCommentForm()}
       </div>
 
     )

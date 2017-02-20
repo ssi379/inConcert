@@ -35,7 +35,7 @@ export default class VideoShow extends React.Component{
   }
 
   renderSettingsOrAvatar(){
-    if(this.props.video.user_id === currentUser.id){
+    if(this.props.currentUser && this.props.video.user_id === this.props.currentUser.id){
       return(
         <div className="settings-path">
 
