@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import {ReadMore} from 'react-read-more';
+import { Link } from 'react-router';
 import SidebarItem from './sidebar_item';
 
 export default class VideoShow extends React.Component{
@@ -31,6 +32,23 @@ export default class VideoShow extends React.Component{
     })
   }
 
+  renderSettingsOrAvatar(){
+    if(this.props.video.id === currentUser.id){
+      return(
+        <div className="settings-path">
+
+          <Link className="settings-button" to={`/videos/${this.props.params.id}/edit`}>
+            <i className="fa fa-cog" aria-hidden="true"></i> <span>Settings</span>
+          </Link>
+        </div>
+      )
+    } else {
+      return(
+        <span><img className="uploader-avatar" src={this.props.video.user.avatar_url}/></span>
+      )
+    }
+  }
+
   render(){
     const { video } = this.props;
     const readMoreStyle = {
@@ -58,8 +76,11 @@ export default class VideoShow extends React.Component{
               <div className="base-video-info">
                 <h1 className="video-title">{video.title}</h1>
                 <p className="identify-uploader">from <span className="uploader-name">{video.user.username}</span></p>
-                <span><img className="uploader-avatar" src={video.user.avatar_url}/></span>
+
+
+                {this.renderSettingsOrAvatar()}
               </div>
+
 
               <div className="video-description-wrapper">
 

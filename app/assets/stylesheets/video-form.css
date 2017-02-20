@@ -1,7 +1,7 @@
 .file-upload{
   display: flex;
   justify-content: flex-start;
-  margin-top: 10px;
+  margin-top: 41px;
   margin-left: -40px;
 }
 
@@ -72,7 +72,7 @@
 #dropzone-preview{
   height: 170px;
   width: 300px;
-  margin-top: 10px;
+  margin-top: 41px;
   margin-left: -40px;
   border: 1px solid black;
 }
@@ -91,10 +91,15 @@
   line-height: 1.3;
   border: none;
   color: #fff;
-  background-color: #1A2E3B;
+  background-color: #3A5161;
   margin-top: 25px;
   margin-left: 40px;
   cursor: pointer;
+}
+
+#video-submit:hover{
+  background-color: #1A2E3B;
+  transition: 0.2s;
 }
 
 #video-delete{
@@ -106,14 +111,17 @@
   line-height: 1.3;
   border: none;
   color: #fff;
-  background-color: #c91a1a;
+  background-color: #FF4D4D;
   margin-top: 25px;
   margin-left: 40px;
-}
-
-#video-delete:focus{
   cursor: pointer;
 }
+
+#video-delete:hover{
+  background-color: #D93636;
+  transition: 0.2s;
+}
+
 
 #canvas{
   display: none;

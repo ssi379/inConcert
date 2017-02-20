@@ -23,10 +23,12 @@ function redirectIfLoggedOut(nextState, replace) {
   }
 }
 
-//NB: Write this when form is good to go!
-// function redirectIfNotOwnVideo(nextState, replace){
-//   if(store.getState().session.currentUser.id !== )
-// }
+function redirectIfNotOwnVideo(nextState, replace){
+  if(!Object.keys(currentUser.videos).map((id) => { return currentUser.videos[id].id })
+  .includes(parseInt(nextState.params.id))){
+    replace('/')
+  }
+}
 
 const Root = ({ store }) => (
   <Provider store={ store }>
@@ -36,8 +38,8 @@ const Root = ({ store }) => (
         <Route path="/login" component={ SessionFormContainer } onEnter={ redirectIfLoggedIn } />
         <Route path="/signup" component={ SessionFormContainer } onEnter={ redirectIfLoggedIn } />
         <Route path="/videos/:id" component={ VideoShowContainer } />
-        <Route path="/videos/:id/edit" component={ VideoFormContainer } onEnter={ redirectIfLoggedOut }/>
-        <Route path="/upload" component={ VideoFormContainer } />
+        <Route path="/videos/:id/edit" component={ VideoFormContainer } onEnter={ redirectIfNotOwnVideo }/>
+        <Route path="/upload" component={ VideoFormContainer } onEnter={ redirectIfLoggedOut } />
       </Route>
     </Router>
   </Provider>

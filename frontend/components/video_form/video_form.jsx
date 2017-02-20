@@ -191,7 +191,6 @@ export default class VideoForm extends React.Component{
   }
 
   setThumbnail(){
-    debugger
     let thumbUrl = document.getElementById('preview-thumbnail').src;
     this.setState({ thumbUrl });
   }
