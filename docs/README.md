@@ -113,8 +113,8 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 
 - [X] Comment Model
 - [ ] Seed database with Comments
-- [ ] CRUD API for comments
-- [ ] JBuilder views to format the comment data appropriately
+- [X] CRUD API for comments
+- [X] JBuilder views to format the comment data appropriately
 - Comment components and respective Redux loops
   - [ ] 'Comment Index' Per video
     - Lists on the Video show page

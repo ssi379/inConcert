@@ -91,14 +91,14 @@ export default class VideoShow extends React.Component{
 
                 <div className="video-description">
                   <ReadMore text={"Read More..."}
-                    children={<p className="video-description">{video.description.slice(2, -2)}</p>}
+                    children={<p className="video-description">{video.description}</p>}
                     lines={3} />
                 </div>
 
               </div>
 
               <div className="comments-show">
-                <h1>16 Comments</h1>
+                <h1>{video.comments.length} Comments</h1>
               </div>
             </div>
 

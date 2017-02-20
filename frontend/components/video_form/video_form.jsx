@@ -69,27 +69,6 @@ export default class VideoForm extends React.Component{
   }
 
 }
-//
-//   // componentWillMount(){
-//   //   if(this.props.router.location.pathname === "/upload"){
-//   //     this.setState({title: "",
-//   //       description: "",
-//   //       user_id: this.props.currentUser.id,
-//   //       videoFile: null,
-//   //       videoUrl: null,
-//   //       thumbUrl: null})
-//   //   } else {
-//   //     let videoId = this.props.params.id
-//   //     this.props.fetchSingleVideo(videoId).then((video) => {
-//   //       let fillVideo = video.video
-//   //       this.setState({title: fillVideo.title,
-//   //         description: fillVideo.description,
-//   //         user_id: fillVideo.user_id,
-//   //         videoFile: fillVideo.video_url,
-//   //         thumbUrl: fillVideo.thumbnail_url})
-//   //   })
-//   // }
-//   // }
 
   handleSubmit(e){
     e.preventDefault();
