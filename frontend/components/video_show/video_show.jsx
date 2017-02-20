@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player';
 import {ReadMore} from 'react-read-more';
 import { Link } from 'react-router';
 import SidebarItem from './sidebar_item';
+import CommentsIndex from './comments/comments_index';
 
 export default class VideoShow extends React.Component{
   constructor(props){
@@ -33,7 +34,7 @@ export default class VideoShow extends React.Component{
   }
 
   renderSettingsOrAvatar(){
-    if(this.props.video.id === currentUser.id){
+    if(this.props.video.user_id === currentUser.id){
       return(
         <div className="settings-path">
 
@@ -99,6 +100,8 @@ export default class VideoShow extends React.Component{
 
               <div className="comments-show">
                 <h1>{video.comments.length} Comments</h1>
+
+                <CommentsIndex comments={video.comments} video={video}/>
               </div>
             </div>
 

@@ -1,0 +1,25 @@
+.comment-item{
+  border-bottom: 1px solid #D0D8DB;
+}
+
+.commentor-avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+}
+
+.comment-author{
+  color: #1A2E3B;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: .875rem;
+}
+
+.comment-body{
+  color: #4E5A5E;
+  margin: .3125rem 0 .625rem;
+  font-size: .875rem;
+  line-height: 1.4;
+  font-weight: 400;
+  overflow-wrap: break-word;
+}

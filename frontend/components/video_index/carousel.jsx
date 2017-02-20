@@ -9,16 +9,15 @@ class App extends React.Component {
 
 
   render() {
-    const { videos, numToSlide } = this.props;
-
+    const { videos, count } = this.props;
     return (
       <Carousel
         className="video-carousel"
-        slidesToShow={numToSlide}
-        slidesToScroll={numToSlide}
+        slidesToShow={5}
+        slidesToScroll={5}
+        cellSpacing={.1}
         height={"300px"}
-        width={"1102px"}
-        slideWidth={0.75}
+        width={"1720px"}
         dragging={false}
         decorators={[{
           component: React.createClass({

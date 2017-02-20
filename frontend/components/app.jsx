@@ -10,7 +10,7 @@ class App extends React.Component{
 
   determineSplash(){
     if(["/", "/login", "/signup", "/videos"].includes(this.props.location.pathname)){
-      return <VideoSplash />
+      return <VideoSplash className="video-splash" />
     } else {
       return <div></div>
     }

@@ -21,6 +21,7 @@ export default class VideoForm extends React.Component{
     this.setThumbnail = this.setThumbnail.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
@@ -75,13 +76,28 @@ export default class VideoForm extends React.Component{
     const { processVideoForm } = this.props;
     const { title, description, user_id, videoFile, thumbUrl  } = this.state
     let formData = new FormData();
-
     formData.append("video[title]", title);
     formData.append("video[description]", description);
     formData.append("video[videoitem]", videoFile);
     formData.append("video[thumbnail]", thumbUrl);
     formData.append("video[user_id]", user_id);
-    processVideoForm(formData);
+    processVideoForm(formData).then(() => {
+      hashHistory.push("/")
+    });
+  }
+
+  handleUpdate(e){
+    e.preventDefault();
+    const { processVideoForm } = this.props;
+    let videoId = this.props.params.id
+
+
+    let formData = new FormData();
+
+    formData.append("video[title]", this.state.title);
+    formData.append("video[description]", this.state.description);
+
+    processVideoForm(videoId, formData);
   }
 
 
@@ -199,11 +215,12 @@ export default class VideoForm extends React.Component{
   render(){
     const headerText = this.props.formType === "upload" ? "Upload your videos" : "Update video info"
     const buttonText = this.props.formType === "upload" ? "Upload Video" : "Update Video"
+    const submitHandler = this.props.formType === "upload" ? this.handleSubmit : this.handleUpdate
     return(
       <div className="video-form-container">
         <h1 className="video-form-title">{headerText}</h1>
 
-        <form id="video-form" onSubmit={this.handleSubmit}>
+        <form id="video-form" onSubmit={submitHandler}>
           <div className="video-inputs">
             {this.renderUploadThumbnail()}
 
