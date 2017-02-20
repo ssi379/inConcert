@@ -28,3 +28,44 @@
   font-weight: 400;
   overflow-wrap: break-word;
 }
+
+.update-delete-settings{
+  position: absolute;
+  top: .5rem;
+  right: .625rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-settings-item{
+  padding: 0;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: 0 0;
+  vertical-align: middle;
+}
+
+.comment-settings-item:first-child:after{
+  margin-right: .3125rem;
+  color: #D0D8DB;
+  content: ' | ';
+}
+
+#edit-comment{
+  color: #657987;
+}
+
+#edit-comment:hover{
+  color: #3A5161;
+}
+
+#delete-comment{
+  margin-right: .3125rem;
+  color: #FF4D4D;
+}
+
+#delete-comment:hover{
+  color: #D93636;
+}

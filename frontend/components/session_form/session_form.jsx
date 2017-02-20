@@ -23,6 +23,12 @@ export default class SessionForm extends React.Component {
    this.props.clearErrors([]);
  }
 
+ componentWillReceiveProps(nextProps){
+   if(nextProps.location.pathname !== this.props.location.pathname){
+      this.props.clearErrors([]);
+   }
+ }
+
 
 
   handleSubmit(e) {
@@ -70,14 +76,25 @@ export default class SessionForm extends React.Component {
   }
 
   renderErrors(){
-    
+    let errors = this.props.errors
+
     return(
       <ul>
-        {this.props.errors.map( (error, idx) => (
-          <li key={`error-${idx}`}>{error}</li>
+        {Object.keys(errors).map( (id, idx) => (
+          <li key={`error-${idx}`}>{`${id.charAt(0).toUpperCase() + id.slice(1)} ${errors[id]}`}</li>
         ))}
       </ul>
     );
+  }
+
+  renderGuestButton(){
+    if(this.props.formType === 'signup'){
+      return(null)
+    } else {
+      return(
+        <input className="submit-guest" type="submit" value="Guest Demo" onClick={this.handleGuest} />
+      )
+    }
   }
 
   render(){
@@ -87,13 +104,6 @@ export default class SessionForm extends React.Component {
     const linkRoute = formType === 'signup' ? "/login" : "/signup";
     const linkText = formType === 'signup' ? "Login" : "Signup";
     const linkPromptText = formType === 'signup' ? "Already have an account? " : "Don't have an account? "
-
-    // if(Object.keys(errors).length > 0){
-    //   this.errorMessages = Object.keys(errors).map( (id, idx) => {
-    //     return <li className="error-modal" key={idx}>{errors[id]}</li>
-    //   });
-    // }
-
 
       if(!loggedIn){
         return (
@@ -110,7 +120,7 @@ export default class SessionForm extends React.Component {
                 <br />
 
                 <input className="submit-session" type="submit" value={header} />
-                <input className="submit-guest" type="submit" value="Guest Demo" onClick={this.handleGuest} />
+                {this.renderGuestButton()}
                 <h3 className="change-form">{linkPromptText}<Link className="change-form-link" to={linkRoute}>{linkText}</Link></h3>
               </form>
             </div>

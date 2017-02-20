@@ -14,6 +14,11 @@ export default class CommentItem extends React.Component{
         <div className="comment-body">
           <h4 className="comment-author">{comment.author.username}</h4>
           <p className="comment-body">{comment.body}</p>
+
+          <div className="update-delete-settings">
+              <span className="comment-settings-item" id="edit-comment">Edit</span>
+              <span className="comment-settings-item" id="delete-comment">Delete</span>
+          </div>
         </div>
       </div>
     )

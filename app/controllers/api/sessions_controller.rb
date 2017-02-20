@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       login!(@user)
       redirect_to api_user_url(@user)
     else
-      render json: ['Invalid Credentials'], status: 422
+      render json: { credentials: ['invalid'] }, status: 422
     end
   end
 
