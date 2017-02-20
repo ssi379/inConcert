@@ -1,5 +1,5 @@
 .video-index{
-  width: 100%;
+  width: 90%;
   max-width: 900px;
 }
 
@@ -17,7 +17,6 @@
   padding: 30px 0 40px 0;
   max-width: 1720px;
   width: 80%;
-  /*margin-left: 58px;*/
   margin-bottom: 20px;
   border-bottom: 1px solid #D0D8DB;
 }

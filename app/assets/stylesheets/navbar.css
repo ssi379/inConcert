@@ -5,6 +5,7 @@
 }
 
 #nav-bar-logged-in{
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -16,6 +17,7 @@
 }
 
 #nav-bar-logged-out{
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

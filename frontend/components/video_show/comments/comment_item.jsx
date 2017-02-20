@@ -11,8 +11,10 @@ export default class CommentItem extends React.Component{
     return(
       <div className="comment-item">
         <img className="commentor-avatar" src={comment.author.avatar_url}/>
-        <h4 className="comment-author">{comment.author.username}</h4>
-        <p className="comment-body">{comment.body}</p>
+        <div className="comment-body">
+          <h4 className="comment-author">{comment.author.username}</h4>
+          <p className="comment-body">{comment.body}</p>
+        </div>
       </div>
     )
   }

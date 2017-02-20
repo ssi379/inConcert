@@ -1,3 +1,5 @@
+
+
 .file-upload{
   display: flex;
   justify-content: flex-start;
@@ -13,6 +15,7 @@
   justify-content: center;
   height: 170px;
   width: 300px;
+  margin-right: 20px;
 }
 
 .video-inputs{
@@ -75,6 +78,7 @@
   margin-top: 41px;
   margin-left: -40px;
   border: 1px solid black;
+  margin-right: 20px;
 }
 
 

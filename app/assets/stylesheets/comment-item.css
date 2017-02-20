@@ -1,11 +1,15 @@
 .comment-item{
   border-bottom: 1px solid #D0D8DB;
+  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: row;
 }
 
 .commentor-avatar{
   width: 40px;
   height: 40px;
   border-radius: 25px;
+  margin-right: 20px;
 }
 
 .comment-author{

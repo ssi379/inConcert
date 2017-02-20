@@ -254,10 +254,10 @@ export default class VideoForm extends React.Component{
           <br />
           <input id="video-submit" type="submit" value={buttonText} />
           <img onLoad={this.setThumbnail} id="preview-thumbnail" hidden={true} />
+          {this.renderDelete()}
 
         </form>
 
-        {this.renderDelete()}
 
       </div>
     )
