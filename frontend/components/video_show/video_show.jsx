@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import {ReadMore} from 'react-read-more';
+import TimeAgo from 'react-timeago';
+import Halogen from 'halogen';
 import { Link } from 'react-router';
 import SidebarItem from './sidebar_item';
 import CommentsIndexContainer from './comments/comments_index_container';
@@ -56,8 +58,9 @@ export default class VideoShow extends React.Component{
     const readMoreStyle = {
       textDecoration: "none"
     }
-
-    if(!video){ return null };
+    if(!video){
+      return(<Halogen.PulseLoader color={"#4DAF7C"} className="spinner"/>)
+    };
     return(
       <div className="video-show-container">
 
@@ -77,8 +80,9 @@ export default class VideoShow extends React.Component{
 
               <div className="base-video-info">
                 <h1 className="video-title">{video.title}</h1>
-                <p className="identify-uploader">from <span className="uploader-name">{video.user.username}</span></p>
-
+                <p className="identify-uploader">
+                  from <span className="uploader-name">{video.user.username}</span> <TimeAgo className="video-show-timeago" date={video.upload_date} />
+                </p>
 
                 {this.renderSettingsOrAvatar()}
               </div>
@@ -88,7 +92,7 @@ export default class VideoShow extends React.Component{
 
                 <div className="video-stats">
                   <span className="stat"><i className="fa fa-play stat-icon" aria-hidden="true"></i>{video.views.toLocaleString()}</span>
-                  <span className="stat"><i className="fa fa-heart stat-icon" aria-hidden="true"></i>100</span>
+                  <span className="stat"><i className="fa fa-heart stat-icon" aria-hidden="true"></i>{video.likes_count.toLocaleString()}</span>
                 </div>
 
                 <div className="video-description">

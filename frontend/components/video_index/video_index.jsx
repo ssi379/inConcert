@@ -8,7 +8,7 @@ export default class VideoIndex extends React.Component {
   constructor (props){
     super(props);
     this.state = {
-      count: 5,
+      count: 6,
       windowWidth: window.innerWidth
     };
     this.handleScroll = this.handleScroll.bind(this);

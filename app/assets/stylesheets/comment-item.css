@@ -19,6 +19,7 @@
   font-weight: 700;
   cursor: pointer;
   font-size: .875rem;
+  display: inline;
 }
 
 .comment-body{
@@ -28,6 +29,13 @@
   line-height: 1.4;
   font-weight: 400;
   overflow-wrap: break-word;
+}
+
+.comment-item-timeago{
+  display: inline;
+  font-size: 13px;
+  color: #8A9599;
+  margin-left: .3125rem;
 }
 
 .update-delete-settings{

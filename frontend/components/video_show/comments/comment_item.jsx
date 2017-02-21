@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentEdit from './comment_edit';
+import TimeAgo from 'react-timeago';
 
 export default class CommentItem extends React.Component{
   constructor(props){
@@ -89,6 +90,7 @@ export default class CommentItem extends React.Component{
         <img className="commentor-avatar" src={comment.author.avatar_url}/>
         <div className="comment-body">
           <h4 className="comment-author">{comment.author.username}</h4>
+          <TimeAgo className="comment-item-timeago" date={comment.comment_date} />
           {this.renderEditModal()}
 
 

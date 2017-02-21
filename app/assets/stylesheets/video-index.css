@@ -129,7 +129,7 @@
 
 .right-button{
   position: relative;
-  right: 0px;
+  right: -5px;
   top: 0px;
   font-size: 24px;
   font-weight: 700;

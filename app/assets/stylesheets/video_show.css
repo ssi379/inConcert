@@ -40,6 +40,10 @@
   font-size: .9375rem;
 }
 
+.video-show-timeago{
+  margin-left: 4px;
+}
+
 .uploader-avatar{
   height: 40px;
   width: 40px;

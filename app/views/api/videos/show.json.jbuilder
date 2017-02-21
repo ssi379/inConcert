@@ -6,7 +6,8 @@ json.set! :comments do
     json.body comment.body
     json.video_id comment.video_id
     json.user_id comment.user_id
-
+    json.comment_date comment.created_at.to_date
+    
     json.set! :author do
       json.partial! './api/users/user', { user: comment.user }
     end

@@ -127,10 +127,10 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 ### Phase 4: Likes Model, API, and Components (1 Day)
 **Objective:** Users should be able to "Like" a video.
 
-- [ ] Likes Model
+- [X] Likes Model
 - [ ] Seed database with Likes
 - [ ] CRD API for Likes
-- [ ] Jbuilder views to format the likes data
+- [X] Jbuilder views to format the likes data
 - Likes components and respective Redux loops
   - [ ] 'Video Likes'
 
