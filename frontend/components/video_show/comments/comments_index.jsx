@@ -12,8 +12,11 @@ export default class CommentsIndex extends React.Component{
     return this.props.comments.map((comment, idx) => {
       return <CommentItem key={`${this.props.video.id}-${idx}`}
               comment={comment}
+              currentUser={this.props.currentUser}
               updateComment={this.props.updateComment}
-              deleteComment={this.props.deleteComment}/>
+              deleteComment={this.props.deleteComment}
+              toggleCommentEdit={this.props.toggleCommentEdit}
+              commentEditForm={this.props.commentEditForm}/>
     })
   }
 

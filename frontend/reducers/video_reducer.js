@@ -1,9 +1,9 @@
 import { RECEIVE_VIDEOS, RECEIVE_VIDEO, REMOVE_VIDEO, RECEIVE_ERRORS } from "../actions/video_actions";
-import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
+import { RECEIVE_COMMENT, REMOVE_COMMENT, UPDATE_COMMENT, TOGGLE_COMMENT_EDIT } from '../actions/comment_actions';
 import merge from 'lodash/merge';
 
 const defaultVideoState = {
-  currentVideo: null
+  currentVideo: null,
 }
 
 const VideoReducer = (oldState = defaultVideoState, action) => {
@@ -20,6 +20,11 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
       return newState;
     case RECEIVE_COMMENT:
       newState.currentVideo.comments.push(action.comment);
+      return newState;
+    case UPDATE_COMMENT:
+      let commentToReplace= $.grep(newState.currentVideo.comments, function(e){ return e.id === action.comment.id; })[0];
+      let commentToReplaceIdx = newState.currentVideo.comments.indexOf(commentToReplace);
+      newState.currentVideo.comments[commentToReplaceIdx] = action.comment;
       return newState;
     case REMOVE_COMMENT:
       let idx = newState.currentVideo.comments.indexOf(action.comment);

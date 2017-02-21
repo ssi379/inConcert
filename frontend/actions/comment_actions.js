@@ -3,9 +3,16 @@ import * as CommentAPIUtil from '../util/comment_api_util';
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const TOGGLE_COMMENT_EDIT = "TOGGLE_COMMENT_EDIT";
+export const UPDATE_COMMENT = "UPDATE_COMMENT";
 
 export const receiveComment = (comment) => ({
   type: RECEIVE_COMMENT,
+  comment
+})
+
+export const receiveUpdatedComment = (comment) => ({
+  type: UPDATE_COMMENT,
   comment
 })
 
@@ -19,6 +26,11 @@ export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
 });
+
+export const toggleCommentEdit = () => ({
+  type: TOGGLE_COMMENT_EDIT,
+  null
+})
 
 export const createComment = (comment) => dispatch => {
   return CommentAPIUtil.createComment(comment)
@@ -34,6 +46,6 @@ export const deleteComment = (id) => dispatch => {
 
 export const updateComment = (id) => dispatch => {
   return CommentAPIUtil.updateComment(id)
-  .then((comment) => dispatch(receiveComment(comment)),
+  .then((comment) => dispatch(receiveUpdatedComment(comment)),
   (err) => dispatch(receiveErrors(err.responseJSON)));
 }
