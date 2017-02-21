@@ -27,7 +27,7 @@ class Api::VideosController < ApplicationController
   end
 
   def update
-
+    
     @video = Video.find(params[:id])
 
     if @video.update_attributes(video_params)

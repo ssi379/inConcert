@@ -12,10 +12,20 @@ export const fetchVideo = (id) => {
   })
 }
 
-export const createVideo = (formData) => {
+export const processVideoForm = (formData, id = "") => {
+  let url;
+  let method;
+
+  if(id === ""){
+    url = "api/videos";
+    method = "POST"
+  } else {
+    url = `api/videos/${id}`
+    method = "PATCH"
+  }
   return $.ajax({
-    method: "POST",
-    url: `api/videos`,
+    method,
+    url,
     processData: false,
     contentType: false,
     dataType: 'json',
@@ -23,17 +33,29 @@ export const createVideo = (formData) => {
   })
 }
 
-export const updateVideo = (videoId) => {
+// export const createVideo = (formData, videoId) => {
+//   return $.ajax({
+//     method: "POST",
+//     url: `api/videos`,
+//     processData: false,
+//     contentType: false,
+//     dataType: 'json',
+//     data: formData
+//   })
+// }
+//
+// export const updateVideo = (videoId) => {
+//
+//   return $.ajax({
+//     method: "PATCH",
+//     url: `api/videos/${videoId}`,
+//     processData: false,
+//     contentType: false,
+//     dataType: 'json',
+//     data: formData
+//   })
+// }
 
-  return $.ajax({
-    method: "PATCH",
-    url: `api/videos/${videoId}`,
-    processData: false,
-    contentType: false,
-    dataType: 'json',
-    data: formData
-  })
-}
 export const deleteVideo = (id) => {
   return $.ajax({
     method: "DELETE",

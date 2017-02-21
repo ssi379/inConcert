@@ -37,8 +37,8 @@ export const fetchSingleVideo = (id) => dispatch => {
   (err) => dispatch(receiveErrors(err.responseJSON)));
 }
 
-export const createVideo = (video) => dispatch => {
-  return VideoAPIUtil.createVideo(video)
+export const processVideoForm = (formData, id) => dispatch => {
+  return VideoAPIUtil.processVideoForm(formData, id)
   .then((video) => dispatch(receiveVideo(video)),
   (err) => dispatch(receiveErrors(err.responseJSON)));
 }

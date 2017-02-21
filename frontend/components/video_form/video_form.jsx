@@ -71,6 +71,8 @@ export default class VideoForm extends React.Component{
 
 }
 
+
+
   handleSubmit(e){
     e.preventDefault();
     const { processVideoForm } = this.props;
@@ -97,7 +99,12 @@ export default class VideoForm extends React.Component{
     formData.append("video[title]", this.state.title);
     formData.append("video[description]", this.state.description);
 
-    processVideoForm(videoId, formData);
+    let postProcessFetch = this.props.fetchSingleVideo;
+    processVideoForm(formData, videoId).then(() => {
+      postProcessFetch(videoId).then(() => {
+        hashHistory.push(`/videos/${videoId}`)
+      })
+    });
   }
 
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createVideo, updateVideo, fetchSingleVideo, deleteVideo, receiveErrors } from '../../actions/video_actions';
+import { processVideoForm, fetchSingleVideo, deleteVideo, receiveErrors } from '../../actions/video_actions';
 import VideoForm from './video_form';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,10 +19,10 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const action = ownProps.location.pathname === "/upload" ? createVideo : updateVideo
+  // const action = ownProps.location.pathname === "/upload" ? createVideo : updateVideo
 
   return({
-    processVideoForm: (video) => dispatch(action(video)),
+    processVideoForm: (formData, id) => dispatch(processVideoForm(formData, id)),
     deleteVideo: (id) => dispatch(deleteVideo(id)),
     fetchSingleVideo: (id) => dispatch(fetchSingleVideo(id))
   })
