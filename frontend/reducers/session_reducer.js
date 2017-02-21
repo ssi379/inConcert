@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS } from '../actions/session_actions';
+import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
 
 const defaultState = {

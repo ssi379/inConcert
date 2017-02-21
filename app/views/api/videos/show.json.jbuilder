@@ -7,9 +7,17 @@ json.set! :comments do
     json.video_id comment.video_id
     json.user_id comment.user_id
     json.comment_date comment.created_at.to_date
-    
+
     json.set! :author do
       json.partial! './api/users/user', { user: comment.user }
     end
+  end
+end
+
+json.set! :likes do
+  json.array! @video.likes do |like|
+    json.id like.id
+    json.user_id like.user_id
+    json.video_id like.video_id
   end
 end

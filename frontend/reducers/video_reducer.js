@@ -1,9 +1,10 @@
 import { RECEIVE_VIDEOS, RECEIVE_VIDEO, REMOVE_VIDEO, RECEIVE_ERRORS } from "../actions/video_actions";
 import { RECEIVE_COMMENT, REMOVE_COMMENT, UPDATE_COMMENT, TOGGLE_COMMENT_EDIT } from '../actions/comment_actions';
+import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
 
 const defaultVideoState = {
-  currentVideo: null,
+  currentVideo: null
 }
 
 const VideoReducer = (oldState = defaultVideoState, action) => {
@@ -27,8 +28,15 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
       newState.currentVideo.comments[commentToReplaceIdx] = action.comment;
       return newState;
     case REMOVE_COMMENT:
-      let idx = newState.currentVideo.comments.indexOf(action.comment);
-      newState.currentVideo.comments.splice(idx, 1);
+      let commentIdx = newState.currentVideo.comments.indexOf(action.comment);
+      newState.currentVideo.comments.splice(commentIdx, 1);
+      return newState;
+    case RECEIVE_LIKE:
+      newState.currentVideo.likes.push(action.like);
+      return newState;
+    case REMOVE_LIKE:
+      let likeIdx = newState.currentVideo.likes.indexOf(action.like);
+      newState.currentVideo.likes.splice(likeIdx, 1);
       return newState;
     default:
       return oldState;

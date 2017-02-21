@@ -14,6 +14,8 @@ export default class VideoShow extends React.Component{
     this.state = {
       sideVideos: []
     };
+
+    this.handleLike = this.handleLike.bind(this);
   }
 
   componentDidMount(){
@@ -23,7 +25,14 @@ export default class VideoShow extends React.Component{
 
   componentWillReceiveProps(nextProps){
     if(this.props.id !== nextProps.id){
-      this.props.fetchSingleVideo(nextProps.id);
+      this.props.fetchSingleVideo(nextProps.id).then((video) => {
+        if($.grep(video.video.likes, function(e){ return e.user_id === nextProps.currentUser.id  }).length > 0){
+          $('#like-button').html("<i class='fa fa-heart' aria-hidden='true'></i> Unlike");
+        } else {
+          $('#like-button').html("<i class='fa fa-heart-o' aria-hidden='true'></i> Like");
+        }
+      });
+
       window.scrollTo(0, 0);
     }
   }
@@ -53,6 +62,48 @@ export default class VideoShow extends React.Component{
     }
   }
 
+  renderLikeButton(){
+    if($.grep(this.props.video.likes, function(e){ return e.user_id === this.props.currentUser.id  })){
+      return(
+        <div className="like-button-container">
+          <button id="like-button" onClick={this.handleLike}>
+            <i className="fa fa-heart-o" aria-hidden="true"></i> Like
+            </button>
+          </div>
+        )
+    } else {
+      return(
+        <div className="like-button-container">
+          <button id="like-button" onClick={this.handleLike}>
+            <i className="fa fa-heart" aria-hidden="true"></i> Unlike
+            </button>
+          </div>
+      )
+    }
+  }
+
+  handleLike(event){
+    event.preventDefault();
+    const like = {};
+
+    like.video_id = this.props.video.id;
+    like.user_id = this.props.currentUser.id
+
+    let dupLikes = $.grep(this.props.video.likes, function(e){ return e.user_id === like.user_id  });
+
+    if(dupLikes.length > 0){
+      this.props.deleteLike(dupLikes[0].id).then(() => {
+        $('#like-button').html("<i class='fa fa-heart-o' aria-hidden='true'></i> Like")
+      })
+    } else {
+      this.props.createLike(like).then(() => {
+        $('#like-button').html("<i class='fa fa-heart' aria-hidden='true'></i> Unlike")
+      });
+    }
+  }
+
+
+
   render(){
     const { video } = this.props;
     const readMoreStyle = {
@@ -66,6 +117,7 @@ export default class VideoShow extends React.Component{
 
           <div className="video-player">
             <ReactPlayer
+              className="the-video"
               url={video.video_url}
               controls={true}
               autoPlay={true}
@@ -77,7 +129,6 @@ export default class VideoShow extends React.Component{
           <div className="video-show-info-container">
 
             <div className="main-video-content-wrapper">
-
               <div className="base-video-info">
                 <h1 className="video-title">{video.title}</h1>
                 <p className="identify-uploader">
@@ -92,7 +143,13 @@ export default class VideoShow extends React.Component{
 
                 <div className="video-stats">
                   <span className="stat"><i className="fa fa-play stat-icon" aria-hidden="true"></i>{video.views.toLocaleString()}</span>
-                  <span className="stat"><i className="fa fa-heart stat-icon" aria-hidden="true"></i>{video.likes_count.toLocaleString()}</span>
+                  <span className="stat"><i className="fa fa-heart stat-icon" aria-hidden="true"></i>{video.likes.length.toLocaleString()}</span>
+                </div>
+
+                <div className="like-button-container">
+                  <button id="like-button" onClick={this.handleLike}>
+                    <i className="fa fa-heart-o" aria-hidden="true"></i> Like
+                  </button>
                 </div>
 
                 <div className="video-description">

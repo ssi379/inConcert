@@ -21,6 +21,6 @@ export const createLike = (like) => dispatch => {
 
 export const deleteLike = (id) => dispatch => {
   return LikeAPIUtil.deleteLike(id)
-  .then((comment) => dispatch(removeLike(like)),
+  .then((like) => dispatch(removeLike(like)),
   (err) => dispatch(receiveErrors(err.responseJSON)));
 }

@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :videos
+  has_many :likes
 
   def self.generate_random_session_token
     SecureRandom.urlsafe_base64(16)
