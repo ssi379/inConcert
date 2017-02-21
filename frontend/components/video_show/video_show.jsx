@@ -58,7 +58,6 @@ export default class VideoShow extends React.Component{
 
   renderLikeButton(){
     if(this.props.currentUser){
-      debugger
       if(this.props.video.liked_by_current_user){
         return(
           <div className="like-button-container">
