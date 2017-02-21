@@ -26,23 +26,6 @@ export default class CommentEdit extends React.Component{
         </div>
       )
     }
-
-    // if(this.state.body.length > 0){
-    //   return(
-    //     <div>
-    //       <input type="submit" id="edit-comment-save" value="Edit Comment"/>
-    //       <br></br>
-    //     </div>
-    //   )
-    // } else if(this.state.body.length === 0 || this.state.body === this.props.comment.body) {
-    //   return (
-    //     <div>
-    //       <input type="submit" id="edit-comment-save-disabled" value="Edit Comment" disabled/>
-    //       <br></br>
-    //     </div>
-    //   )
-    // }
-
   }
 
   handleInput(event){

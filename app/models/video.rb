@@ -31,6 +31,7 @@ class Video < ActiveRecord::Base
 
   belongs_to :user
   has_many :comments
+  has_many :likes
 
   def self.destroy_nonseeds
     destroy_these_ids = []
