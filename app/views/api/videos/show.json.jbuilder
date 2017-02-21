@@ -22,4 +22,6 @@ json.set! :likes do
   end
 end
 
-json.liked_by_current_user current_user.likes.include?(Like.find_by(video_id: @video.id))
+if(current_user)
+  json.liked_by_current_user current_user.likes.include?(Like.find_by(video_id: @video.id))
+end
