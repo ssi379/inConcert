@@ -8,41 +8,41 @@ export default class VideoIndex extends React.Component {
   constructor (props){
     super(props);
     this.state = {
-      count: 6,
+      count: 5,
       windowWidth: window.innerWidth
     };
     this.handleScroll = this.handleScroll.bind(this);
-    // this.handleResize = this.handleResize.bind(this);
+    this.handleResize = this.handleResize.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchManyVideos();
-    // this.handleResize();
-    // window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize);
   }
 
-  // componentWillUnmount(){
-  //   window.removeEventListener('resize', this.handleResize);
-  // }
+  componentWillUnmount(){
+    window.removeEventListener('resize', this.handleResize);
+  }
 
- //  handleResize(){
- //   const { count } = this.state;
- //   const width = $(window).width();
- //
- //   if (width > 1635 && count !== 5){
- //     $('.video-index').width("1120px");
- //     this.setState({ count: 5 });
- //   }else if(width < 1635 && width > 1130 && count !== 3){
- //     $('.video-index').width("900px");
- //     this.setState({ count: 3 });
- //   }else if(width < 1131 && width > 915 && count !== 2){
- //     $('.video-index').width("680px");
- //     this.setState({ count: 2 });
- //   }else if(width < 916 && width > 710 && count !== 1){
- //     $('.video-index').width("460px");
- //     this.setState({ count: 1 });
- //   }
- // }
+  handleResize(){
+   const { count } = this.state;
+   const width = $(window).width();
+
+   if (width > 1600 && count !== 6){
+     $('.video-index').width("1800px");
+     this.setState({ count: 6 });
+   }else if(width < 1280 && width > 941 && count !== 4){
+     $('.video-index').width("1300px");
+     this.setState({ count: 4 });
+   }else if(width < 940 && width > 720 && count !== 3){
+     $('.video-index').width("1200px");
+     this.setState({ count: 3 });
+   }else if(width < 720 && width > 480 && count !== 2){
+     $('.video-index').width("580px");
+     this.setState({ count: 2 });
+   }
+ }
 
   handleScroll(e){
     e.preventDefault();

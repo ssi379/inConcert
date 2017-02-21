@@ -1,6 +1,5 @@
 .video-index{
-  width: 90%;
-  max-width: 900px;
+  margin-left: -23px;
 }
 
 
@@ -108,8 +107,9 @@
 }
 
 .left-button{
-  position: absolute;
-  right: 30px;
+  position: relative;
+  right: 40px;
+  top: 0px;
   font-size: 24px;
   font-weight: 700;
   font-family: inherit;
@@ -128,8 +128,9 @@
 }
 
 .right-button{
-  position: absolute;
+  position: relative;
   right: 0px;
+  top: 0px;
   font-size: 24px;
   font-weight: 700;
   font-family: inherit;

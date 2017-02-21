@@ -13,11 +13,11 @@ class App extends React.Component {
     return (
       <Carousel
         className="video-carousel"
-        slidesToShow={5}
-        slidesToScroll={5}
-        cellSpacing={.1}
+        slidesToShow={count}
+        slidesToScroll={count}
+        cellSpacing={1}
+        title={"maybe I shoulda done this"}
         height={"300px"}
-        width={"1720px"}
         dragging={false}
         decorators={[{
           component: React.createClass({
