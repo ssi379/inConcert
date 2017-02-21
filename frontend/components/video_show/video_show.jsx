@@ -25,13 +25,7 @@ export default class VideoShow extends React.Component{
 
   componentWillReceiveProps(nextProps){
     if(this.props.id !== nextProps.id){
-      this.props.fetchSingleVideo(nextProps.id).then((video) => {
-        if($.grep(video.video.likes, function(e){ return e.user_id === nextProps.currentUser.id  }).length > 0){
-          $('#like-button').html("<i class='fa fa-heart' aria-hidden='true'></i> Unlike");
-        } else {
-          $('#like-button').html("<i class='fa fa-heart-o' aria-hidden='true'></i> Like");
-        }
-      });
+      this.props.fetchSingleVideo(nextProps.id)
 
       window.scrollTo(0, 0);
     }
@@ -63,22 +57,27 @@ export default class VideoShow extends React.Component{
   }
 
   renderLikeButton(){
-    if($.grep(this.props.video.likes, function(e){ return e.user_id === this.props.currentUser.id  })){
-      return(
-        <div className="like-button-container">
-          <button id="like-button" onClick={this.handleLike}>
-            <i className="fa fa-heart-o" aria-hidden="true"></i> Like
+    if(this.props.currentUser){
+      debugger
+      if(this.props.video.liked_by_current_user){
+        return(
+          <div className="like-button-container">
+            <button id="like-button" onClick={this.handleLike}>
+              <i className="fa fa-heart" aria-hidden="true"></i> Unlike
             </button>
           </div>
         )
+      } else {
+        return(
+          <div className="like-button-container">
+            <button id="like-button" onClick={this.handleLike}>
+              <i className="fa fa-heart-o" aria-hidden="true"></i> Like
+              </button>
+            </div>
+          )
+        }
     } else {
-      return(
-        <div className="like-button-container">
-          <button id="like-button" onClick={this.handleLike}>
-            <i className="fa fa-heart" aria-hidden="true"></i> Unlike
-            </button>
-          </div>
-      )
+      return(null)
     }
   }
 
@@ -146,11 +145,7 @@ export default class VideoShow extends React.Component{
                   <span className="stat"><i className="fa fa-heart stat-icon" aria-hidden="true"></i>{video.likes.length.toLocaleString()}</span>
                 </div>
 
-                <div className="like-button-container">
-                  <button id="like-button" onClick={this.handleLike}>
-                    <i className="fa fa-heart-o" aria-hidden="true"></i> Like
-                  </button>
-                </div>
+                {this.renderLikeButton()}
 
                 <div className="video-description">
                   <ReadMore text={"Read More..."}
