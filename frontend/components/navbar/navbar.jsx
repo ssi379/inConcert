@@ -1,10 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { hashHistory, Link } from 'react-router';
 
 export default class Navbar extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.handleLogout = this.handleLogout.bind(this);
+  }
+
+  handleLogout(){
+    this.props.logout().then(() => { hashHistory.push("/") })
+  }
 
   render(){
-    const { currentUser, logout } = this.props;
+    const { currentUser } = this.props;
     if(currentUser){
       return(
         <div id="nav-bar-logged-in">
@@ -23,7 +32,7 @@ export default class Navbar extends React.Component {
               	<li>
               		<span className="user-welcome">Welcome, {currentUser.username}</span>
               	</li>
-              	<li onClick={logout}>
+              	<li onClick={this.handleLogout}>
               		<button id="logout-button">Log Out</button>
               	</li>
               </ul>
