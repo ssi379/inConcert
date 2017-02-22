@@ -23,11 +23,10 @@ export default class VideoIndexRow  extends React.Component{
   }
 
   render(){
-
     return (
     <div className="carousel-container">
       <div className="carousel">
-         <Carousel count={this.props.count} onLoad={this.handleCarousel()} videos={ this.renderVideoIndexItems() } numToSlide={ 3 }/>
+         <Carousel count={this.props.count} onLoad={this.handleCarousel()} videos={ this.renderVideoIndexItems() }/>
        </div>
     </div>
     )

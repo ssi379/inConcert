@@ -85,6 +85,7 @@ export default class VideoForm extends React.Component{
       formData.append("video[videoitem]", videoFile);
       formData.append("video[thumbnail]", thumbUrl);
     }
+    
     formData.append("video[user_id]", user_id);
     processVideoForm(formData).then(() => {
       hashHistory.push("/")

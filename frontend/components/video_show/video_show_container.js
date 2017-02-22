@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchManyVideos, fetchSingleVideo } from '../../actions/video_actions';
+import { fetchManyVideos, fetchSingleVideo, receiveErrors } from '../../actions/video_actions';
 import { createLike, deleteLike } from '../../actions/like_actions';
 import VideoShow from './video_show';
 
@@ -14,7 +14,8 @@ const mapDispatchToProps = dispatch => ({
   fetchSingleVideo: (id) => dispatch(fetchSingleVideo(id)),
   fetchManyVideos: () => dispatch(fetchManyVideos()),
   createLike: (like) => dispatch(createLike(like)),
-  deleteLike: (id) => dispatch(deleteLike(id))
+  deleteLike: (id) => dispatch(deleteLike(id)),
+  clearErrors: (array) => dispatch(receiveErrors(array))
 });
 
 export default connect(

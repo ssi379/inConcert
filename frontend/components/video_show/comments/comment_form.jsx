@@ -9,6 +9,17 @@ export default class CommentForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    this.props.clearErrors([]);
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.errors.length > 0){
+      this.props.clearErrors([]);
+    }
+
+  }
+
 
   renderSubmit(){
     if(this.state.body.length > 0){
@@ -21,7 +32,7 @@ export default class CommentForm extends React.Component{
     } else {
       return (
         <div>
-          <input type="submit" id="add-comment-disabled" value="Add Comment" disabled/>
+          <input type="submit" id="add-comment-disabled" value="Add Comment"/>
           <br></br>
         </div>
       )
@@ -42,10 +53,25 @@ export default class CommentForm extends React.Component{
     });
   }
 
+  renderErrors(){
+    let errors = this.props.errors
+
+    return(
+      <ul>
+        {Object.keys(errors).map( (id, idx) => (
+          <li key={`error-${idx}`}>{`${id.charAt(0).toUpperCase() + id.slice(1)} ${errors[id]}`}</li>
+        ))}
+        <br />
+      </ul>
+
+    );
+  }
+
   render(){
 
     return(
       <div className="comment-form">
+        {this.renderErrors()}
         <div className="current-commentor-info">
           <img className="current-commentor-avatar" src={this.props.currentUser.avatar_url} />
         </div>

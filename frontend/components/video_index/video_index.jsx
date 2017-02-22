@@ -21,6 +21,10 @@ export default class VideoIndex extends React.Component {
     window.addEventListener('resize', this.handleResize);
   }
 
+  // componentWillReceiveProps(){
+  //   this.handleResize();
+  // }
+
   componentWillUnmount(){
     window.removeEventListener('resize', this.handleResize);
   }
@@ -32,10 +36,10 @@ export default class VideoIndex extends React.Component {
    if (width > 1600 && count !== 6){
      $('.video-index').width("1800px");
      this.setState({ count: 6 });
-   }else if(width < 1280 && width > 941 && count !== 4){
+   }else if(width < 1281 && width > 1040 && count !== 4){
      $('.video-index').width("1300px");
      this.setState({ count: 4 });
-   }else if(width < 940 && width > 720 && count !== 3){
+   }else if(width < 1040 && width > 720 && count !== 3){
      $('.video-index').width("1200px");
      this.setState({ count: 3 });
    }else if(width < 720 && width > 480 && count !== 2){

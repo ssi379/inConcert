@@ -25,8 +25,7 @@ export default class VideoShow extends React.Component{
 
   componentWillReceiveProps(nextProps){
     if(this.props.id !== nextProps.id){
-      this.props.fetchSingleVideo(nextProps.id)
-
+      this.props.fetchSingleVideo(nextProps.id);
       window.scrollTo(0, 0);
     }
   }

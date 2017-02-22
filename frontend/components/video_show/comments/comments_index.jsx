@@ -7,6 +7,7 @@ export default class CommentsIndex extends React.Component{
     super(props);
   }
 
+
   renderCommentItems(){
     const { updateComment, deleteComment } = this.props;
     return this.props.comments.map((comment, idx) => {
@@ -15,8 +16,10 @@ export default class CommentsIndex extends React.Component{
               currentUser={this.props.currentUser}
               updateComment={this.props.updateComment}
               deleteComment={this.props.deleteComment}
+              clearErrors={this.props.clearErrors}
               toggleCommentEdit={this.props.toggleCommentEdit}
-              commentEditForm={this.props.commentEditForm}/>
+              commentEditForm={this.props.commentEditForm}
+              errors={this.props.errors}/>
     })
   }
 
@@ -25,7 +28,9 @@ export default class CommentsIndex extends React.Component{
       return(
         <CommentForm currentUser={this.props.currentUser}
           createComment={this.props.createComment}
-          video={this.props.video}/>
+          video={this.props.video}
+          errors={this.props.errors}
+          clearErrors={this.props.clearErrors}/>
       )
     } else {
       return null
