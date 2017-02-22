@@ -33,28 +33,6 @@ export const processVideoForm = (formData, id = "") => {
   })
 }
 
-// export const createVideo = (formData, videoId) => {
-//   return $.ajax({
-//     method: "POST",
-//     url: `api/videos`,
-//     processData: false,
-//     contentType: false,
-//     dataType: 'json',
-//     data: formData
-//   })
-// }
-//
-// export const updateVideo = (videoId) => {
-//
-//   return $.ajax({
-//     method: "PATCH",
-//     url: `api/videos/${videoId}`,
-//     processData: false,
-//     contentType: false,
-//     dataType: 'json',
-//     data: formData
-//   })
-// }
 
 export const deleteVideo = (id) => {
   return $.ajax({

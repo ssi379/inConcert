@@ -4,7 +4,8 @@ import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
 
 const defaultVideoState = {
-  currentVideo: null
+  currentVideo: null,
+  errors: []
 }
 
 const VideoReducer = (oldState = defaultVideoState, action) => {
@@ -37,6 +38,9 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
     case REMOVE_LIKE:
       let likeIdx = newState.currentVideo.likes.indexOf(action.like);
       newState.currentVideo.likes.splice(likeIdx, 1);
+      return newState;
+    case RECEIVE_ERRORS:
+      newState.errors = action.errors;
       return newState;
     default:
       return oldState;

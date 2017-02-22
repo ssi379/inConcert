@@ -5,7 +5,8 @@ import VideoForm from './video_form';
 const mapStateToProps = (state, ownProps) => {
   let video = { title: "", description: "" };
   let formType = "edit";
-
+  
+  let errors = state.video.errors;
 
 
   if(ownProps.location.pathname === "/upload"){
@@ -15,16 +16,16 @@ const mapStateToProps = (state, ownProps) => {
     video = state.video.currentVideo;
   }
 
-  return({formType, currentUser: state.session.currentUser, video})
+  return({formType, currentUser: state.session.currentUser, video, errors})
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  // const action = ownProps.location.pathname === "/upload" ? createVideo : updateVideo
 
   return({
     processVideoForm: (formData, id) => dispatch(processVideoForm(formData, id)),
     deleteVideo: (id) => dispatch(deleteVideo(id)),
-    fetchSingleVideo: (id) => dispatch(fetchSingleVideo(id))
+    fetchSingleVideo: (id) => dispatch(fetchSingleVideo(id)),
+    clearErrors: (array) => dispatch(receiveErrors(array))
   })
 }
 

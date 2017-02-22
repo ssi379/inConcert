@@ -27,7 +27,7 @@ class Video < ActiveRecord::Base
   has_attached_file :videoitem, processors: [:transcoder]
   validates_attachment_content_type :videoitem, :content_type => ["video/quicktime", "video/mp4"]
 
-  validates :title, :description, :user_id, :views, presence: true
+  validates :title, :description, :user_id, :views, :videoitem, :thumbnail, presence: true
 
   belongs_to :user
   has_many :comments
@@ -43,4 +43,36 @@ class Video < ActiveRecord::Base
 
     Video.destroy(destroy_these_ids)
   end
+
+  def self.getFilteredVideos(filter)
+    sort_dir = filter[:dir] ? filter[:dir] : "asc"
+    if filter[:query]
+      search_strings = filter[:query].split(" ").map { |string| "%#{string}%" }
+      where_string = ""
+      search_string_array = []
+
+      while search_strings.length > 0
+        where_string = where_string + " OR " if where_string.length > 0
+        string = search_strings.pop
+        where_string = where_string + "UPPER(title) LIKE UPPER(?) OR UPPER(description) LIKE UPPER(?)"
+        search_string_array << string
+        search_string_array << string
+      end
+
+      query = Video.where(where_string, *search_string_array).includes(:user)
+
+    elsif filter[:sort]
+      query = Video.all.includes(:user).order(filter[:sort] => sort_dir)
+    else
+      query = Video.all
+    end
+
+    if(filter[:limit])
+      query = query.limit(filter[:limit].to_i)
+    end
+
+    query
+  end
+
+
 end

@@ -25,6 +25,10 @@
   transition: 0.2s;
 }
 
+#like-button:focus{
+  outline: none;
+}
+
 #like-button > .fa{
   margin-right: 2px;
 }

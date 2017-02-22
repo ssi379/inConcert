@@ -26,7 +26,7 @@ export default class VideoForm extends React.Component{
   }
 
   componentDidMount(){
-
+      this.props.clearErrors([]);
       if(this.props.router.location.pathname === "/upload"){
         this.setState({title: "",
           description: "",
@@ -58,6 +58,7 @@ export default class VideoForm extends React.Component{
             thumbUrl: null})
         }
        else if(nextProps.router.location.pathname !== this.props.location.pathname) {
+        this.props.clearErrors([]);
         let videoId = nextProps.params.id
         this.props.fetchSingleVideo(videoId).then((video) => {
           let fillVideo = video.video
@@ -80,8 +81,10 @@ export default class VideoForm extends React.Component{
     let formData = new FormData();
     formData.append("video[title]", title);
     formData.append("video[description]", description);
-    formData.append("video[videoitem]", videoFile);
-    formData.append("video[thumbnail]", thumbUrl);
+    if(videoFile){
+      formData.append("video[videoitem]", videoFile);
+      formData.append("video[thumbnail]", thumbUrl);
+    }
     formData.append("video[user_id]", user_id);
     processVideoForm(formData).then(() => {
       hashHistory.push("/")
@@ -215,6 +218,18 @@ export default class VideoForm extends React.Component{
     }
   }
 
+  renderErrors(){
+    let errors = this.props.errors
+
+    return(
+      <ul>
+        {Object.keys(errors).map( (id, idx) => (
+          <li key={`error-${idx}`}>{`${id.charAt(0).toUpperCase() + id.slice(1)} ${errors[id]}`}</li>
+        ))}
+      </ul>
+    );
+  }
+
   handleInput(event){
    this.setState({ [event.currentTarget.id]: event.currentTarget.value });
   }
@@ -226,7 +241,7 @@ export default class VideoForm extends React.Component{
     return(
       <div className="video-form-container">
         <h1 className="video-form-title">{headerText}</h1>
-
+        {this.renderErrors()}
         <form id="video-form" onSubmit={submitHandler}>
           <div className="video-inputs">
             {this.renderUploadThumbnail()}
