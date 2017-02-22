@@ -109,6 +109,7 @@ export default class VideoShow extends React.Component{
     if(!video){
       return(<Halogen.PulseLoader color={"#4DAF7C"} className="spinner"/>)
     };
+  
     return(
       <div className="video-show-container">
 

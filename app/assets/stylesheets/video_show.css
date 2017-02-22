@@ -228,3 +228,7 @@
   font-size: 13px;
   font-weight: 400;
 }
+
+#upload-spinner{
+  display: none;
+}

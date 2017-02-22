@@ -44,13 +44,13 @@ class Video < ActiveRecord::Base
     Video.destroy(destroy_these_ids)
   end
 
-  def self.getFilteredVideos(filter)
+  def self.search_videos(filter)
+    
     sort_dir = filter[:dir] ? filter[:dir] : "asc"
     if filter[:query]
       search_strings = filter[:query].split(" ").map { |string| "%#{string}%" }
       where_string = ""
       search_string_array = []
-
       while search_strings.length > 0
         where_string = where_string + " OR " if where_string.length > 0
         string = search_strings.pop

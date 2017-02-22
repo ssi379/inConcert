@@ -1,5 +1,6 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
+import Halogen from 'halogen';
 import { hashHistory } from 'react-router';
 
 export default class VideoForm extends React.Component{
@@ -48,7 +49,7 @@ export default class VideoForm extends React.Component{
 }
 
   componentWillReceiveProps(nextProps){
-
+    // $('#upload-spinner').css("display", "none")
     if(nextProps.router.location.pathname === "/upload"){
           this.setState({title: "",
             description: "",
@@ -85,10 +86,11 @@ export default class VideoForm extends React.Component{
       formData.append("video[videoitem]", videoFile);
       formData.append("video[thumbnail]", thumbUrl);
     }
-    
+
     formData.append("video[user_id]", user_id);
-    processVideoForm(formData).then(() => {
-      hashHistory.push("/")
+    // $('#upload-spinner').css("display", "block")
+    processVideoForm(formData).then((video) => {
+      hashHistory.push(`/videos/${video.video.id}`)
     });
   }
 
@@ -131,12 +133,12 @@ export default class VideoForm extends React.Component{
 
 
   onDragEnter(){
-    $('.dropzone-video-upload').css("transition", "0.2s");
-    $('.dropzone-video-upload').css("background-color", "rgb(212, 215, 223)");
+    // $('.dropzone-video-upload').css("transition", "0.2s");
+    // $('.dropzone-video-upload').css("background-color", "rgb(212, 215, 223)");
   }
   onDragLeave(){
 
-    $('.dropzone-video-upload').css("background-color", "white")
+    // $('.dropzone-video-upload').css("background-color", "white")
   }
   extractFrame(files) {
 
@@ -153,7 +155,7 @@ export default class VideoForm extends React.Component{
       this.pause();
       ctx.drawImage(this, 0, 0);
       document.getElementById('preview-thumbnail').src = canvas.toDataURL();
-      $('#preview-thumbnail').css("height", "160")
+      // $('#preview-thumbnail').css("height", "160")
     }
 
     video.autoplay = true;
@@ -246,7 +248,7 @@ export default class VideoForm extends React.Component{
         <form id="video-form" onSubmit={submitHandler}>
           <div className="video-inputs">
             {this.renderUploadThumbnail()}
-
+              <Halogen.PulseLoader color={"#4DAF7C"} className="spinner" id="upload-spinner" display="none"/>
               <div className="input-fields">
                 <label className="input-label">
                   Title

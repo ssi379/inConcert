@@ -16,9 +16,9 @@ class App extends React.Component {
         slidesToShow={count}
         slidesToScroll={count}
         cellSpacing={1}
-        title={"maybe I shoulda done this"}
         height={"300px"}
         dragging={false}
+        wrapAround={true}
         decorators={[{
           component: React.createClass({
             render() {

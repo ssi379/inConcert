@@ -4,14 +4,14 @@ class Api::VideosController < ApplicationController
     @video = Video.new(video_params)
 
     if @video.save
-      render :create
+      render :show
     else
       render json: @video.errors, status: 422
     end
   end
 
   def index
-    @videos = Video.all
+    @videos = Video.search_videos(params)
     render :index
   end
 
