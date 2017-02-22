@@ -16,10 +16,7 @@ export default class VideoIndex extends React.Component {
   }
 
   componentDidMount(){
-    let tryThis = this.props.fetchManyVideos().then((videos) => {
-      debugger
-    });
-
+    this.props.fetchManyVideos();
     this.handleResize();
     window.addEventListener('resize', this.handleResize);
   }
