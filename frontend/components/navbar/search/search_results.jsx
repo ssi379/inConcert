@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchResultItem from './search_result_item';
 
+
 export default class SearchResults extends React.Component{
   constructor(props){
     super(props);
@@ -51,3 +52,18 @@ export default class SearchResults extends React.Component{
     )
   }
 }
+
+
+
+
+// <ReactPaginate previousLabel={"previous"}
+//   nextLabel={"next"}
+//   breakLabel={<a href="">...</a>}
+//   breakClassName={"break-me"}
+//   pageCount={this.props.searchResults.length / 12}
+//   marginPagesDisplayed={2}
+//   pageRangeDisplayed={5}
+//   onPageChange={console.log("hey")}
+//   containerClassName={"pagination"}
+//   subContainerClassName={"pages pagination"}
+//   activeClassName={"active"}/>

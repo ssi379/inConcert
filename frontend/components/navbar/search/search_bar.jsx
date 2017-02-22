@@ -31,12 +31,13 @@ export default class SearchBar extends React.Component{
       <div>
         <form className="search-input">
           <input type="text"
-            id="search-navigator"
             className="search-bar"
             onChange={this.handleSearchInput}
             value={this.state.searchQuery}
             placeholder="Search videos, artists and more"/>
-          <button onClick={this.handleSearchSubmit}><i className="fa fa-search" aria-hidden="true"></i></button>
+          <button className="search-button" onClick={this.handleSearchSubmit}>
+            <i className="fa fa-search" aria-hidden="true"></i>
+          </button>
         </form>
       </div>
     )

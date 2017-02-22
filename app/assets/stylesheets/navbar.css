@@ -127,18 +127,19 @@
 }
 
 .fa-search{
-  height: 27px;
-  top: -1px;
-  right: 10px;
+  height: 17px;
+  top: -3px;
+  right: 16px;
   margin: 0;
   margin-top: 1px;
-  padding: 5px 10px 0px 10px;
+  padding: 11px 10px 4px 10px;
   border: 1px solid #D0D8DB;
   border-left-width: 0;
   border-radius: 0 5px 5px 0;
   color: #8A9599;
   background-color: #fff;
   position: relative;
+  vertical-align: middle;
 }
 
 .search-logged-in{
@@ -163,6 +164,14 @@
 .search-bar:focus{
   outline: none;
 }
+
+.search-button{
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
 
 .nav-dropper{
   position: relative;

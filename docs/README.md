@@ -129,25 +129,23 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 
 - [X] Likes Model
 - [ ] Seed database with Likes
-- [ ] CRD API for Likes
+- [X] CRD API for Likes
 - [X] Jbuilder views to format the likes data
 - Likes components and respective Redux loops
-  - [ ] 'Video Likes'
+  - [X] 'Video Likes'
 
 ### Phase 5: Video Searching (2 Days)
 **Objective:** Video can be searched by title via the search bar.
 
-- [ ] Video search bar component
+- [X] Video search bar component
   - [ ] Search suggestion item components
-- [ ] JBuilder views to format videos appropriately
-  - [ ] This also means to update your controller to take in search queries!
-- [ ] Video search result page
+- [X] JBuilder views to format videos appropriately
+  - [X] This also means to update your controller to take in search queries!
+- [X] Video search result page
   - Video
     - Title
     - Username
-    - Description
     - View Count
-    - Date posted
   - [ ] Paginate videos for every 12 links
 
 ### Bonus Phase 1: User Profile Page
