@@ -1,7 +1,8 @@
 export const searchVideos = (filter) => {
   return $.ajax({
     method: "GET",
-    url: `api/videos/${filter}`
+    url: `api/videos/`,
+    data: filter
   })
 }
 

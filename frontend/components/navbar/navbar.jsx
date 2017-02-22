@@ -1,6 +1,6 @@
 import React from 'react';
 import { hashHistory, Link } from 'react-router';
-
+import SearchBarContainer from './search/search_bar_container';
 export default class Navbar extends React.Component {
   constructor(props){
     super(props);
@@ -21,10 +21,7 @@ export default class Navbar extends React.Component {
 
 
           <ul className="nav-right">
-            <form>
-              <input type="text" className="search-bar" value ="Search videos, artists and more"/>
-              <span><i className="fa fa-search search-logged-in" aria-hidden="true"></i></span>
-            </form>
+            <SearchBarContainer />
 
             <li className="nav-dropper">
               <img className="nav-avatar" src={currentUser.avatar_url} />
@@ -54,10 +51,7 @@ export default class Navbar extends React.Component {
             <li><Link to="/signup" className="join-button">Join</Link></li>
             <li><Link to="/login" className="login-button">Log In</Link></li>
         </div>
-          <form className="search-input">
-            <input type="text" className="search-bar" value ="Search videos, artists and more"/>
-            <i className="fa fa-search" aria-hidden="true"></i>
-          </form>
+          <SearchBarContainer />
         </div>
       )
     }

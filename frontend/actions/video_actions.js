@@ -25,6 +25,12 @@ export const receiveErrors = (errors) => ({
   errors
 });
 
+export const searchVideos = (filter) => dispatch => {
+  return VideoAPIUtil.searchVideos(filter)
+  .then((videos) => dispatch(receiveVideos(videos)),
+  (err) => dispatch(receiveErrors(err.responseJSON)));
+}
+
 export const fetchManyVideos = () => dispatch => {
   return VideoAPIUtil.fetchVideos()
   .then((videos) => dispatch(receiveVideos(videos)),
