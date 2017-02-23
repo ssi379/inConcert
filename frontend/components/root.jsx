@@ -8,6 +8,7 @@ import VideoShowContainer from './video_show/video_show_container';
 import VideoIndexContainer from './video_index/video_index_container';
 import VideoFormContainer from './video_form/video_form_container';
 import SearchResultsContainer from './navbar/search/search_results_container';
+import UserShowContainer from './user_show/user_show_container';
 
 function isLoggedIn(){
   return !!store.getState().session.currentUser;
@@ -43,7 +44,7 @@ const Root = ({ store }) => (
         <Route path="/videos/:id/edit" component={ VideoFormContainer } onEnter={ redirectIfNotOwnVideo }/>
         <Route path="/upload" component={ VideoFormContainer } onEnter={ redirectIfLoggedOut } />
         <Route path="/search" component={ SearchResultsContainer }  />
-        <Route path="/user/:id" />
+        <Route path="/users/:id" component={ UserShowContainer } />
       </Route>
     </Router>
   </Provider>

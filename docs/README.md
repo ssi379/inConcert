@@ -146,12 +146,11 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
     - Title
     - Username
     - View Count
-  - [ ] Paginate videos for every 12 links
 
 ### Bonus Phase 1: User Profile Page
 **Objective:** Add user profile page displaying their uploaded videos, liked videos and playlists.
 
-- [ ] User show page with up to 10 most recently uploaded videos and about me description
+- [ ] User show page with up to 6 most recently uploaded videos and about me description
 - [ ] Edit user profile info
 - [ ] Give users an data upload quota
 - [ ] Page displaying user's liked videos

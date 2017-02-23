@@ -31,6 +31,7 @@ gem "paperclip", '~> 5.0.0'
 gem 'paperclip-av-transcoder'
 gem "paperclip-ffmpeg"
 gem 'faker'
+gem 'streamio-ffmpeg'
 
 group :production do
   gem 'rails_12factor'
