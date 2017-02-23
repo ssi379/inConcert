@@ -6,9 +6,10 @@ const VideoSplash = () => (
         <source src="https://s3.amazonaws.com/seed-middle/concert_cut.mp4" type="video/mp4" />
       </video>
 
-    <i className="fa fa-chevron-down" aria-hidden="true" />
   </div>
 
 );
 
 export default VideoSplash;
+
+// <i className="fa fa-chevron-down" aria-hidden="true" />

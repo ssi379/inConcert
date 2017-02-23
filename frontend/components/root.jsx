@@ -43,6 +43,7 @@ const Root = ({ store }) => (
         <Route path="/videos/:id/edit" component={ VideoFormContainer } onEnter={ redirectIfNotOwnVideo }/>
         <Route path="/upload" component={ VideoFormContainer } onEnter={ redirectIfLoggedOut } />
         <Route path="/search" component={ SearchResultsContainer }  />
+        <Route path="/user/:id" />
       </Route>
     </Router>
   </Provider>

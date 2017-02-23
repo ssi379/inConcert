@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchResultItem from './search_result_item';
-
+import Halogen from 'halogen';
+import Masonry from 'react-masonry-component';
 
 export default class SearchResults extends React.Component{
   constructor(props){
@@ -29,7 +30,7 @@ export default class SearchResults extends React.Component{
 
   renderResultHeader(){
     if(typeof this.props.searchResults === "undefined"){
-      return null
+      return <Halogen.PulseLoader color={"#4bf"} className="spinner" id="upload-spinner" display="none"/>
     } else {
       return(
         <h1 className="search-result-header">
@@ -41,29 +42,19 @@ export default class SearchResults extends React.Component{
   }
 
   render(){
-
+    let masonryOptions = {
+     transitionDuration: '0.5s',
+   };
     return(
       <div className="search-results-container">
         {this.renderResultHeader()}
-        <div className="search-results-index">
+        <Masonry
+          className={'search-results-index'}
+          updateOnEachImageLoad={true}
+          options={masonryOptions}>
           {this.renderSearchResultItems()}
-        </div>
+        </Masonry>
       </div>
     )
   }
 }
-
-
-
-
-// <ReactPaginate previousLabel={"previous"}
-//   nextLabel={"next"}
-//   breakLabel={<a href="">...</a>}
-//   breakClassName={"break-me"}
-//   pageCount={this.props.searchResults.length / 12}
-//   marginPagesDisplayed={2}
-//   pageRangeDisplayed={5}
-//   onPageChange={console.log("hey")}
-//   containerClassName={"pagination"}
-//   subContainerClassName={"pages pagination"}
-//   activeClassName={"active"}/>
