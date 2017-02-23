@@ -16,6 +16,7 @@ export default class VideoShow extends React.Component{
     };
 
     this.handleLike = this.handleLike.bind(this);
+    this.handleUnlike = this.handleUnlike.bind(this);
   }
 
   componentDidMount(){
@@ -25,6 +26,7 @@ export default class VideoShow extends React.Component{
 
   componentWillReceiveProps(nextProps){
     if(this.props.id !== nextProps.id){
+
       this.props.fetchSingleVideo(nextProps.id);
       window.scrollTo(0, 0);
     }
@@ -57,10 +59,11 @@ export default class VideoShow extends React.Component{
 
   renderLikeButton(){
     if(this.props.currentUser){
-      if(this.props.video.liked_by_current_user){
+      
+      if(this.props.likedByCurrentUser){
         return(
           <div className="like-button-container">
-            <button id="like-button" onClick={this.handleLike}>
+            <button id="like-button" onClick={this.handleUnlike}>
               <i className="fa fa-heart" aria-hidden="true"></i> Unlike
             </button>
           </div>
@@ -82,21 +85,23 @@ export default class VideoShow extends React.Component{
   handleLike(event){
     event.preventDefault();
     const like = {};
-
     like.video_id = this.props.video.id;
     like.user_id = this.props.currentUser.id
 
-    let dupLikes = $.grep(this.props.video.likes, function(e){ return e.user_id === like.user_id  });
+    this.props.createLike(like);
 
-    if(dupLikes.length > 0){
-      this.props.deleteLike(dupLikes[0].id).then(() => {
-        $('#like-button').html("<i class='fa fa-heart-o' aria-hidden='true'></i> Like")
-      })
-    } else {
-      this.props.createLike(like).then(() => {
-        $('#like-button').html("<i class='fa fa-heart' aria-hidden='true'></i> Unlike")
-      });
-    }
+  }
+
+  handleUnlike(event){
+    event.preventDefault();
+    let dupLikes = this.props.video.likes.filter((like) => {
+	     return like.video_id === this.props.video.id && like.user_id === this.props.currentUser.id;
+     })
+
+
+     if(dupLikes.length > 0){
+       this.props.deleteLike(dupLikes[dupLikes.length - 1].id)
+     }
   }
 
 
@@ -109,7 +114,7 @@ export default class VideoShow extends React.Component{
     if(!video){
       return(<Halogen.PulseLoader color={"#4DAF7C"} className="spinner"/>)
     };
-  
+
     return(
       <div className="video-show-container">
 
