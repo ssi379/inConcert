@@ -27,7 +27,10 @@ export default class Navbar extends React.Component {
               <img className="nav-avatar" src={currentUser.avatar_url} />
               <ul id="nav-dropdown" >
               	<li>
-              		<Link to={`/users/${currentUser.id}`}><span className="user-welcome">Welcome, {currentUser.username}</span></Link>
+              		<Link to={`/users/${currentUser.id}`}>
+                    <span className="user-welcome">Welcome, {currentUser.username}</span>
+                    <span className="view-profile-sub">View Profile</span>
+              		</Link>
               	</li>
               	<li onClick={this.handleLogout}>
               		<button id="logout-button">Log Out</button>

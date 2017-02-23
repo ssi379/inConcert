@@ -6,6 +6,7 @@ import Halogen from 'halogen';
 import { Link } from 'react-router';
 import SidebarItem from './sidebar_item';
 import CommentsIndexContainer from './comments/comments_index_container';
+import { shuffleVideos } from '../../util/video_api_util';
 
 
 export default class VideoShow extends React.Component{
@@ -34,7 +35,7 @@ export default class VideoShow extends React.Component{
 
   renderSidebarVideos(sideVideos){
     if(typeof sideVideos === "undefined"){ return null };
-
+    sideVideos = shuffleVideos(sideVideos).slice(0, 10);
     return sideVideos.map((videoItem, idx) => {
       return <SidebarItem video={videoItem} key={idx} />
     })
@@ -114,7 +115,7 @@ export default class VideoShow extends React.Component{
     if(!video){
       return(<Halogen.PulseLoader color={"#4bf"} className="spinner"/>)
     };
-    
+
     return(
       <div className="video-show-container">
 

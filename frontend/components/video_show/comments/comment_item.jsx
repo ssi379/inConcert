@@ -61,7 +61,7 @@ export default class CommentItem extends React.Component{
   handleDelete(event){
     event.preventDefault();
     const { deleteComment } = this.props;
-    deleteComment(this.props.comment.id);
+    deleteComment(this.props.comment.id).then(() => { this.removeDeleteModal() });
   }
 
 

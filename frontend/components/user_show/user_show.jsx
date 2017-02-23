@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import Halogen from 'halogen'
 
 export default class UserShow extends React.Component{
@@ -24,13 +25,20 @@ export default class UserShow extends React.Component{
     }
     return(
       <div className="user-profile-container">
-        <div className="avatar-show">
-          <img src={profile.avatar_url} width={150} height={150}/>
+
+        <div className="sub-header">
+          <ul className="profile-nav">
+            <Link className="profile-nav-link" to="/">Videos</Link>
+            <Link className="profile-nav-link" to="/">Likes</Link>
+          </ul>
         </div>
+        <img className="avatar-show" src={profile.avatar_url} width={150} height={150}/>
+
         <h1 className="username-show">{profile.username}</h1>
 
         <ul className="user-stats">
           <li>{profile.video_count} Videos</li>
+
           <li>{profile.likes_count} Likes</li>
         </ul>
       </div>

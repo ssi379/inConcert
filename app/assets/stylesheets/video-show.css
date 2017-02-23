@@ -1,0 +1,46 @@
+.sub-header{
+  padding: 1.63rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-nav{
+  display: flex;
+  flex-direction: row;
+  padding: 0rem 1.875rem;
+}
+
+.profile-nav-link{
+  font-size: 0.9rem;
+  color: #3a5161;
+  margin-right: 20px;
+  padding: 0;
+  transition: 0.2s;
+}
+
+.profile-nav-link:hover{
+  color: #141c21;
+  transition: 0.2s;
+}
+
+.avatar-show{
+  z-index: 9;
+  position: relative;
+  top: -50px;
+  left: 44%;
+  border-radius: 200px;
+}
+
+.user-stats{
+  display: flex;
+  flex-direction: row;
+  color: #879cab;
+  font-size: .875rem;
+}
+
+.user-stats > li:first-child{
+  margin-right: .325rem;
+}
+
+.user-stats > li:last-child{
+  margin-left: .325rem;
+}
