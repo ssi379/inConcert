@@ -1,0 +1,29 @@
+.error-message{
+  font-family: inherit;
+  font-size: .875rem;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  background-color: #ffeded;
+  color: #4E5A5E;
+  padding: 1.25rem;
+  border-radius: 5px;
+}
+
+.error-message > li {
+  text-align: center;
+}
+
+.auth-error{
+  position: relative;
+  left: 16px;
+}
+
+.video-form-error{
+  width: 45%;
+  margin: 0 auto;
+}
+
+.comment-form-error{
+  padding: 15px 15px 5px 15px;
+  font-weight: 400;
+}

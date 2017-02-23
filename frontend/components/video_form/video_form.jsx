@@ -133,12 +133,12 @@ export default class VideoForm extends React.Component{
 
 
   onDragEnter(){
-    // $('.dropzone-video-upload').css("transition", "0.2s");
-    // $('.dropzone-video-upload').css("background-color", "rgb(212, 215, 223)");
+    $('.dropzone-video-upload').css("transition", "0.2s");
+    $('.dropzone-video-upload').css("background-color", "rgb(212, 215, 223)");
   }
   onDragLeave(){
 
-    // $('.dropzone-video-upload').css("background-color", "white")
+    $('.dropzone-video-upload').css("background-color", "white")
   }
   extractFrame(files) {
 
@@ -155,7 +155,7 @@ export default class VideoForm extends React.Component{
       this.pause();
       ctx.drawImage(this, 0, 0);
       document.getElementById('preview-thumbnail').src = canvas.toDataURL();
-      // $('#preview-thumbnail').css("height", "160")
+      $('#preview-thumbnail').css("height", "160")
     }
 
     video.autoplay = true;
@@ -223,9 +223,9 @@ export default class VideoForm extends React.Component{
 
   renderErrors(){
     let errors = this.props.errors
-
+    if(errors.length === 0){ return null; }
     return(
-      <ul>
+      <ul className="error-message video-form-error">
         {Object.keys(errors).map( (id, idx) => (
           <li key={`error-${idx}`}>{`${id.charAt(0).toUpperCase() + id.slice(1)} ${errors[id]}`}</li>
         ))}

@@ -59,7 +59,7 @@ export default class VideoShow extends React.Component{
 
   renderLikeButton(){
     if(this.props.currentUser){
-      
+
       if(this.props.likedByCurrentUser){
         return(
           <div className="like-button-container">
@@ -112,7 +112,7 @@ export default class VideoShow extends React.Component{
       textDecoration: "none"
     }
     if(!video){
-      return(<Halogen.PulseLoader color={"#4DAF7C"} className="spinner"/>)
+      return(<Halogen.PulseLoader color={"#4bf"} className="spinner"/>)
     };
 
     return(

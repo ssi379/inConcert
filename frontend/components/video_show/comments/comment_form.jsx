@@ -32,7 +32,7 @@ export default class CommentForm extends React.Component{
     } else {
       return (
         <div>
-          <input type="submit" id="add-comment-disabled" value="Add Comment"/>
+          <input type="submit" id="add-comment-disabled" value="Add Comment" disabled/>
           <br></br>
         </div>
       )
@@ -55,9 +55,9 @@ export default class CommentForm extends React.Component{
 
   renderErrors(){
     let errors = this.props.errors
-
+    if(errors.length === 0){ return null }
     return(
-      <ul>
+      <ul className="error-message comment-form-error">
         {Object.keys(errors).map( (id, idx) => (
           <li key={`error-${idx}`}>{`${id.charAt(0).toUpperCase() + id.slice(1)} ${errors[id]}`}</li>
         ))}
@@ -71,12 +71,12 @@ export default class CommentForm extends React.Component{
 
     return(
       <div className="comment-form">
-        {this.renderErrors()}
         <div className="current-commentor-info">
           <img className="current-commentor-avatar" src={this.props.currentUser.avatar_url} />
         </div>
 
         <form onSubmit={this.handleSubmit}>
+          {this.renderErrors()}
           <textarea id="comment-form-body"
             onChange={this.handleInput}
             value={this.state.body}

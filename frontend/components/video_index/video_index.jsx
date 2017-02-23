@@ -21,10 +21,6 @@ export default class VideoIndex extends React.Component {
     window.addEventListener('resize', this.handleResize);
   }
 
-  // componentWillReceiveProps(){
-  //   this.handleResize();
-  // }
-
   componentWillUnmount(){
     window.removeEventListener('resize', this.handleResize);
   }

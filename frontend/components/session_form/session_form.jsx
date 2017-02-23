@@ -77,9 +77,9 @@ export default class SessionForm extends React.Component {
 
   renderErrors(){
     let errors = this.props.errors
-
+    if(errors.length === 0){ return null }
     return(
-      <ul>
+      <ul className="error-message auth-error">
         {Object.keys(errors).map( (id, idx) => (
           <li key={`error-${idx}`}>{`${id.charAt(0).toUpperCase() + id.slice(1)} ${errors[id]}`}</li>
         ))}
