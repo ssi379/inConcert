@@ -2,6 +2,8 @@ import React from 'react';
 import VideoSplash from './video_splash';
 import VideoIndexItem from './video_index_item';
 import VideoIndexRow from './video_index_row';
+import { shuffleVideos } from '../../util/video_api_util';
+import merge from 'lodash/merge';
 
 
 export default class VideoIndex extends React.Component {
@@ -11,7 +13,6 @@ export default class VideoIndex extends React.Component {
       count: 6,
       windowWidth: window.innerWidth
     };
-    this.handleScroll = this.handleScroll.bind(this);
     this.handleResize = this.handleResize.bind(this);
   }
 
@@ -44,35 +45,41 @@ export default class VideoIndex extends React.Component {
    }
  }
 
-  handleScroll(e){
-    e.preventDefault();
-  }
+ setCuratedRow(){
+   let curatedVideos = merge([], this.props.listed_videos);
+   if(typeof curatedVideos !== "undefined"){
+     return shuffleVideos(curatedVideos).slice(0, 7);
+   }
+ }
 
-  renderRow(){
-    if(typeof this.props.listed_videos === "undefined"){ return null };
-    return this.props.listed_videos.map((video, idx) => {
-      return <VideoIndexItem video={video} key={idx} />
-    })
-  }
+ setLikesRow(){
+   let likeVideos = merge([], this.props.listed_videos);
+   if(typeof likeVideos !== "undefined"){
+     return likeVideos.sort((a,b) => { return a.num_likes < b.num_likes });
+   }
+ }
 
-
-
+ setViewsRow(){
+   let viewsVideos = merge([], this.props.listed_videos);
+   if(typeof viewsVideos !== "undefined"){
+     return viewsVideos.sort((a,b) => { return a.views < b.views });
+   }
+ }
 
   render(){
-
     return(
       <div className="video-index">
         <div className="video-index-row">
           <h1 className="row-title">Watch musician-curated Staff Picks</h1>
-          <VideoIndexRow count={this.state.count} videos={this.props.listed_videos} />
+          <VideoIndexRow count={this.state.count} videos={this.setCuratedRow()} />
         </div>
         <div className="video-index-row">
           <h1 className="row-title">Highly Acclaimed Performances</h1>
-          <VideoIndexRow count={this.state.count} videos={this.props.listed_videos} />
+          <VideoIndexRow count={this.state.count} videos={this.setLikesRow()} />
         </div>
         <div className="video-index-row">
           <h1 className="row-title">See What's Trending</h1>
-          <VideoIndexRow count={this.state.count} videos={this.props.listed_videos} />
+          <VideoIndexRow count={this.state.count} videos={this.setViewsRow()} />
         </div>
       </div>
     )

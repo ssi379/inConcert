@@ -46,7 +46,6 @@ class Video < ActiveRecord::Base
 
   def self.search_videos(filter)
 
-    sort_dir = filter[:dir] ? filter[:dir] : "asc"
     if filter[:query]
       search_strings = filter[:query].split(" ").map { |string| "%#{string}%" }
       where_string = ""
@@ -61,9 +60,9 @@ class Video < ActiveRecord::Base
 
       query = Video.where(where_string, *search_string_array).includes(:user)
     else
-      query = Video.all
+      query = Video.where(seeded: true)
     end
-    
+
     query
   end
 

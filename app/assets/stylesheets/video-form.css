@@ -1,12 +1,9 @@
-
-
 .file-upload{
   display: flex;
   justify-content: flex-start;
   margin-top: 41px;
   margin-left: -40px;
 }
-
 
 
 .dropzone-video-upload{
@@ -16,6 +13,11 @@
   height: 170px;
   width: 300px;
   margin-right: 20px;
+}
+
+.video-form-container{
+  margin: 0 auto;
+  width: 80%;
 }
 
 .video-inputs{
@@ -97,7 +99,7 @@
   color: #fff;
   background-color: #3A5161;
   margin-top: 25px;
-  margin-left: 40px;
+  margin-left: 75px;
   cursor: pointer;
 }
 

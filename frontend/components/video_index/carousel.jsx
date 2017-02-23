@@ -18,7 +18,7 @@ class App extends React.Component {
         cellSpacing={1}
         height={"300px"}
         dragging={false}
-        wrapAround={true}
+        wrapAround={false}
         decorators={[{
           component: React.createClass({
             render() {

@@ -1,3 +1,21 @@
+export const shuffleVideos = (videos) => {
+  let currentIdx = videos.length
+  let tempValue;
+  let randomIdx;
+  while( 0 !== currentIdx){
+    randomIdx = Math.floor(Math.random() * currentIdx);
+    currentIdx -= 1;
+
+    tempValue = videos[currentIdx];
+    videos[currentIdx] = videos[randomIdx];
+    videos[randomIdx] = tempValue;
+  }
+
+  return videos;
+}
+
+
+
 export const searchVideos = (filter) => {
   return $.ajax({
     method: "GET",

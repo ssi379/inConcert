@@ -1,6 +1,7 @@
 import React from 'react';
 import VideoIndexItem from './video_index_item';
 import Carousel from './carousel.jsx';
+import Halogen from 'halogen';
 
 export default class VideoIndexRow  extends React.Component{
   constructor(props){
@@ -15,8 +16,8 @@ export default class VideoIndexRow  extends React.Component{
   }
 
   renderVideoIndexItems(){
-    if(typeof this.props.videos === "undefined"){ return null }
-
+    if(typeof this.props.videos === "undefined"){ return (<Halogen.PulseLoader color={"#4bf"} className="spinner"/>) }
+    
     return this.props.videos.map((video, idx) => {
       return <VideoIndexItem video={video} key={idx}/>
     })

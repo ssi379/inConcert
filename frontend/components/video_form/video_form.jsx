@@ -49,7 +49,7 @@ export default class VideoForm extends React.Component{
 }
 
   componentWillReceiveProps(nextProps){
-    // $('#upload-spinner').css("display", "none")
+    $('#upload-spinner').css("display", "none")
     if(nextProps.router.location.pathname === "/upload"){
           this.setState({title: "",
             description: "",
@@ -88,7 +88,7 @@ export default class VideoForm extends React.Component{
     }
 
     formData.append("video[user_id]", user_id);
-    // $('#upload-spinner').css("display", "block")
+    $('#upload-spinner').css("display", "block")
     processVideoForm(formData).then((video) => {
       hashHistory.push(`/videos/${video.video.id}`)
     });
@@ -137,7 +137,6 @@ export default class VideoForm extends React.Component{
     $('.dropzone-video-upload').css("background-color", "rgb(212, 215, 223)");
   }
   onDragLeave(){
-
     $('.dropzone-video-upload').css("background-color", "white")
   }
   extractFrame(files) {
@@ -248,7 +247,7 @@ export default class VideoForm extends React.Component{
         <form id="video-form" onSubmit={submitHandler}>
           <div className="video-inputs">
             {this.renderUploadThumbnail()}
-              <Halogen.PulseLoader color={"#4DAF7C"} className="spinner" id="upload-spinner" display="none"/>
+              <Halogen.PulseLoader color={"#4bf"} className="spinner" id="upload-spinner" display="none"/>
               <div className="input-fields">
                 <label className="input-label">
                   Title

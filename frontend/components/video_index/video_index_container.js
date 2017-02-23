@@ -2,9 +2,11 @@ import { connect } from 'react-redux';
 import { fetchManyVideos } from '../../actions/video_actions';
 import VideoIndex from './video_index';
 
-const mapStateToProps = ({video}) => ({
-  listed_videos: video.listed_videos
-});
+const mapStateToProps = ({video}) => {
+  let listed_videos = video.listed_videos;
+  
+  return { listed_videos }
+};
 
 
 const mapDispatchToProps = dispatch => ({
