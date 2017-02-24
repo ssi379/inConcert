@@ -32,6 +32,8 @@ export default class Navbar extends React.Component {
                     <span className="view-profile-sub">View Profile</span>
               		</Link>
               	</li>
+                <Link to={`/users/${currentUser.id}/videos`}><li>Videos</li></Link>
+                <Link to={`/users/${currentUser.id}/likes`}><li>Likes</li></Link>
               	<li onClick={this.handleLogout}>
               		<button id="logout-button">Log Out</button>
               	</li>

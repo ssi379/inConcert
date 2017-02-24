@@ -198,13 +198,13 @@
   border-radius: 5px;
 }
 
-#nav-dropdown > li{
+#nav-dropdown  li{
   padding-left: 15px;
   background: transparent;
   z-index: 400;
 }
 
-#nav-dropdown > li:hover{
+#nav-dropdown  li:hover{
   background-color: #e6eaec;
   cursor: pointer;
 }
