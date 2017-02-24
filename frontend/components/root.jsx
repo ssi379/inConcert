@@ -26,15 +26,15 @@ function redirectIfLoggedOut(nextState, replace) {
   }
 }
 
-function redirectIfNotOwnVideo(nextState, replace){
-  if(currentUser){
-    debugger
-    if(!Object.keys(currentUser.videos).map((id) => { return currentUser.videos[id].id })
-    .includes(parseInt(nextState.params.id))){
-      replace('/')
-    }
-  }
-}
+// function redirectIfNotOwnVideo(nextState, replace){
+//   if(currentUser){
+// 
+//     if(!Object.keys(currentUser.videos).map((id) => { return currentUser.videos[id].id })
+//     .includes(parseInt(nextState.params.id))){
+//       replace('/')
+//     }
+//   }
+// }
 
 const Root = ({ store }) => (
   <Provider store={ store }>

@@ -33,7 +33,7 @@ export default class Navbar extends React.Component {
               		</Link>
               	</li>
                 <Link to={`/users/${currentUser.id}/videos`}><li>Videos</li></Link>
-                <Link to={`/users/${currentUser.id}/likes`}><li>Likes</li></Link>
+                <Link to={`/users/${currentUser.id}/likes`} ><li className="dropdown-link-border">Likes</li></Link>
               	<li onClick={this.handleLogout}>
               		<button id="logout-button">Log Out</button>
               	</li>

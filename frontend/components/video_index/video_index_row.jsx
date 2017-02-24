@@ -17,13 +17,14 @@ export default class VideoIndexRow  extends React.Component{
 
   renderVideoIndexItems(){
     if(typeof this.props.videos === "undefined"){ return (<Halogen.PulseLoader color={"#4bf"} className="spinner"/>) }
-    
+
     return this.props.videos.map((video, idx) => {
       return <VideoIndexItem video={video} key={idx}/>
     })
   }
 
   render(){
+    
     return (
     <div className="carousel-container">
       <div className="carousel">

@@ -36,7 +36,6 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
       });
 
       let commentIdx = newState.currentVideo.comments.indexOf(commentToRemove);
-      debugger
       newState.currentVideo.comments.splice(commentIdx, 1);
       return newState;
     case RECEIVE_LIKE:

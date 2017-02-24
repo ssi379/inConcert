@@ -207,7 +207,6 @@ export default class VideoForm extends React.Component{
 
     this.props.deleteVideo(videoId).then(() => {
       hashHistory.push("/")
-      debugger
     });
   }
 
@@ -227,7 +226,10 @@ export default class VideoForm extends React.Component{
     return(
       <ul className="error-message video-form-error">
         {Object.keys(errors).map( (id, idx) => (
-          <li key={`error-${idx}`}>{`${id.charAt(0).toUpperCase() + id.slice(1)} ${errors[id]}`}</li>
+          <li key={`error-${idx}`}>
+            <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            {`${id.charAt(0).toUpperCase() + id.slice(1)} ${errors[id]}`}
+          </li>
         ))}
       </ul>
     );
