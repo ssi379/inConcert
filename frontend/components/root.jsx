@@ -45,6 +45,8 @@ const Root = ({ store }) => (
         <Route path="/upload" component={ VideoFormContainer } onEnter={ redirectIfLoggedOut } />
         <Route path="/search" component={ SearchResultsContainer }  />
         <Route path="/users/:id" component={ UserShowContainer } />
+        <Route path="/users/:id/likes" component={ UserShowContainer } />
+        <Route path="/users/:id/videos" component={ UserShowContainer } />
       </Route>
     </Router>
   </Provider>

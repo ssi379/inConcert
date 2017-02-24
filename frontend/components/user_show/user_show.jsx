@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import Halogen from 'halogen'
 import UserVideoItem from './user_video_item';
+import UserDetail from './user_detail';
 
 export default class UserShow extends React.Component{
   constructor(props){
@@ -22,10 +23,23 @@ export default class UserShow extends React.Component{
     let end = 6;
     if(this.props.profile.videos.length % 2 !== 0){ end -= 1 }
     if(typeof this.props.profile.videos === "undefined"){ return null }
-    
+
     return this.props.profile.videos.slice(0,end).map((video, idx) => {
       return(<UserVideoItem profile={this.props.profile} video={video} key={`user-${this.props.profile.id}-${idx}`} />)
     })
+  }
+
+  renderSeeMore(){
+    let videoLength = this.props.profile.videos.length
+    if(videoLength > 6 || (videoLength % 2 === 1 && videoLength > 2 )){
+      return(
+        <div className="see-more">
+          <Link to="/" id="user-see-more-button">See More</Link>
+        </div>
+      )
+    } else {
+      return null;
+    }
   }
 
   render(){
@@ -33,6 +47,16 @@ export default class UserShow extends React.Component{
 
     if(!profile){
       return(<Halogen.PulseLoader color={"#4bf"} className="spinner"/>);
+    }
+
+    if(this.props.location.pathname.includes("likes")){
+      return(
+        <UserDetail videos={profile.liked_videos} profile={profile} detailType={"likes"} />
+      )
+    } else if(this.props.location.pathname.includes("videos")){
+      return(
+        <UserDetail videos={profile.videos} profile={profile} detailType={"videos"} />
+      )
     }
 
     return(
@@ -61,9 +85,7 @@ export default class UserShow extends React.Component{
         <ul className="user-videos-list-container">
           {this.renderUserVideoItems()}
         </ul>
-        <div className="see-more">
-          <Link to="/" id="user-see-more-button">See More</Link>
-        </div>
+        {this.renderSeeMore()}
       </div>
     )
   }

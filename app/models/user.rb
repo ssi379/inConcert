@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   has_many :videos
   has_many :likes
 
+  has_many :liked_videos, through: :likes, source: :video
+
   def self.generate_random_session_token
     SecureRandom.urlsafe_base64(16)
   end
