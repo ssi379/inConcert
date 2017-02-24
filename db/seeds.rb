@@ -39,7 +39,7 @@
 # }))
 # users.push(
 User.create!({
-   username: "Master Chef",
+   username: "Tofu Block",
    password: "greendale",
    avatar: open(Faker::LoremPixel.image("150x150"))
 })

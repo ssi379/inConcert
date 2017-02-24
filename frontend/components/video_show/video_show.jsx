@@ -136,7 +136,7 @@ export default class VideoShow extends React.Component{
               <div className="base-video-info">
                 <h1 className="video-title">{video.title}</h1>
                 <p className="identify-uploader">
-                  from <span className="uploader-name">{video.user.username}</span> <TimeAgo className="video-show-timeago" date={video.upload_date} />
+                  from <Link className="uploader-name" to={`/users/${video.user.id}`}>{video.user.username}</Link> <TimeAgo className="video-show-timeago" date={video.upload_date} />
                 </p>
 
                 {this.renderSettingsOrAvatar()}
