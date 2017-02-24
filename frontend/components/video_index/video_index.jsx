@@ -30,14 +30,17 @@ export default class VideoIndex extends React.Component {
    const { count } = this.state;
    const width = $(window).width();
 
-   if (width > 1600 && count !== 6){
+   if (width > 1625 && count !== 6){
      $('.video-index').width("1800px");
      this.setState({ count: 6 });
-   }else if(width < 1281 && width > 1040 && count !== 4){
+   } else if(width < 1625 && width > 1282 && count !== 5){
+     $('.video-index').width("1625px")
+     this.setState({ count: 5 })
+   } else if(width < 1281 && width > 1040 && count !== 4){
      $('.video-index').width("1300px");
      this.setState({ count: 4 });
    }else if(width < 1040 && width > 720 && count !== 3){
-     $('.video-index').width("1200px");
+     $('.video-index').width("1020px");
      this.setState({ count: 3 });
    }else if(width < 720 && width > 480 && count !== 2){
      $('.video-index').width("580px");
