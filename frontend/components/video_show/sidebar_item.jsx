@@ -27,9 +27,9 @@ export default class SidebarItem extends React.Component {
             </Link>
           </div>
 
-          {/* Change this to link to user show when done */}
+
           <div>
-            <Link className="sidebar-uploader" to="/">
+            <Link className="sidebar-uploader" to={`/users/${video.user.id}`}>
               from {video.user.username}
             </Link>
           </div>

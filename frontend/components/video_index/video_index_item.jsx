@@ -22,7 +22,7 @@ export default class VideoIndexItem extends React.Component{
         </div>
 
         <div className="index-uploader-info">
-          <Link to="/">
+          <Link to={`/users/${video.user.id}`}>
             <img className="index-uploader-avatar" src={video.user.avatar_url} />
             <span className="index-item-uploader">{video.user.username}</span>
           </Link>
