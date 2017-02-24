@@ -22,9 +22,9 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
     - [X] Most Popular (likes),
       - [ ] Implement filters & sorting
     - [X] Sideways scrolling on each video list on the splash
-- [ ] Comments
+- [X] Comments
   * Users should have the ability to comment on videos
-- [ ] Likes
+- [X] Likes
   * Users should be able to like a Video
 - [ ] Video Searching
   * Users should be able to search videos by title
@@ -37,9 +37,9 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 ### Bonus Features
 - [ ] Stylized video player components
 - [ ] User created playlists
-- [ ] User Show Page
-    - [ ] User's uploaded videos
-    - [ ] User's likes
+- [X] User Show Page
+    - [X] User's uploaded videos
+    - [X] User's likes
     - [ ] User's playlists
     - [ ] Recommended
 - [ ] Nested Comments (Can reply to comments)
@@ -112,7 +112,7 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 **Objective:** Comments can be created and updated through the API and by Users. These comments are owned by a User and by a Video.
 
 - [X] Comment Model
-- [ ] Seed database with Comments
+- [X] Seed database with Comments
 - [X] CRUD API for comments
 - [X] JBuilder views to format the comment data appropriately
 - Comment components and respective Redux loops
@@ -128,7 +128,7 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 **Objective:** Users should be able to "Like" a video.
 
 - [X] Likes Model
-- [ ] Seed database with Likes
+- [X] Seed database with Likes
 - [X] CRD API for Likes
 - [X] Jbuilder views to format the likes data
 - Likes components and respective Redux loops
@@ -150,10 +150,10 @@ inConcert is a web application inspired by Vimeo built using Ruby on Rails and R
 ### Bonus Phase 1: User Profile Page
 **Objective:** Add user profile page displaying their uploaded videos, liked videos and playlists.
 
-- [ ] User show page with up to 6 most recently uploaded videos and about me description
+- [X] User show page with up to 6 most recently uploaded videos and about me description
 - [ ] Edit user profile info
 - [ ] Give users an data upload quota
-- [ ] Page displaying user's liked videos
+- [X] Page displaying user's liked videos
 
 ### Bonus Phase 2: Playlists
 **Objective:** Allow users to create playlists and add videos to it
