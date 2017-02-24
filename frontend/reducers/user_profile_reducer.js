@@ -9,6 +9,7 @@ export default function userProfileReducer(oldState = defaultState, action){
     case RECEIVE_USER_PROFILE:
       let newState = merge({}, oldState, { userProfile: action.userProfile});
       newState.userProfile.videos = action.userProfile.videos;
+      newState.userProfile.liked_videos = action.userProfile.liked_videos
       return newState;
     default:
       return oldState;
