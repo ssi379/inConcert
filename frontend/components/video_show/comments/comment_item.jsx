@@ -1,6 +1,7 @@
 import React from 'react';
 import CommentEdit from './comment_edit';
 import TimeAgo from 'react-timeago';
+import { Link } from 'react-router';
 
 export default class CommentItem extends React.Component{
   constructor(props){
@@ -97,7 +98,7 @@ export default class CommentItem extends React.Component{
       <div className="comment-item" onMouseOver={this.showCommentSettings} onMouseOut={this.hideCommentSettings}>
         <img className="commentor-avatar" src={comment.author.avatar_url}/>
         <div className="comment-body">
-          <h4 className="comment-author">{comment.author.username}</h4>
+          <Link to={`/users/${comment.author.id}`} className="comment-author">{comment.author.username}</Link>
           {this.renderTimeAgo()}
           {this.renderEditModal()}
 
