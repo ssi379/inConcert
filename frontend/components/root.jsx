@@ -27,9 +27,12 @@ function redirectIfLoggedOut(nextState, replace) {
 }
 
 function redirectIfNotOwnVideo(nextState, replace){
-  if(!Object.keys(currentUser.videos).map((id) => { return currentUser.videos[id].id })
-  .includes(parseInt(nextState.params.id))){
-    replace('/')
+  if(currentUser){
+    debugger
+    if(!Object.keys(currentUser.videos).map((id) => { return currentUser.videos[id].id })
+    .includes(parseInt(nextState.params.id))){
+      replace('/')
+    }
   }
 }
 
@@ -41,7 +44,7 @@ const Root = ({ store }) => (
         <Route path="/login" component={ SessionFormContainer } onEnter={ redirectIfLoggedIn } />
         <Route path="/signup" component={ SessionFormContainer } onEnter={ redirectIfLoggedIn } />
         <Route path="/videos/:id" component={ VideoShowContainer } />
-        <Route path="/videos/:id/edit" component={ VideoFormContainer } onEnter={ redirectIfNotOwnVideo }/>
+        <Route path="/videos/:id/edit" component={ VideoFormContainer } />
         <Route path="/upload" component={ VideoFormContainer } onEnter={ redirectIfLoggedOut } />
         <Route path="/search" component={ SearchResultsContainer }  />
         <Route path="/users/:id" component={ UserShowContainer } />

@@ -240,6 +240,15 @@ export default class VideoForm extends React.Component{
     const headerText = this.props.formType === "upload" ? "Upload your videos" : "Update video info"
     const buttonText = this.props.formType === "upload" ? "Upload Video" : "Update Video"
     const submitHandler = this.props.formType === "upload" ? this.handleSubmit : this.handleUpdate
+
+    if(this.props.location.pathname.includes("edit")){
+      if(!this.props.video){
+        return null;
+      }
+      if(this.props.currentUser.id !== this.props.video.user_id){
+        return null;
+      }
+    }
     return(
       <div className="video-form-container">
         <h1 className="video-form-title">{headerText}</h1>
@@ -276,11 +285,13 @@ export default class VideoForm extends React.Component{
           <video id="video-preview"></video>
           <canvas id="canvas"></canvas>
           <br />
-          <input id="video-submit" type="submit" value={buttonText} />
+          <div className="form-buttons">
+            <input id="video-submit" type="submit" value={buttonText} />
+            {this.renderDelete()}
+          </div>
           <img onLoad={this.setThumbnail} id="preview-thumbnail" hidden={true} />
 
         </form>
-        {this.renderDelete()}
 
 
       </div>

@@ -37,11 +37,14 @@
 #   password: Faker::Hipster.words(2).join(""),
 #   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_20.jpeg")
 # }))
-# users.push(User.create!({
-#   username: Faker::Superhero.name,
-#   password: Faker::Hipster.words(2).join(""),
-#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_7.jpeg")
-# }))
+# users.push(
+User.create!({
+   username: "The Dean",
+   password: "greendale",
+   avatar: open("http://api.theweek.com/sites/default/files/legacygeneric/DeanPelton_BoysNIght.jpg")
+})
+
+
 
 Video.destroy_nonseeds
 

@@ -88,6 +88,11 @@
   display: none;
 }
 
+.form-buttons{
+  position: relative;
+  right: 10%;
+}
+
 #video-submit{
   font-family: inherit;
   font-weight: 700;
