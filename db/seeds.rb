@@ -39,9 +39,9 @@
 # }))
 # users.push(
 User.create!({
-   username: "The Dean",
+   username: "Master Chef",
    password: "greendale",
-   avatar: open("http://api.theweek.com/sites/default/files/legacygeneric/DeanPelton_BoysNIght.jpg")
+   avatar: open(Faker::LoremPixel.image("150x150"))
 })
 
 

@@ -204,9 +204,10 @@ export default class VideoForm extends React.Component{
 
   handleDelete(e){
     let videoId = this.props.params.id;
-    let alertTitle = this.state.video;
+
     this.props.deleteVideo(videoId).then(() => {
       hashHistory.push("/")
+      debugger
     });
   }
 
@@ -287,11 +288,11 @@ export default class VideoForm extends React.Component{
           <br />
           <div className="form-buttons">
             <input id="video-submit" type="submit" value={buttonText} />
-            {this.renderDelete()}
           </div>
           <img onLoad={this.setThumbnail} id="preview-thumbnail" hidden={true} />
 
         </form>
+        {this.renderDelete()}
 
 
       </div>

@@ -21,7 +21,6 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
       newState.listed_videos = action.videos.listed_videos;
       return newState;
     case REMOVE_VIDEO:
-      delete newState[action.video.id];
       return newState;
     case RECEIVE_COMMENT:
       newState.currentVideo.comments.push(action.comment);

@@ -108,6 +108,10 @@
   cursor: pointer;
 }
 
+#video-submit:focus{
+  outline: none;
+}
+
 #video-submit:hover{
   background-color: #1A2E3B;
   transition: 0.2s;
@@ -124,8 +128,10 @@
   color: #fff;
   background-color: #FF4D4D;
   margin-top: 25px;
-  margin-left: 40px;
+  margin-left: -25px;
   cursor: pointer;
+  position: relative;
+
 }
 
 #video-delete:hover{
@@ -133,6 +139,9 @@
   transition: 0.2s;
 }
 
+#vide-delete:focus{
+  outline: none;
+}
 
 #canvas{
   display: none;
