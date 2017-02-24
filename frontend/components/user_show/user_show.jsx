@@ -64,8 +64,8 @@ export default class UserShow extends React.Component{
 
         <div className="sub-header">
           <ul className="profile-nav">
-            <Link className="profile-nav-link" to="/">Videos</Link>
-            <Link className="profile-nav-link" to="/">Likes</Link>
+            <Link className="profile-nav-link" to={`/users/${profile.id}/videos`}>Videos</Link>
+            <Link className="profile-nav-link" to={`/users/${profile.id}/likes`}>Likes</Link>
           </ul>
         </div>
         <img className="avatar-show" src={profile.avatar_url} width={150} height={150}/>
@@ -74,9 +74,9 @@ export default class UserShow extends React.Component{
           <h1 className="username-show">{profile.username}</h1>
 
           <ul className="user-stats">
-            <li>{profile.video_count} Videos</li>
+            <Link to={`/users/${profile.id}/videos`}>{profile.video_count} Videos</Link>
             <span className="user-stat-divider"></span>
-            <li>{profile.likes_count} Likes</li>
+            <Link to={`/users/${profile.id}/likes`}>{profile.likes_count} Likes</Link>
           </ul>
 
 

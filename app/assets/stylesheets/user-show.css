@@ -51,8 +51,16 @@
 .user-stats{
   display: flex;
   flex-direction: row;
-  color: #879cab;
   font-size: .875rem;
+}
+
+.user-stats > a{
+  color: #879cab;
+}
+
+.user-stats > a:hover{
+  color: #546978;
+  transition: 0.2s;
 }
 
 .user-stat-divider{
