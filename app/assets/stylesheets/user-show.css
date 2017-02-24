@@ -1,4 +1,5 @@
 .user-profile-container{
+
 }
 
 .sub-header{
@@ -25,12 +26,25 @@
   transition: 0.2s;
 }
 
-.avatar-show{
-  z-index: 9;
-  position: relative;
-  top: -50px;
-  left: 44%;
-  border-radius: 200px;
+@media(max-width: 1542px){
+  .avatar-show{
+    z-index: 9;
+    position: relative;
+    top: -50px;
+    left: 44%;
+    border-radius: 200px;
+  }
+
+}
+
+@media (min-width: 1543px){
+  .avatar-show{
+    z-index: 9;
+    position: relative;
+    top: -50px;
+    left: 46%;
+    border-radius: 200px;
+  }
 }
 
 .user-headline{

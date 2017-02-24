@@ -1,45 +1,7 @@
-# # User.destroy_all
-# users = []
-#
-# users.push(User.create!({
-#   username: "Demo",
-#   password: "football",
-# }))
+users = [8, 9, 10, 11, 12, 13, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
 
-
-# users.push(User.create!({
-#   username: Faker::Superhero.name,
-#   password: Faker::Hipster.words(2).join(""),
-#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_0.jpg")
-# }))
-# users.push(User.create!({
-#   username: Faker::Superhero.name,
-#   password: Faker::Hipster.words(2).join(""),
-#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_14.jpeg")
-# }))
-# users.push(User.create!({
-#   username: Faker::Superhero.name,
-#   password: Faker::Hipster.words(2).join(""),
-#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_15.jpeg")
-# }))
-# users.push(User.create!({
-#   username: Faker::Superhero.name,
-#   password: Faker::Hipster.words(2).join(""),
-#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_17.jpeg")
-# }))
-# users.push(User.create!({
-#   username: Faker::Superhero.name,
-#   password: Faker::Hipster.words(2).join(""),
-#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_19.jpeg")
-# }))
-# users.push(User.create!({
-#   username: Faker::Superhero.name,
-#   password: Faker::Hipster.words(2).join(""),
-#   avatar: open("https://s3.amazonaws.com/seed-middle/avatars/avatar_20.jpeg")
-# }))
-# users.push(
 User.create!({
-   username: "Tofu Block",
+   username: Faker::Superhero.name,
    password: "greendale",
    avatar: open(Faker::LoremPixel.image("150x150"))
 })
