@@ -82,6 +82,14 @@ export default class CommentItem extends React.Component{
     } else { return null }
   }
 
+  renderTimeAgo(){
+    if(this.props.comment.comment_date){
+      return(<TimeAgo className="comment-item-timeago" date={this.props.comment.comment_date} />);
+    } else {
+      return (<TimeAgo className="comment-item-timeago" date={Date.now()} minPeriod={30}/>)
+    }
+  }
+
   render(){
 
     const { comment } = this.props;
@@ -90,7 +98,7 @@ export default class CommentItem extends React.Component{
         <img className="commentor-avatar" src={comment.author.avatar_url}/>
         <div className="comment-body">
           <h4 className="comment-author">{comment.author.username}</h4>
-          <TimeAgo className="comment-item-timeago" date={comment.comment_date} />
+          {this.renderTimeAgo()}
           {this.renderEditModal()}
 
 
