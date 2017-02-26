@@ -2,6 +2,7 @@ import React from 'react';
 import NavbarContainer from './navbar/navbar_container';
 import VideoIndex from './video_index/video_index';
 import VideoSplash from './video_index/video_splash';
+import Footer from './footer';
 
 class App extends React.Component{
   constructor(props){
@@ -22,6 +23,7 @@ class App extends React.Component{
         <NavbarContainer />
         {this.determineSplash()}
         { this.props.children }
+        <Footer />
       </div>
     )
   }

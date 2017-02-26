@@ -1,0 +1,27 @@
+#site-footer{
+  width: 100%;
+  background-color: #EEF1F2;
+  line-height: 42px;
+  padding: 40px 0;
+}
+
+.footer-links{
+  float: left;
+  margin-top: -15px;
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+
+.footer-links > li{
+  float: left;
+  margin-right: 40px;
+  font-weight: 300;
+}
+
+#site-footer > span{
+  float: right;
+  font-weight: 200;
+  margin-top: -15px;
+  margin-right: 60px;
+  font-size: 12px;
+}
