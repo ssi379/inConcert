@@ -35,7 +35,7 @@ export default class VideoShow extends React.Component{
 
   renderSidebarVideos(sideVideos){
     if(typeof sideVideos === "undefined"){ return null };
-    sideVideos = shuffleVideos(sideVideos).slice(0, 10);
+    sideVideos = sideVideos.slice(0, 10);
     return sideVideos.map((videoItem, idx) => {
       return <SidebarItem video={videoItem} key={idx} />
     })

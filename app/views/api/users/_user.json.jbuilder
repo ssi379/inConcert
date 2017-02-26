@@ -13,7 +13,7 @@ json.set! :videos do
 end
 
 json.set! :liked_videos do
-  json.array! user.liked_videos do |video|
+  json.array! user.liked_videos.uniq do |video|
     json.id video.id
     json.user_id video.user_id
     json.title video.title
