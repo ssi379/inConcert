@@ -4,7 +4,7 @@
 
 [heroku]: http://liveinconcert.herokuapp.com
 
-inConcert is a web application inspired by Vimeo, with a musical twist, built using Ruby on Rails and React/Redux.
+inConcert is a web application inspired by Vimeo, with a musical twist, built using Ruby on Rails and React/Redux. The database is seeded with my favorite videos produced by the live audio/visual team of Sofar Sounds New York where I worked as a videography lead for two years.
 
 ## Features and Implementation
 
@@ -31,4 +31,54 @@ Users can like a video. The like instance is then stored in the database with an
 
 ### Video Search
 
-Users can search a video by title or description by using the search bar in the navigation bar. A search API call is made upon submitting the query. Once the query hits the controller, the query parameters are passed into a SQL query that checks for videos with a title or description containing any one of the query strings passed in. Search results are then rendered as video items with their thumbnail, title, views.
+Users can search a video by title by using the search bar in the navigation bar. A search API call is made upon submitting the query. Once the query hits the controller, the query parameters are passed into a SQL query that checks for videos with a title or description containing any one of the query strings passed in. Search results are then rendered as video items with their thumbnail, title, views.
+
+## Languages, Frameworks, Libraries
+
+* Ruby on Rails
+* PostgreSQL
+* React.js
+* Redux
+* jQuery
+* Gems
+  * Paperclip
+  * Paperclip AV Transcoder
+  * Paperclip ffmpeg
+  * Amazon Web Services SDK
+  * Jbuilder
+  * BCrypt
+  * Figaro
+* NPM packages
+  * Nuka Carousel
+  * Halogen
+  * React Timeago
+  * React Player
+  * React Dropzone
+  * React Masonry
+
+## Screenshots
+
+
+Home Index:
+![home index](./screenshots/home-index.png)
+
+Video show page:
+![video show](./screenshots/video-show.png)
+
+Video Upload:
+![video upload](./screenshots/video-upload.png)
+
+Video Update:
+![video update](./screenshots/video-edit.png)
+
+User show page:
+![user show](./screenshots/user-show.png)
+
+Search Result page:
+![search result](./screenshots/search.png)
+
+Comment Edit form:
+![comment edit](./screenshots/comment-edit.png)
+
+Comment Delete:
+![comment delete](./screenshots/comment-delete.png)
