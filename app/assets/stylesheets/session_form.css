@@ -10,7 +10,7 @@
   font-size: 20px;
   padding: 50px 70px 50px 50px;;
   border-radius: 5px;
-  transform: translateX(-50%) translateY(-65%);
+  transform: translateX(-50%) translateY(-140%);
   opacity: 1;
   animation: fadein .5s;
 }
