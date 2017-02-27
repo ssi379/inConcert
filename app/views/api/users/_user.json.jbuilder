@@ -26,4 +26,4 @@ end
 json.likes user.likes, :video_id
 
 json.video_count user.videos.length
-json.likes_count user.likes.length
+json.likes_count user.likes.uniq.length

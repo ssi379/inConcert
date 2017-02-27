@@ -119,62 +119,63 @@ export default class VideoShow extends React.Component{
     return(
       <div className="video-show-container">
 
-          <div className="video-player">
-            <ReactPlayer
-              className="the-video"
-              url={video.video_url}
-              controls={true}
-              autoPlay={true}
-              height={540}
-              width={"100%"}
-            />
-          </div>
+           <div className="video-player">
+             <ReactPlayer
+               className="the-video"
+               url={video.video_url}
+               controls={true}
+               autoPlay={true}
+               height={540}
+               width={"100%"}
+             />
+           </div>
 
-          <div className="video-show-info-container">
+           <div className="video-show-info-container">
 
-            <div className="main-video-content-wrapper">
-              <div className="base-video-info">
-                <h1 className="video-title">{video.title}</h1>
-                <p className="identify-uploader">
-                  from <Link className="uploader-name" to={`/users/${video.user.id}`}>{video.user.username}</Link> <TimeAgo className="video-show-timeago" date={video.upload_date} />
-                </p>
+             <div className="main-video-content-wrapper">
+               <div className="base-video-info">
+                 <h1 className="video-title">{video.title}</h1>
+                 <p className="identify-uploader">
+                   from <Link className="uploader-name" to={`/users/${video.user.id}`}>{video.user.username}</Link> <TimeAgo className="video-show-timeago" date={video.upload_date} />
+                 </p>
 
-                {this.renderSettingsOrAvatar()}
-              </div>
-
-
-              <div className="video-description-wrapper">
-
-                <div className="video-stats">
-                  <span className="stat"><i className="fa fa-play stat-icon" aria-hidden="true"></i>{video.views.toLocaleString()}</span>
-                  <span className="stat"><i className="fa fa-heart stat-icon" aria-hidden="true"></i>{video.likes.length.toLocaleString()}</span>
-                </div>
-
-                {this.renderLikeButton()}
-
-                <div className="video-description">
-                  <ReadMore text={"Read More..."}
-                    children={<p className="video-description">{video.description}</p>}
-                    lines={3} />
-                </div>
-
-              </div>
-
-              <div className="comments-show">
-                <h1>{video.comments.length} Comments</h1>
-
-                <CommentsIndexContainer />
-              </div>
-            </div>
+                 {this.renderSettingsOrAvatar()}
+               </div>
 
 
-            <div className="sidebar-wrapper">
-              <h1 className="sidebar-header">See more performances</h1>
-              {this.renderSidebarVideos(this.props.listed_videos)}
-            </div>
-          </div>
+               <div className="video-description-wrapper">
 
-      </div>
+                 <div className="video-stats">
+                   <span className="stat"><i className="fa fa-play stat-icon" aria-hidden="true"></i>{video.views.toLocaleString()}</span>
+                   <span className="stat"><i className="fa fa-heart stat-icon" aria-hidden="true"></i>{video.likes.length.toLocaleString()}</span>
+                 </div>
+
+                 {this.renderLikeButton()}
+
+                 <div className="video-description">
+                   <ReadMore text={"Read More..."}
+                     children={<p className="video-description">{video.description}</p>}
+                     lines={3} />
+                 </div>
+
+               </div>
+
+               <div className="comments-show">
+                 <h1>{video.comments.length} Comments</h1>
+
+                 <CommentsIndexContainer />
+               </div>
+             </div>
+
+
+             <div className="sidebar-wrapper">
+               <h1 className="sidebar-header">See more performances</h1>
+               {this.renderSidebarVideos(this.props.listed_videos)}
+             </div>
+           </div>
+
+       </div>
+
     )
   }
 }

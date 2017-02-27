@@ -19,10 +19,12 @@ class App extends React.Component{
 
   render(){
     return(
-      <div>
+      <div className>
         <NavbarContainer />
         {this.determineSplash()}
         { this.props.children }
+
+
         <Footer />
       </div>
     )

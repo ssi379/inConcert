@@ -8,7 +8,6 @@ const Footer = () => {
         <li><a href="https://github.com/MatthewDG/inConcert">Github</a></li>
         <li><a href="https://www.linkedin.com/in/matthew-goldman-a6aaa6115/">LinkedIn</a></li>
       </ul>
-      <span>mattdylangoldman@gmail.com</span>
     </footer>
   )
 }

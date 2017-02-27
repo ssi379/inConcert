@@ -51,7 +51,7 @@
 
 .main-video-content-wrapper{
   width: calc(100% - 350px);
-  height: 720px;
+  height: 100%;
   margin-left: 20px;
 }
 
@@ -168,6 +168,7 @@
   margin-right: 1.5625rem;
   font-family: inherit;
   font-size: 1.125rem;
+  height: 100%;
   font-weight: 700;
   color: #40545C;
 }
