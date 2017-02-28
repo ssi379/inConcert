@@ -37,13 +37,6 @@
   color: red;
 }
 
-@media(max-width: 1280px){
-  #like-button{
-    right: 20%;
-    top: 5%;
-  }
-}
-
 .video-show-info-container{
   display: flex;
   flex-direction: row;
