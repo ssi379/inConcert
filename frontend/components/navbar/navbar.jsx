@@ -17,7 +17,7 @@ export default class Navbar extends React.Component {
     if(currentUser){
       return(
         <div id="nav-bar-logged-in">
-          <Link to="/"><img className="logo" src="https://s3.amazonaws.com/inconcert-dev/inConcert+logo_2.png" /></Link>
+          <Link to="/"><img className="logo" src="https://s3.amazonaws.com/seed-middle/inConcert-logo-black.png" /></Link>
 
 
           <ul className="nav-right">
