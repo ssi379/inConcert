@@ -17,7 +17,7 @@ export default class Navbar extends React.Component {
     if(currentUser){
       return(
         <div id="nav-bar-logged-in">
-          <Link to="/"><img className="logo" src="https://s3.amazonaws.com/seed-middle/inConcert-logo-black.png" /></Link>
+          <Link to="/"><img className="logo-logged-in" src={window.images.inconcertLogo}/></Link>
 
 
           <ul className="nav-right">
@@ -52,7 +52,7 @@ export default class Navbar extends React.Component {
       return (
         <div id="nav-bar-logged-out">
           <div className="nav-left">
-            <Link to="/"><img className="logo" src="https://s3.amazonaws.com/inconcert-dev/inConcert+logo_2.png" /></Link>
+            <Link to="/"><img className="logo-logged-out" src={window.images.inconcertLogo} /></Link>
             <li><Link to="/signup" className="join-button">Join</Link></li>
             <li><Link to="/login" className="login-button">Log In</Link></li>
         </div>

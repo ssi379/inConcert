@@ -1,7 +1,13 @@
-.logo{
+.logo-logged-in{
   height: 72px;
   vertical-align: middle;
   margin: -12px 0 -12px 40px;
+}
+
+.logo-logged-out{
+  height: 72px;
+  vertical-align: middle;
+  margin: -23px 0 -15px 40px;
 }
 
 #nav-bar-logged-in{
