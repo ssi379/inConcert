@@ -43,7 +43,11 @@ export default class CommentItem extends React.Component{
   }
 
   hideCommentSettings(event){
-    this.setState( { commentSettings: false } )
+
+    if(event.relatedTarget.className !== "comment-settings-item"){
+      
+      this.setState( { commentSettings: false } )
+    }
   }
 
 

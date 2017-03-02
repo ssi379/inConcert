@@ -40,7 +40,7 @@
 
 .update-delete-settings{
   position: absolute;
-  top: .5rem;
+  top: 1.5rem;
   right: .625rem;
   display: flex;
   flex-direction: row;
