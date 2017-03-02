@@ -31,7 +31,7 @@ export default class UserShow extends React.Component{
 
   renderSeeMore(){
     let videoLength = this.props.profile.videos.length
-    if(videoLength > 6 || (videoLength % 2 === 1 && videoLength > 2 )){
+    if(videoLength > 6){
       return(
         <div className="see-more">
           <Link to={`/users/${this.props.profile.id}/videos`} id="user-see-more-button">See More</Link>
