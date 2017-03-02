@@ -44,7 +44,6 @@
   right: .625rem;
   display: flex;
   flex-direction: row;
-  display: none;
 }
 
 .comment-settings-item{

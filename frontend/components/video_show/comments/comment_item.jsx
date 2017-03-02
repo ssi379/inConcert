@@ -9,26 +9,41 @@ export default class CommentItem extends React.Component{
 
     this.state = ({
       deleteModal: false,
-      form: false
+      form: false,
+      commentSettings: false
     })
 
     this.triggerDeleteModal = this.triggerDeleteModal.bind(this);
     this.removeDeleteModal = this.removeDeleteModal.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.showCommentSettings = this.showCommentSettings.bind(this);
+    this.hideCommentSettings = this.hideCommentSettings.bind(this);
     this.toggleForm = this.toggleForm.bind(this);
+  }
+
+  renderCommentSettings(){
+    if(this.state.commentSettings){
+      return(
+        <div className="update-delete-settings">
+          <span className="comment-settings-item" id="edit-comment" onClick={this.toggleForm}>Edit</span>
+          <span className="comment-settings-item" id="delete-comment" onClick={this.triggerDeleteModal}>Delete</span>
+        </div>
+      )
+    } else {
+      return null;
+    }
   }
 
   showCommentSettings(event){
     if(this.props.currentUser){
       if(this.props.currentUser.id === this.props.comment.user_id){
-        $(event.currentTarget).find('.update-delete-settings').css("display", "block")
+        this.setState( {commentSettings: true } )
       }
     }
   }
 
   hideCommentSettings(event){
-    $(event.currentTarget).find('.update-delete-settings').css("display", "none")
+    this.setState( { commentSettings: false } )
   }
 
 
@@ -96,6 +111,7 @@ export default class CommentItem extends React.Component{
     const { comment } = this.props;
     return(
       <div className="comment-item" onMouseOver={this.showCommentSettings} onMouseOut={this.hideCommentSettings}>
+        {this.renderCommentSettings()}
         <img className="commentor-avatar" src={comment.author.avatar_url}/>
         <div className="comment-body">
           <Link to={`/users/${comment.author.id}`} className="comment-author">{comment.author.username}</Link>
@@ -103,10 +119,7 @@ export default class CommentItem extends React.Component{
           {this.renderEditModal()}
 
 
-          <div className="update-delete-settings">
-              <span className="comment-settings-item" id="edit-comment" onClick={this.toggleForm}>Edit</span>
-              <span className="comment-settings-item" id="delete-comment" onClick={this.triggerDeleteModal}>Delete</span>
-          </div>
+
           <br />
           {this.renderDeleteModal()}
         </div>
