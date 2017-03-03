@@ -68,7 +68,6 @@ end
       this.pause();
       ctx.drawImage(this, 0, 0);
       document.getElementById('preview-thumbnail').src = canvas.toDataURL();
-      $('#preview-thumbnail').css("height", "160")
     }
 
     video.autoplay = true;
