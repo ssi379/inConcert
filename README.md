@@ -4,6 +4,8 @@
 
 [live]: http://liveinconcert.co
 
+<img src="./screenshots/home_animated.gif" alt="home-page"/>
+
 inConcert is a web application inspired by Vimeo, with a musical twist, built using Ruby on Rails and React/Redux. The database is seeded with my favorite videos produced by the live audio/visual team of Sofar Sounds New York where I worked as a videography lead for two years.
 
 ## Features and Implementation
@@ -213,6 +215,7 @@ end
   * [React Player]
   * [React Dropzone]
   * [React Masonry]
+  * [React Scroll]
 
 [Ruby on Rails]: http://rubyonrails.org/
 [PostgreSQL]: https://www.postgresql.org/
@@ -231,6 +234,7 @@ end
 [React Player]: https://github.com/souporserious/react-media-player
 [React Dropzone]: https://github.com/okonet/react-dropzone
 [React Masonry]: https://github.com/eiriklv/react-masonry-component
+[React Scroll]: https://github.com/fisshy/react-scroll
 
 ## Additional Screenshots
 

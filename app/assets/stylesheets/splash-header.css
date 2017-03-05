@@ -1,0 +1,48 @@
+.splash-header{
+  z-index: 999;
+  position: absolute;
+  color: white;
+  top: 35%;
+  left: 22%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+
+.splash-header-main{
+  font-size: 72px;
+}
+
+.splash-header-secondary{
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.start-watching{
+  background-color: #7FC400;
+  color: #fff;
+  box-shadow: 11px 7px 26px -5px rgba(0,0,0,0.75);
+  padding: .5625em .875em .65em;
+  width: 350px;
+  position: relative;
+  margin-top: 30px;
+  left: 25%;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.start-watching:hover{
+  background-color: #45A600;
+  transition: 0.2s;
+}
+
+.splash-logo{
+  width: 50%;
+  left: 23%;
+}

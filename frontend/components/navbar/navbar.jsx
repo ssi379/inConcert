@@ -17,7 +17,7 @@ export default class Navbar extends React.Component {
     if(currentUser){
       return(
         <div id="nav-bar-logged-in">
-          <Link to="/"><img className="logo-logged-in" src={window.images.inconcertLogo}/></Link>
+          <Link to="/"><img className="logo-logged-in" src={window.images.inconcertLogo} alt="logo"/></Link>
 
 
           <ul className="nav-right">
