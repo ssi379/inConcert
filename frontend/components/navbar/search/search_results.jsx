@@ -10,7 +10,12 @@ export default class SearchResults extends React.Component{
 
   componentDidMount(){
     let searchQuery = this.props.location.search.slice(1);
-    this.props.searchVideos(searchQuery);
+    if(searchQuery === "query="){
+      this.props.router.goBack();
+      return;
+    } else {
+      this.props.searchVideos(searchQuery);
+    }
   }
 
   componentWillReceiveProps(nextProps){
