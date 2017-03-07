@@ -12,7 +12,8 @@ export default class VideoForm extends React.Component{
       videoFile: null,
       videoUrl: null,
       thumbUrl: null,
-      user_id: this.props.currentUser.id
+      user_id: this.props.currentUser.id,
+      uploading: false
     }
 
     this.updateFile = this.updateFile.bind(this);
@@ -34,7 +35,8 @@ export default class VideoForm extends React.Component{
           user_id: this.props.currentUser.id,
           videoFile: null,
           videoUrl: null,
-          thumbUrl: null})
+          thumbUrl: null,
+          uploading: false})
       } else {
         let videoId = this.props.params.id
         this.props.fetchSingleVideo(videoId).then((video) => {
@@ -43,12 +45,14 @@ export default class VideoForm extends React.Component{
             description: fillVideo.description,
             user_id: fillVideo.user_id,
             videoFile: fillVideo.video_url,
-            thumbUrl: fillVideo.thumbnail_url})
+            thumbUrl: fillVideo.thumbnail_url,
+            uploading: false})
       })
     }
 }
 
   componentWillReceiveProps(nextProps){
+    this.setState({ uploading: false })
     $('#upload-spinner').css("display", "none")
     if(nextProps.router.location.pathname === "/upload"){
           this.setState({title: "",
@@ -56,7 +60,8 @@ export default class VideoForm extends React.Component{
             user_id: this.props.currentUser.id,
             videoFile: null,
             videoUrl: null,
-            thumbUrl: null})
+            thumbUrl: null,
+            uploading: false})
         }
        else if(nextProps.router.location.pathname !== this.props.location.pathname) {
         this.props.clearErrors([]);
@@ -67,7 +72,8 @@ export default class VideoForm extends React.Component{
             description: fillVideo.description,
             user_id: fillVideo.user_id,
             videoFile: fillVideo.video_url,
-            thumbUrl: fillVideo.thumbnail_url})
+            thumbUrl: fillVideo.thumbnail_url,
+            uploading: false})
       })
   }
 
@@ -88,7 +94,7 @@ export default class VideoForm extends React.Component{
     }
 
     formData.append("video[user_id]", user_id);
-    $('#upload-spinner').css("display", "block")
+    this.setState( { uploading: true } )
     processVideoForm(formData).then((video) => {
       hashHistory.push(`/videos/${video.video.id}`)
     });
@@ -238,6 +244,14 @@ export default class VideoForm extends React.Component{
    this.setState({ [event.currentTarget.id]: event.currentTarget.value });
   }
 
+  renderSpinner(){
+    if(this.state.uploading){
+      return(<Halogen.PulseLoader color={"#4bf"} className="spinner" id="upload-spinner"/>);
+    } else{
+      return null;
+    }
+  }
+
   render(){
     const headerText = this.props.formType === "upload" ? "Upload your videos" : "Update video info"
     const buttonText = this.props.formType === "upload" ? "Upload Video" : "Update Video"
@@ -258,7 +272,6 @@ export default class VideoForm extends React.Component{
         <form id="video-form" onSubmit={submitHandler}>
           <div className="video-inputs">
             {this.renderUploadThumbnail()}
-              <Halogen.PulseLoader color={"#4bf"} className="spinner" id="upload-spinner" display="none"/>
               <div className="input-fields">
                 <label className="input-label">
                   Title
@@ -287,13 +300,14 @@ export default class VideoForm extends React.Component{
           <video id="video-preview"></video>
           <canvas id="canvas"></canvas>
           <br />
-          <div className="form-buttons">
-            <input id="video-submit" type="submit" value={buttonText} />
-          </div>
-          <img onLoad={this.setThumbnail} id="preview-thumbnail" hidden={true} />
 
         </form>
-        {this.renderDelete()}
+        <div className="form-buttons">
+          <input id="video-submit" type="submit" value={buttonText} onClick={submitHandler}/>
+          {this.renderDelete()}
+          {this.renderSpinner()}
+        </div>
+        <img onLoad={this.setThumbnail} id="preview-thumbnail" hidden={true} />
 
 
       </div>

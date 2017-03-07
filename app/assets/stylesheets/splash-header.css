@@ -3,7 +3,7 @@
   position: absolute;
   color: white;
   top: 35%;
-  left: 22%;
+  left: 24%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -44,5 +44,5 @@
 
 .splash-logo{
   width: 50%;
-  left: 23%;
+  left: 25%;
 }

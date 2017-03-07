@@ -2,6 +2,7 @@ import React from 'react';
 import SearchResultItem from './search_result_item';
 import Halogen from 'halogen';
 import Masonry from 'react-masonry-component';
+import { hashHistory } from 'react-router';
 
 export default class SearchResults extends React.Component{
   constructor(props){
@@ -11,8 +12,7 @@ export default class SearchResults extends React.Component{
   componentDidMount(){
     let searchQuery = this.props.location.search.slice(1);
     if(searchQuery === "query="){
-      this.props.router.goBack();
-      return;
+      hashHistory.push("/");
     } else {
       this.props.searchVideos(searchQuery);
     }
