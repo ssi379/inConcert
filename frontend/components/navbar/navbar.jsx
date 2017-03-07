@@ -26,17 +26,17 @@ export default class Navbar extends React.Component {
             <li className="nav-dropper">
               <img className="nav-avatar" src={currentUser.avatar_url} />
               <ul id="nav-dropdown" >
-              	<li>
-              		<Link to={`/users/${currentUser.id}`}>
+                <li>
+                  <Link to={`/users/${currentUser.id}`}>
                     <span className="user-welcome">Welcome, {currentUser.username}</span>
                     <span className="view-profile-sub">View Profile</span>
-              		</Link>
-              	</li>
+                  </Link>
+                </li>
                 <Link to={`/users/${currentUser.id}/videos`}><li>Videos</li></Link>
                 <Link to={`/users/${currentUser.id}/likes`} ><li className="dropdown-link-border">Likes</li></Link>
-              	<li onClick={this.handleLogout}>
-              		<button id="logout-button">Log Out</button>
-              	</li>
+                <li onClick={this.handleLogout}>
+                  <button id="logout-button">Log Out</button>
+                </li>
               </ul>
             </li>
 
