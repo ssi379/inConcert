@@ -43,10 +43,10 @@ export default class CommentItem extends React.Component{
   }
 
   hideCommentSettings(event){
-
-    if(event.relatedTarget.className !== "comment-settings-item"){
-      
-      this.setState( { commentSettings: false } )
+    if(event.relatedTarget){
+      if(event.relatedTarget.className !== "comment-settings-item"){
+        this.setState( { commentSettings: false } )
+      }
     }
   }
 
@@ -81,7 +81,8 @@ export default class CommentItem extends React.Component{
   handleDelete(event){
     event.preventDefault();
     const { deleteComment } = this.props;
-    deleteComment(this.props.comment.id).then(() => { this.removeDeleteModal() });
+    deleteComment(this.props.comment.id)
+    this.removeDeleteModal();
   }
 
 
