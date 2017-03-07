@@ -24,6 +24,22 @@ export default class SearchBar extends React.Component{
     hashHistory.push(`/search/?query=${searchQuery}`)
   }
 
+  renderSearchButton(){
+    if(this.state.searchQuery.length > 0){
+      return(
+        <button className="search-button" onClick={this.handleSearchSubmit}>
+          <i className="fa fa-search" aria-hidden="true"></i>
+        </button>
+      )
+    } else {
+      return(
+        <button className="search-button" onClick={this.handleSearchSubmit} disabled>
+          <i className="fa fa-search" aria-hidden="true"></i>
+        </button>
+      )
+    }
+  }
+
 
   render(){
 
@@ -35,9 +51,7 @@ export default class SearchBar extends React.Component{
             onChange={this.handleSearchInput}
             value={this.state.searchQuery}
             placeholder="Search videos, artists and more"/>
-          <button className="search-button" onClick={this.handleSearchSubmit}>
-            <i className="fa fa-search" aria-hidden="true"></i>
-          </button>
+          {this.renderSearchButton()}
         </form>
       </div>
     )
