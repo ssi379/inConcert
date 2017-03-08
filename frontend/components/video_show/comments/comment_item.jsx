@@ -104,10 +104,11 @@ export default class CommentItem extends React.Component{
   }
 
   renderTimeAgo(){
+    debugger
     if(this.props.comment.comment_date){
       return(<TimeAgo className="comment-item-timeago" date={this.props.comment.comment_date} />);
     } else {
-      return (<TimeAgo className="comment-item-timeago" date={Date.now()} minPeriod={30}/>)
+      return (<span className="comment-item-timeago">Just Now</span>)
     }
   }
 
