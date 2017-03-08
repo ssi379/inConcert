@@ -61,11 +61,11 @@ export default class VideoShow extends React.Component{
 
   renderLikeButton(){
     if(this.props.currentUser){
-      let disabled = this.state.liking ? "disabled" : "";
+
       if(this.props.likedByCurrentUser){
         return(
           <div className="like-button-container">
-            <button id="like-button" onClick={this.handleUnlike} disabled={disabled}>
+            <button id="like-button" onClick={this.handleUnlike} disabled={this.state.liking}>
               <i className="fa fa-heart" aria-hidden="true"></i> Unlike
             </button>
           </div>
@@ -73,7 +73,7 @@ export default class VideoShow extends React.Component{
       } else {
         return(
           <div className="like-button-container">
-            <button id="like-button" onClick={this.handleLike} disabled={disabled}>
+            <button id="like-button" onClick={this.handleLike} disabled={this.state.liking}>
               <i className="fa fa-heart-o" aria-hidden="true"></i> Like
               </button>
             </div>
@@ -91,7 +91,7 @@ export default class VideoShow extends React.Component{
     like.user_id = this.props.currentUser.id
     this.setState({ liking: true });
     this.props.createLike(like).then(() => {
-      this.setState({ liking: false })
+      this.setState({ liking: false });
     });
 
   }
@@ -102,9 +102,13 @@ export default class VideoShow extends React.Component{
 	     return like.video_id === this.props.video.id && like.user_id === this.props.currentUser.id;
      })
 
-
-     if(dupLikes.length > 0){
-       this.props.deleteLike(dupLikes[dupLikes.length - 1].id)
+     if(!this.state.liking){
+       if(dupLikes.length > 0){
+         this.setState({ liking: true })
+         this.props.deleteLike(dupLikes[dupLikes.length - 1].id).then(() => {
+           this.setState({ liking: false });
+         })
+       }
      }
   }
 
