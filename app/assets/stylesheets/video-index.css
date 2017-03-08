@@ -43,13 +43,15 @@
 .video-index-item-container{
 }
 
+
+
 .video-index-item-title{
   display: block;
   color: #3A5161;
   font-family: inherit;
   font-size: .83rem;
   font-weight: 700;
-  margin-top: 5px;
+  margin: 5px 0 3px 0;
   max-width: 220px;
 }
 
@@ -71,12 +73,14 @@
   border-radius: 25px;
   margin-right: .3125rem;
 }
+
 .index-item-uploader{
   position: relative;
   top: -2px;
   font-size: .75rem;
   color: #879CAB;
   margin-bottom: 2px;
+  vertical-align: middle;
 }
 .index-item-uploader:hover{
   text-decoration: none;

@@ -13,7 +13,8 @@ export default class VideoShow extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      sideVideos: []
+      sideVideos: [],
+      liking: false
     };
 
     this.handleLike = this.handleLike.bind(this);
@@ -60,11 +61,11 @@ export default class VideoShow extends React.Component{
 
   renderLikeButton(){
     if(this.props.currentUser){
-
+      let disabled = this.state.liking ? "disabled" : "";
       if(this.props.likedByCurrentUser){
         return(
           <div className="like-button-container">
-            <button id="like-button" onClick={this.handleUnlike}>
+            <button id="like-button" onClick={this.handleUnlike} disabled={disabled}>
               <i className="fa fa-heart" aria-hidden="true"></i> Unlike
             </button>
           </div>
@@ -72,7 +73,7 @@ export default class VideoShow extends React.Component{
       } else {
         return(
           <div className="like-button-container">
-            <button id="like-button" onClick={this.handleLike}>
+            <button id="like-button" onClick={this.handleLike} disabled={disabled}>
               <i className="fa fa-heart-o" aria-hidden="true"></i> Like
               </button>
             </div>
@@ -88,8 +89,10 @@ export default class VideoShow extends React.Component{
     const like = {};
     like.video_id = this.props.video.id;
     like.user_id = this.props.currentUser.id
-
-    this.props.createLike(like);
+    this.setState({ liking: true });
+    this.props.createLike(like).then(() => {
+      this.setState({ liking: false })
+    });
 
   }
 
@@ -108,6 +111,7 @@ export default class VideoShow extends React.Component{
 
 
   render(){
+    debugger
     const { video } = this.props;
     const readMoreStyle = {
       textDecoration: "none"
