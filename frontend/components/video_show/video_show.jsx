@@ -111,7 +111,6 @@ export default class VideoShow extends React.Component{
 
 
   render(){
-    debugger
     const { video } = this.props;
     const readMoreStyle = {
       textDecoration: "none"
