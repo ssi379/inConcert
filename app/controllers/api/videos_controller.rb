@@ -11,12 +11,12 @@ class Api::VideosController < ApplicationController
   end
 
   def index
-    @videos = Video.search_videos(params)
+    @videos = Video.includes(:user, :likes).search_videos(params)
     render :index
   end
 
   def show
-    @video = Video.find(params[:id])
+    @video = Video.includes(:likes, :comments).find(params[:id])
     if @video
       @video.views += 1
       @video.save
