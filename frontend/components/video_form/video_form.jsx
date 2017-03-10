@@ -225,6 +225,14 @@ export default class VideoForm extends React.Component{
     }
   }
 
+  renderUpload(buttonText, submitHandler){
+    if(this.state.uploading){
+      return(<input id="video-submit-disabled" type="submit" value={buttonText} onClick={submitHandler} disabled/>)
+    } else {
+      return(<input id="video-submit" type="submit" value={buttonText} onClick={submitHandler}/>);
+    }
+  }
+
   renderErrors(){
     let errors = this.props.errors
     if(errors.length === 0){ return null; }
@@ -243,6 +251,7 @@ export default class VideoForm extends React.Component{
   handleInput(event){
    this.setState({ [event.currentTarget.id]: event.currentTarget.value });
   }
+
 
   renderSpinner(){
     if(this.state.uploading){
@@ -303,7 +312,7 @@ export default class VideoForm extends React.Component{
 
         </form>
         <div className="form-buttons">
-          <input id="video-submit" type="submit" value={buttonText} onClick={submitHandler}/>
+          {this.renderUpload(buttonText, submitHandler)}
           {this.renderDelete()}
           {this.renderSpinner()}
         </div>

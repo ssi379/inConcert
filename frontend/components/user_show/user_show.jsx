@@ -22,9 +22,9 @@ export default class UserShow extends React.Component{
   renderUserVideoItems(){
     let end = 6;
     if(this.props.profile.videos.length % 2 !== 0){ end -= 1 }
-    if(typeof this.props.profile.videos === "undefined"){ return null }
+    if(typeof this.props.profile.videos === "undefined"){ return (<Halogen.PulseLoader color={"#4bf"} className="spinner"/>) }
 
-    return this.props.profile.videos.slice(0,end).map((video, idx) => {
+    return this.props.profile.videos.slice(0, 6).map((video, idx) => {
       return(<UserVideoItem profile={this.props.profile} video={video} key={`user-${this.props.profile.id}-${idx}`} />)
     })
   }
