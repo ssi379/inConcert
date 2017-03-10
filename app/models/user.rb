@@ -16,7 +16,8 @@
 
 class User < ActiveRecord::Base
 
-  has_attached_file :avatar, default_url: "demo-avatar.png"
+  has_attached_file :avatar, default_url: "demo-avatar.png",
+  :s3_protocol => :https
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
   validates :username, :password_digest, :session_token, presence: true

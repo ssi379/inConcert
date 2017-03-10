@@ -21,10 +21,18 @@
 
 class Video < ActiveRecord::Base
 
-  has_attached_file :thumbnail, default_url: "default_thumbnail.png"
+  has_attached_file :thumbnail, default_url: "default_thumbnail.png",
+  :styles => {
+      :thumb => "440x247#",
+      :small  => "150x150>",
+      :medium => "200x200" },
+  :convert_options => {
+    :thumb => "-quality 75 -strip" },
+    :s3_protocol => :https
+
   validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\Z/
 
-  has_attached_file :videoitem, processors: [:transcoder]
+  has_attached_file :videoitem, processors: [:transcoder], :s3_protocol => :https
   validates_attachment_content_type :videoitem, :content_type => ["video/quicktime", "video/mp4"]
 
   validates :title, :description, :user_id, :views, :videoitem, :thumbnail, presence: true
