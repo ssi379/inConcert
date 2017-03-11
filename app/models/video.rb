@@ -23,11 +23,11 @@ class Video < ActiveRecord::Base
 
   has_attached_file :thumbnail, default_url: "default_thumbnail.png",
   :styles => {
-      :thumb => "440x247#",
-      :small  => "150x150>",
-      :medium => "200x200" },
-  :convert_options => {
-    :thumb => "-quality 75 -strip" },
+      :user_show => "440x247>",
+      :side  => "132x75>",
+      :user_detail => "305x176>",
+      :home_index => "217x122>",
+      :search => "320x180>"},
     :s3_protocol => :https
 
   validates_attachment_content_type :thumbnail, content_type: /\Aimage\/.*\Z/

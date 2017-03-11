@@ -69,6 +69,7 @@
   border: none;
   border-radius: 5px;
   font-family: inherit;
+  cursor: pointer;
 }
 
 .submit-session:hover{
@@ -89,6 +90,7 @@
   border: none;
   border-radius: 5px;
   font-family: inherit;
+  cursor: pointer;
 }
 
 .submit-guest:hover{

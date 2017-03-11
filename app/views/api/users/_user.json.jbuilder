@@ -8,6 +8,8 @@ json.set! :videos do
     json.title video.title
     json.views video.views
     json.thumbnail_url asset_path(video.thumbnail.url)
+    json.user_show_thumbnail_url  asset_path(video.thumbnail(:user_show))
+    json.user_detail_thumbnail_url  asset_path(video.thumbnail(:user_detail))
     json.upload_date video.created_at.to_date
   end
 end
@@ -19,6 +21,7 @@ json.set! :liked_videos do
     json.title video.title
     json.views video.views
     json.thumbnail_url asset_path(video.thumbnail.url)
+    json.user_detail_thumbnail_url  asset_path(video.thumbnail(:user_detail))
     json.upload_date video.created_at.to_date
   end
 end

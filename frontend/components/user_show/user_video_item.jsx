@@ -11,13 +11,13 @@ export default class UserVideoItem extends React.Component{
       if(typeof video === "undefined"){
         return null;
       }
-
+      
       const linkPath = `/videos/${video.id}`
       return(
         <div className="user-item-container">
 
           <div className="video-index-item-thumbnail">
-            <Link to={linkPath}><img src={video.thumbnail_url} width={440} height={247} /></Link>
+            <Link to={linkPath}><img src={video.user_show_thumbnail_url} width={440} height={247} /></Link>
           </div>
 
           <div>

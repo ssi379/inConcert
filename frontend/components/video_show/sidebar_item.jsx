@@ -15,7 +15,7 @@ export default class SidebarItem extends React.Component {
 
         <Link to={linkPath}>
           <img className="sidebar-item-thumbnail"
-            src={video.thumbnail_url}
+            src={video.side_thumbnail_url}
             width={132}
             height={75} />
         </Link>
