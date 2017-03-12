@@ -1,5 +1,8 @@
 json.extract! user, :id, :username
 json.avatar_url asset_path(user.avatar.url)
+json.nav_avatar_url asset_path(user.avatar(:nav))
+json.item_avatar_url asset_path(user.avatar(:video_item))
+json.comment_avatar_url asset_path(user.avatar(:comment))
 
 json.set! :videos do
   json.array! user.videos do |video|

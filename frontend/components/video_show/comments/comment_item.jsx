@@ -104,7 +104,7 @@ export default class CommentItem extends React.Component{
   }
 
   renderTimeAgo(){
-    debugger
+
     if(this.props.comment.comment_date){
       return(<TimeAgo className="comment-item-timeago" date={this.props.comment.comment_date} />);
     } else {
@@ -118,7 +118,7 @@ export default class CommentItem extends React.Component{
     return(
       <div className="comment-item" onMouseOver={this.showCommentSettings} onMouseOut={this.hideCommentSettings}>
         {this.renderCommentSettings()}
-        <img className="commentor-avatar" src={comment.author.avatar_url}/>
+        <img className="commentor-avatar" src={comment.author.comment_avatar_url}/>
         <div className="comment-body">
           <Link to={`/users/${comment.author.id}`} className="comment-author">{comment.author.username}</Link>
           {this.renderTimeAgo()}

@@ -24,7 +24,7 @@ export default class Navbar extends React.Component {
             <SearchBarContainer />
 
             <li className="nav-dropper">
-              <img className="nav-avatar" src={currentUser.avatar_url} />
+              <img className="nav-avatar" src={currentUser.nav_avatar_url} />
               <ul id="nav-dropdown" >
                 <li>
                   <Link to={`/users/${currentUser.id}`}>

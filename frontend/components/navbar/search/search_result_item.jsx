@@ -22,7 +22,7 @@ export default class SearchResultItem extends React.Component{
 
           <div className="index-uploader-info">
             <Link to={`/users/${video.user.id}`}>
-              <img className="index-uploader-avatar" src={video.user.avatar_url} />
+              <img className="index-uploader-avatar" src={video.user.item_avatar_url} />
               <span className="index-item-uploader">{video.user.username}</span>
             </Link>
             <span className="index-item-views">{video.views.toLocaleString()} plays</span>

@@ -11,7 +11,7 @@ export default class UserVideoItem extends React.Component{
       if(typeof video === "undefined"){
         return null;
       }
-      
+
       const linkPath = `/videos/${video.id}`
       return(
         <div className="user-item-container">
@@ -26,7 +26,7 @@ export default class UserVideoItem extends React.Component{
 
           <div className="index-uploader-info">
             <Link to={`/users/${this.props.profile.id}`}>
-              <img className="index-uploader-avatar" src={this.props.profile.avatar_url} />
+              <img className="index-uploader-avatar" src={this.props.profile.item_avatar_url} />
               <span className="index-item-uploader">{this.props.profile.username}</span>
             </Link>
             <span className="index-item-views">{video.views.toLocaleString()} plays</span>

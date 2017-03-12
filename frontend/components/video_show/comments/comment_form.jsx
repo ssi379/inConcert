@@ -72,7 +72,7 @@ export default class CommentForm extends React.Component{
     return(
       <div className="comment-form">
         <div className="current-commentor-info">
-          <img className="current-commentor-avatar" src={this.props.currentUser.avatar_url} />
+          <img className="current-commentor-avatar" src={this.props.currentUser.comment_avatar_url} />
         </div>
 
         <form onSubmit={this.handleSubmit}>

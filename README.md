@@ -2,7 +2,7 @@
 
 [inConcert Live] [live]
 
-[live]: http://liveinconcert.co
+[live]: http://www.liveinconcert.co
 
 <img src="./screenshots/home_animated.gif" alt="home-page"/>
 
