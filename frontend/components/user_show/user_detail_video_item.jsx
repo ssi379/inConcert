@@ -14,12 +14,12 @@ export default class UserDetailVideoItem extends React.Component{
       }
 
       const linkPath = `/videos/${video.id}`
-      
+
       return(
         <div className="user-detail-item-container">
 
           <div className="video-index-item-thumbnail">
-            <Link to={linkPath}><img src={video.user_detail_thumbnail_url} width={305} height={176} /></Link>
+            <Link to={linkPath}><img src={video.user_detail_thumbnail_url} /></Link>
           </div>
 
           <div>

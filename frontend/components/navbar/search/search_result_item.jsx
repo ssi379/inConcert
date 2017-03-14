@@ -13,7 +13,7 @@ export default class SearchResultItem extends React.Component{
         <div className="search-result-item-container">
 
           <div className="video-index-item-thumbnail">
-            <Link to={linkPath}><img src={video.thumbnail_url} width={320} height={180} /></Link>
+            <Link to={linkPath}><img src={video.search_thumbnail_url} /></Link>
           </div>
 
           <div>

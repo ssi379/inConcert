@@ -14,7 +14,7 @@ export default class VideoIndexItem extends React.Component{
       <div className="video-index-item-container">
 
         <div className="video-index-item-thumbnail">
-          <Link to={linkPath}><img src={video.home_index_thumbnail_url} width={217} height={122} /></Link>
+          <Link to={linkPath}><img src={video.home_index_thumbnail_url} /></Link>
         </div>
 
         <div>

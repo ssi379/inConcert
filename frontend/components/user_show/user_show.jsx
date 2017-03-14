@@ -68,7 +68,7 @@ export default class UserShow extends React.Component{
             <Link className="profile-nav-link" to={`/users/${profile.id}/likes`}>Likes</Link>
           </ul>
         </div>
-        <img className="avatar-show" src={profile.avatar_url} width={150} height={150}/>
+        <img className="avatar-show" src={profile.avatar_url}/>
 
         <div className="user-headline">
           <h1 className="username-show">{profile.username}</h1>
