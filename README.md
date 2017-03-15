@@ -1,6 +1,6 @@
 # inConcert
 
-[Live] [live]
+[Live]
 
 [live]: http://www.liveinconcert.co
 
