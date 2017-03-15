@@ -8,6 +8,7 @@
   font-family: inherit;
   top: 0px;
   position: relative;
+  transition: 0.2s;
 }
 
 @mixin ui-button-disabled{

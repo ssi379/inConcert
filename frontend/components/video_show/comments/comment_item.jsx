@@ -89,7 +89,7 @@ export default class CommentItem extends React.Component{
   renderDeleteModal(){
     if(this.state.deleteModal){
       return(
-        <div className="delete-comment-confirm">
+        <div className="delete-comment-confirm-container">
           <div className="delete-notification">
             <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
             <p>Are you sure you want delete this comment permanently?</p>
