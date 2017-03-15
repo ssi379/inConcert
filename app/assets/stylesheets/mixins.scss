@@ -22,6 +22,20 @@
   transition: 0.2s;
 }
 
+@mixin session-form-button{
+  color: #fff;
+  padding: .5625em .875em .65em;
+  width: 350px;
+  position: relative;
+  left: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
 @mixin link-hover-black {
   &:hover{
     color: #000;
