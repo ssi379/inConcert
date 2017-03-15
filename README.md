@@ -1,6 +1,8 @@
 # inConcert
 
-<a href="www.liveinconcert.co">live</a>
+[inConcert Live] [live]
+
+[live]: http://www.liveinconcert.co
 
 <img src="./screenshots/home_animated.gif" alt="home-page"/>
 
