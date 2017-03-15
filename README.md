@@ -1,8 +1,6 @@
 # inConcert
 
-[inConcert Live] [live]
-
-[live]: http://www.liveinconcert.co
+<a href="www.liveinconcert.co">live</a>
 
 <img src="./screenshots/home_animated.gif" alt="home-page"/>
 
