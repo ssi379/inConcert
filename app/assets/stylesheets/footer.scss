@@ -16,18 +16,9 @@
 .footer-links{
   float: left;
   margin-left: 100px;
-}
-
-.footer-links > li{
-  float: left;
-  margin-right: 40px;
-  font-weight: 300;
-}
-
-#site-footer > span{
-  float: right;
-  font-weight: 200;
-  margin-top: -15px;
-  margin-right: 60px;
-  font-size: 12px;
+  li{
+    float: left;
+    margin-right: 40px;
+    font-weight: 300;
+  }
 }
