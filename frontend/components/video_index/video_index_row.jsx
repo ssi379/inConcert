@@ -12,7 +12,7 @@ export default class VideoIndexRow  extends React.Component{
   handleCarousel(){
     setTimeout(() => {
       window.dispatchEvent(new Event('resize'));
-    }, 0);
+    }, 1000);
   }
 
   renderVideoIndexItems(){
@@ -24,7 +24,7 @@ export default class VideoIndexRow  extends React.Component{
   }
 
   render(){
-    
+
     return (
     <div className="carousel-container">
       <div className="carousel">

@@ -14,7 +14,6 @@ export default class VideoIndex extends React.Component {
       windowWidth: window.innerWidth
     };
     this.handleResize = this.handleResize.bind(this);
-    // $('.video-index').width("1020px");
   }
 
   componentDidMount(){
