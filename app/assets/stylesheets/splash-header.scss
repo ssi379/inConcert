@@ -13,12 +13,16 @@
   text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
 }
 
-@media(min-width: 1650px){
+@media(max-width: 1024px){
   .splash-header{
-    left: 31%;
+    left: 17%;
   }
 }
-
+@media(min-width: 1650px){
+  .splash-header{
+    left: 32%;
+  }
+}
 .splash-header-main{
   font-size: 72px;
 }
@@ -45,5 +49,5 @@
 
 .splash-logo{
   width: 50%;
-  left: 21%;
+  left: 23%;
 }

@@ -14,6 +14,7 @@ export default class VideoIndex extends React.Component {
       windowWidth: window.innerWidth
     };
     this.handleResize = this.handleResize.bind(this);
+    // $('.video-index').width("1020px");
   }
 
   componentDidMount(){
@@ -34,7 +35,7 @@ export default class VideoIndex extends React.Component {
      $('.video-index').width("1800px");
      this.setState({ count: 6 });
    } else if(width < 1625 && width > 1282 && count !== 5){
-     $('.video-index').width("1625px")
+     $('.video-index').width("1625px");
      this.setState({ count: 5 })
    } else if(width < 1281 && width > 1040 && count !== 4){
      $('.video-index').width("1300px");
