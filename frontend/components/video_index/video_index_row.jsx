@@ -15,7 +15,7 @@ export default class VideoIndexRow  extends React.Component{
     }, 1000);
     setTimeout(() => {
       window.dispatchEvent(new Event('resize'));
-    }, 5000);
+    }, 10000);
   }
 
   renderVideoIndexItems(){
