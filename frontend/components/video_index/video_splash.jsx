@@ -12,7 +12,7 @@ const VideoSplash = () => (
         <button className="start-watching" onClick={() => {scroll.scrollTo(790, 0)}}>Start watching</button>
       </div>
       <video id="splash-video" className="video-js vjs-default-skin" autoPlay loop>
-        <source src="https://s3.amazonaws.com/seed-middle/concert_cut.mp4" type="video/mp4" />
+        <source src="https://s3.amazonaws.com/seed-middle/concert_cut.webm" type="video/mp4" />
       </video>
 
   </div>
@@ -20,5 +20,3 @@ const VideoSplash = () => (
 );
 
 export default VideoSplash;
-
-// <i className="fa fa-chevron-down" aria-hidden="true" />
