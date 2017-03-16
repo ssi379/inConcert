@@ -1,26 +1,19 @@
-.user-video-detail{
-
-}
-
 .detail-header{
   color: #456;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
-  text-rendering: optimizeLegibility;
   padding-left: 0;
   margin-top: 20px;
   position: relative;
   left: 15%;
-}
-
-.detail-header > a{
-  color: #123;
-}
-
-.detail-header > a:hover{
-  color: #4bf;
-  transition: 0.1s;
+  >a{
+    color: #123;
+    &:hover{
+      color: #4bf;
+      transition: 0.1s;
+    }
+  }
 }
 
 .user-video-detail-container{
@@ -38,9 +31,10 @@
 .user-detail-item-container{
   width: 50%;
   margin-top: 20px;
-}
-
-.user-detail-item-container:hover .user-video-item-title{
-  color: #4bf;
-  transition: 0.2s;
+  &:hover{
+    .user-video-item-title{
+      color: #4bf;
+      transition: 0.2s;
+    }
+  }
 }

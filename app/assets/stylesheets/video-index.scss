@@ -1,3 +1,5 @@
+@import "mixins";
+
 .video-index{
   margin-left: -23px;
 }
@@ -40,11 +42,6 @@
   flex-direction: row;
 }
 
-.video-index-item-container{
-}
-
-
-
 .video-index-item-title{
   display: block;
   color: #3A5161;
@@ -62,10 +59,6 @@
 }
 
 
-.index-uploader-info > a{
-  text-decoration: none;
-}
-
 .index-uploader-avatar{
   position: relative;
   width: 16px;
@@ -81,11 +74,7 @@
   color: #879CAB;
   margin-bottom: 2px;
   vertical-align: middle;
-}
-.index-item-uploader:hover{
-  text-decoration: none;
-  color: #000;
-  transition: 0.2s;
+  @include link-hover-black;
 }
 
 .index-item-views{
@@ -105,11 +94,6 @@
   left: 5%;
 }
 
-
-.video-carousel{
-
-}
-
 .left-button{
   position: relative;
   right: 40px;
@@ -120,15 +104,7 @@
   border: none;
   background-color: white;
   color: #657987;
-}
-
-.left-button:hover{
-  color: #000;
-  transition: 0.2s;
-}
-
-.left-button:focus{
-  outline: none;
+  @include link-hover-black;
 }
 
 .right-button{
@@ -141,13 +117,5 @@
   border: none;
   background: none;
   color: #657987;
-}
-
-.right-button:hover{
-  color: #000;
-  transition: 0.2s;
-}
-
-.right-button:focus{
-  outline: none;
+  @include link-hover-black;
 }

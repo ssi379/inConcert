@@ -24,7 +24,7 @@ class App extends React.Component{
         {this.determineSplash()}
         { this.props.children }
 
-
+        <div className="push"></div>
         <Footer />
       </div>
     )
