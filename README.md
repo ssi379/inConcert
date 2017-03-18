@@ -168,6 +168,7 @@ Users can like a video. The like instance is then stored in the database with an
 Users can search a video by title by using the search bar in the navigation bar. A search API call is made upon submitting the query. Once the query hits the controller, the query parameters are passed into a SQL query that checks for videos with a title or description containing any one of the query strings passed in. Search results are then rendered as video items with their thumbnail, title, views.
 
 <img src="./screenshots/search.png" alt="Drawing" style="width: 500px;"/>
+
 ```ruby
 video.rb
 
