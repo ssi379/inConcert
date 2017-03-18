@@ -52,7 +52,7 @@ end
   <img src="./screenshots/video-upload.png" alt="Video Upload" style="width: 500px;"/>
 
   <img src="./screenshots/video-edit.png" alt="Video Update" style="width: 500px;"/>
-  
+
   ```javascript
   video_form.jsx
 
@@ -168,7 +168,7 @@ Users can like a video. The like instance is then stored in the database with an
 
 Users can search a video by title by using the search bar in the navigation bar. A search API call is made upon submitting the query. Once the query hits the controller, the query parameters are passed into a SQL query that checks for videos with a title or description containing any one of the query strings passed in. Search results are then rendered as video items with their thumbnail, title, views.
 
-<img src="./screenshots/search.png" alt="Drawing" style="width: 500px;"/>
+<img src="./screenshots/search.png" alt="search-page" style="width: 500px;"/>
 
 ```ruby
 video.rb
@@ -242,7 +242,7 @@ end
 
 
 Home Index:
-<img src="./screenshots/home-index.png" alt="Drawing" style="width: 500px;"/>
+<img src="./screenshots/home-index.png" alt="home-index" style="width: 500px;"/>
 
 Video show page:
-<img src="./screenshots/video-show.png" alt="Drawing" style="width: 500px;"/>
+<img src="./screenshots/video-show.png" alt="video-show" style="width: 500px;"/>
