@@ -16,6 +16,7 @@ inConcert is a web application inspired by Vimeo, with a musical twist, built us
 A demo account is provided to those who want to test inConcert's features without signing up for a new account. Users are stored in a database table containing their `id`, `username`, `password_digest`, `avatar` and `session_token`. User avatars are stored on AWS and attached to the User model via Paperclip. Users can visit their profile to see an index of videos that they either uploaded or liked by utilizing the `videos` and `liked_videos` database associations written on the User model. Jbuilder views allows us to carry this curated data over to the front-end.
 
 <img src="./screenshots/user-show.png" alt="user-show" style="width: 500px;"/>
+
 ```ruby
 _user.json.jbuilder
 
@@ -51,6 +52,7 @@ end
   <img src="./screenshots/video-upload.png" alt="Video Upload" style="width: 500px;"/>
 
   <img src="./screenshots/video-edit.png" alt="Video Update" style="width: 500px;"/>
+
   ```javascript
   video_form.jsx
 
@@ -83,6 +85,7 @@ end
   ```
 
   Users are re-directed to their new video's show page, where other users can like or comment the video and the view count increments by 1 with each visit. Videos are streamed using the `npm` package `ReactPlayer`. Uploaders also have the option to edit their video's title and description or delete the video entirely through the video's edit form. Uploads and updates are handled by the same function:
+
   ```javascript
   export const processVideoForm = (formData, id = "") => {
     let url;
@@ -116,6 +119,7 @@ Comment Edit form:
 
 Comment Delete:
 ![comment delete](./screenshots/comment-delete.png)
+
 ```javascript
 comment_form.jsx
 
@@ -137,7 +141,7 @@ renderSubmit(){
   }
 }
 ```
-<h5>Comment Settings</h5>
+
 ```javascript
 comment_item.jsx
 
