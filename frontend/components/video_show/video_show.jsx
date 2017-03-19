@@ -80,15 +80,17 @@ export default class VideoShow extends React.Component{
           )
         }
     } else {
-      return(null)
+      return(null);
     }
   }
 
   handleLike(event){
     event.preventDefault();
+
     const like = {};
     like.video_id = this.props.video.id;
     like.user_id = this.props.currentUser.id
+
     this.setState({ liking: true });
     this.props.createLike(like).then(() => {
       this.setState({ liking: false });
