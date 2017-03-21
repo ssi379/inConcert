@@ -51,3 +51,56 @@
   width: 50%;
   left: 23%;
 }
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#left1{
+  top: -40px;
+  left: -13px;
+  animation: fadein 2s;
+}
+
+#left2{
+  top: -24px;
+  left: -4px;
+  animation: fadein 3s;
+}
+
+#left3{
+  top: -9px;
+  left: 9px;
+  animation: fadein 4.5s;
+}
+
+#left4{
+  top: 5px;
+  left: 34px;
+  animation: fadein 5s;
+}
+
+#right1{
+  top: -40px;
+  right: 1px;
+  animation: fadein 2s;
+}
+
+#right2{
+  top: -25px;
+  right: 10px;
+  animation: fadein 3s;
+}
+
+#right3{
+  top: -8px;
+  right: 19px;
+  animation: fadein 4.5s;
+}
+
+#right4{
+  top: 6px;
+  right: 36px;
+  animation: fadein 5s;
+}

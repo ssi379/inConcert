@@ -109,6 +109,7 @@ end
   }
   ```
 
+
 ### Commenting on videos
 
 Users can submit comments to videos and then have the option to edit and delete their comments. Comments are stored in a database table with their `id`, `body`, `video_id`, and `user_id`. Custom front-end validations ensure users cannot submit blank comments and can only edit and delete their own comments.

@@ -66,6 +66,9 @@
     background-color: #45A600;
     transition: 0.2s;
   }
+  &:focus{
+    outline: none;
+  }
 }
 
 .submit-guest{
@@ -75,6 +78,9 @@
   &:hover{
     background-color: #3b5998;
     transition: 0.2s;
+  }
+  &:focus{
+    outline: none;
   }
 }
 
