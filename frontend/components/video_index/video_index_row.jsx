@@ -19,11 +19,15 @@ export default class VideoIndexRow  extends React.Component{
   }
 
   renderVideoIndexItems(){
-    if(typeof this.props.videos === "undefined"){ return (<Halogen.PulseLoader color={"#4bf"} className="spinner"/>) }
+    const { videos } = this.props;
 
-    return this.props.videos.map((video, idx) => {
+    if(typeof videos === "undefined"){
+      return (<Halogen.PulseLoader color={"#4bf"} className="spinner"/>);
+    }
+
+    return videos.map((video, idx) => {
       return <VideoIndexItem video={video} key={idx}/>
-    })
+    });
   }
 
   render(){
@@ -31,9 +35,9 @@ export default class VideoIndexRow  extends React.Component{
     return (
     <div className="carousel-container">
       <div className="carousel">
-         <Carousel count={this.props.count} onLoad={this.handleCarousel()} videos={ this.renderVideoIndexItems() }/>
+         <Carousel count={this.props.count} onLoad={this.handleCarousel()} videos={this.renderVideoIndexItems()}/>
        </div>
     </div>
-    )
+    );
   }
 }

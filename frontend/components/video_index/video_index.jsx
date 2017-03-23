@@ -35,7 +35,7 @@ export default class VideoIndex extends React.Component {
      this.setState({ count: 6 });
    } else if(width < 1625 && width > 1282 && count !== 5){
      $('.video-index').width("1625px");
-     this.setState({ count: 5 })
+     this.setState({ count: 5 });
    } else if(width < 1281 && width > 1040 && count !== 4){
      $('.video-index').width("1300px");
      this.setState({ count: 4 });
@@ -85,6 +85,6 @@ export default class VideoIndex extends React.Component {
           <VideoIndexRow count={this.state.count} videos={this.setViewsRow()} />
         </div>
       </div>
-    )
+    );
   }
 }

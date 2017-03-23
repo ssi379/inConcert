@@ -9,7 +9,7 @@ export default class VideoIndexItem extends React.Component{
 
   render(){
     const { video } =  this.props;
-    const linkPath = `/videos/${video.id}`
+    const linkPath = `/videos/${video.id}`;
     return(
       <div className="video-index-item-container">
 
@@ -29,6 +29,6 @@ export default class VideoIndexItem extends React.Component{
           <span className="index-item-views">{video.views.toLocaleString()} plays</span>
         </div>
       </div>
-    )
+    );
   }
 }

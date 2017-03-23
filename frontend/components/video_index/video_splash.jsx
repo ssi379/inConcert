@@ -15,7 +15,6 @@ const VideoSplash = () => (
       <video id="splash-video" className="video-js vjs-default-skin" autoPlay loop>
         <source src="https://s3.amazonaws.com/seed-middle/concert_cut_v2.mp4" type="video/mp4" />
       </video>
-
   </div>
 
 );
