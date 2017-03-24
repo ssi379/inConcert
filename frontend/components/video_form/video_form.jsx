@@ -85,6 +85,7 @@ export default class VideoForm extends React.Component{
     e.preventDefault();
     const { processVideoForm } = this.props;
     const { title, description, user_id, videoFile, thumbUrl  } = this.state
+
     let formData = new FormData();
     formData.append("video[title]", title);
     formData.append("video[description]", description);
@@ -134,7 +135,9 @@ export default class VideoForm extends React.Component{
   onDrop(files){
     $('.dropzone-video-upload').css("background-color", "white")
     this.extractFrame(files);
-    this.updateFile(files[0]);
+    if(files[0]/1024/1024 < 1000){
+      this.updateFile(files[0]);
+    }
   }
 
 
@@ -171,9 +174,6 @@ export default class VideoForm extends React.Component{
     video.src = URL.createObjectURL(files[0]);
     video.src += "#t=15";
   }
-
-
-
 
   renderUploadThumbnail(){
     if(this.state.thumbUrl === null){

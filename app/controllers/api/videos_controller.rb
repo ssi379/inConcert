@@ -3,7 +3,13 @@ class Api::VideosController < ApplicationController
   def create
     @video = Video.new(video_params)
 
-    if @video.save
+    error_hash = {}
+    error_hash["title"] = ["can't be blank"] if video_params["title"] == ""
+    error_hash["description"] = ["can't be blank"] if video_params["description"] == ""
+
+    if(error_hash.keys.length > 0)
+      render json: error_hash, status: 422
+    elsif @video.save
       render :show
     else
       render json: @video.errors, status: 422
