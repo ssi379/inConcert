@@ -112,25 +112,69 @@ export default class CommentItem extends React.Component{
     }
   }
 
+  renderReplies(){
+    const { updateComment, deleteComment } = this.props;
+
+    if(this.props.replies){
+      return this.props.replies.map((reply, idx) => {
+        return <CommentItem key={`${this.props.comment.id}-${idx}`}
+          comment={reply}
+          type="Comment"
+          replies={null}
+          currentUser={this.props.currentUser}
+          updateComment={this.props.updateComment}
+          deleteComment={this.props.deleteComment}
+          clearErrors={this.props.clearErrors}
+          toggleCommentEdit={this.props.toggleCommentEdit}
+          commentEditForm={this.props.commentEditForm}
+          errors={this.props.errors}/>
+      })
+    } else {
+      return null;
+    }
+  }
+
   render(){
 
-    const { comment } = this.props;
-    return(
-      <div className="comment-item" onMouseOver={this.showCommentSettings} onMouseOut={this.hideCommentSettings}>
-        {this.renderCommentSettings()}
-        <img className="commentor-avatar" src={comment.author.comment_avatar_url}/>
-        <div className="comment-body">
-          <Link to={`/users/${comment.author.id}`} className="comment-author">{comment.author.username}</Link>
-          {this.renderTimeAgo()}
-          {this.renderEditModal()}
+    const { comment, type } = this.props;
+
+    if(type === "Video"){
+      return(
+        <div className="comment-item" onMouseOver={this.showCommentSettings} onMouseOut={this.hideCommentSettings}>
+          {this.renderCommentSettings()}
+          <img className="commentor-avatar" src={comment.author.comment_avatar_url}/>
+          <div className="comment-body">
+            <Link to={`/users/${comment.author.id}`} className="comment-author">{comment.author.username}</Link>
+            {this.renderTimeAgo()}
+            {this.renderEditModal()}
 
 
 
-          <br />
-          {this.renderDeleteModal()}
+            <br />
+            {this.renderDeleteModal()}
+          </div>
+          <div className="comment-replies">
+            {this.renderReplies()}
+          </div>
         </div>
+      )
+    } else if(type === "Comment"){
+      return(
+        <div className="reply-item" onMouseOver={this.showCommentSettings} onMouseOut={this.hideCommentSettings}>
+          {this.renderCommentSettings()}
+          <img className="reply-avatar" src={comment.author.comment_avatar_url}/>
+          <div className="reply-body">
+            <Link to={`/users/${comment.author.id}`} className="reply-author">{comment.author.username}</Link>
+            {this.renderTimeAgo()}
+            {this.renderEditModal()}
 
-      </div>
-    )
+
+
+            <br />
+            {this.renderDeleteModal()}
+          </div>
+        </div>
+      )
+    }
   }
 }
