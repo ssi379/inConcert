@@ -47,7 +47,8 @@ export default class CommentForm extends React.Component{
     event.preventDefault();
     const comment = Object.assign({}, this.state);
     comment.user_id = this.props.currentUser.id;
-    comment.video_id = this.props.video.id;
+    comment.commentable_id = this.props.video.id;
+    comment.commentable_type = "Video";
     this.props.createComment(comment).then(() => {
       this.setState({body: ""})
     });
