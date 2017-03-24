@@ -32,6 +32,37 @@
   overflow-wrap: break-word;
 }
 
+.comment-replies{
+
+}
+
+.reply-item{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-left: -35px;
+  margin-bottom: 1.875rem;
+}
+
+.reply-body{
+  background: #F6F7F8;
+  padding: .9375rem;
+  height: 45px;
+  width: 738px;
+  max-width: 768px;
+}
+
+.reply-avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  margin-right: .625rem;
+}
+
+.reply-author{
+  font-weight: 700;
+}
+
 .comment-item-timeago{
   display: inline;
   font-size: 13px;
@@ -45,6 +76,7 @@
   right: .625rem;
   display: flex;
   flex-direction: row;
+  z-index: 999;
 }
 
 .comment-settings-item{

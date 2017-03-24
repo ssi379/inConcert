@@ -116,19 +116,24 @@ export default class CommentItem extends React.Component{
     const { updateComment, deleteComment } = this.props;
 
     if(this.props.replies){
-      return this.props.replies.map((reply, idx) => {
-        return <CommentItem key={`${this.props.comment.id}-${idx}`}
-          comment={reply}
-          type="Comment"
-          replies={null}
-          currentUser={this.props.currentUser}
-          updateComment={this.props.updateComment}
-          deleteComment={this.props.deleteComment}
-          clearErrors={this.props.clearErrors}
-          toggleCommentEdit={this.props.toggleCommentEdit}
-          commentEditForm={this.props.commentEditForm}
-          errors={this.props.errors}/>
-      })
+      return (
+        <div className="comment-replies">
+          {this.props.replies.map((reply, idx) => {
+            return <CommentItem key={`${this.props.comment.id}-${idx}`}
+              comment={reply}
+              type="Comment"
+              replies={null}
+              currentUser={this.props.currentUser}
+              updateComment={this.props.updateComment}
+              deleteComment={this.props.deleteComment}
+              clearErrors={this.props.clearErrors}
+              toggleCommentEdit={this.props.toggleCommentEdit}
+              commentEditForm={this.props.commentEditForm}
+              errors={this.props.errors}/>
+          })
+        }
+
+      </div>);
     } else {
       return null;
     }
@@ -148,22 +153,20 @@ export default class CommentItem extends React.Component{
             {this.renderTimeAgo()}
             {this.renderEditModal()}
 
-
-
             <br />
             {this.renderDeleteModal()}
-          </div>
-          <div className="comment-replies">
             {this.renderReplies()}
           </div>
+
+
         </div>
       )
     } else if(type === "Comment"){
       return(
         <div className="reply-item" onMouseOver={this.showCommentSettings} onMouseOut={this.hideCommentSettings}>
-          {this.renderCommentSettings()}
           <img className="reply-avatar" src={comment.author.comment_avatar_url}/>
           <div className="reply-body">
+            {this.renderCommentSettings()}
             <Link to={`/users/${comment.author.id}`} className="reply-author">{comment.author.username}</Link>
             {this.renderTimeAgo()}
             {this.renderEditModal()}
