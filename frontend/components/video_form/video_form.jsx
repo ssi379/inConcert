@@ -134,8 +134,8 @@ export default class VideoForm extends React.Component{
 
   onDrop(files){
     $('.dropzone-video-upload').css("background-color", "white")
-    this.extractFrame(files);
-    if(files[0]/1024/1024 < 1000){
+    if(files[0].size/1024/1024 < 500){
+      this.extractFrame(files);
       this.updateFile(files[0]);
     }
   }

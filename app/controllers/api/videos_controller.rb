@@ -4,6 +4,12 @@ class Api::VideosController < ApplicationController
     @video = Video.new(video_params)
 
     error_hash = {}
+
+    if(video_params["videoitem"])
+      video_size = FFMPEG::Movie.new(video_params["videoitem"].tempfile.path).size
+      error_hash["File"] = ["too large"] if video_size.fdiv(1000).fdiv(1000) > 500
+    end
+
     error_hash["title"] = ["can't be blank"] if video_params["title"] == ""
     error_hash["description"] = ["can't be blank"] if video_params["description"] == ""
 
