@@ -13,7 +13,8 @@ export default class VideoForm extends React.Component{
       videoUrl: null,
       thumbUrl: null,
       user_id: this.props.currentUser.id,
-      uploading: false
+      uploading: false,
+      fileTooLarge: false
     }
 
     this.updateFile = this.updateFile.bind(this);
@@ -137,6 +138,9 @@ export default class VideoForm extends React.Component{
     if(files[0].size/1024/1024 < 500){
       this.extractFrame(files);
       this.updateFile(files[0]);
+      this.setState({ fileTooLarge: false });
+    } else {
+      this.setState({ fileTooLarge: true });
     }
   }
 
@@ -190,7 +194,7 @@ export default class VideoForm extends React.Component{
               <div className="placeholder">
                 <h1 className="dropzone-text">Drag video file here to upload</h1>
               </div>
-
+              {this.renderFileSizeInstruction()}
             </div>
           </Dropzone>
         </div>
@@ -199,6 +203,18 @@ export default class VideoForm extends React.Component{
       return(
         <img id="dropzone-preview"src={this.state.thumbUrl} />
       )
+    }
+  }
+
+  renderFileSizeInstruction(){
+    if(this.state.fileTooLarge){
+      return (<div className="file-size-instruction">
+        <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
+        File greater than 500 MB! Try again.
+      </div>
+    );
+    } else {
+      return <div className="file-size-instruction">Maximum file size: 500 MB</div>
     }
   }
 
