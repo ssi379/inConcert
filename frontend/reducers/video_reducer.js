@@ -26,9 +26,26 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
       newState.currentVideo.comments.push(action.comment);
       return newState;
     case UPDATE_COMMENT:
-      let commentToReplace= $.grep(newState.currentVideo.comments, function(e){ return e.id === action.comment.id; })[0];
-      let commentToReplaceIdx = newState.currentVideo.comments.indexOf(commentToReplace);
-      newState.currentVideo.comments[commentToReplaceIdx] = action.comment;
+      if(action.comment.commentable_type === "Comment"){
+        let parentComment = newState.currentVideo.comments.find((obj) => {
+          return obj.id === action.comment.commentable_id
+        });
+
+        let replyToReplace = parentComment.replies.find((obj) => {
+          return obj.id === action.comment.id;
+        });
+
+        let replyToReplaceIdx = parentComment.replies.indexOf(replyToReplace);
+        parentComment.replies[replyToReplaceIdx] = action.comment;
+      } else {
+        let commentToReplace = newState.currentVideo.comments.find((obj) => {
+          return obj.id === action.comment.id
+        });
+        let commentToReplaceIdx = newState.currentVideo.comments.indexOf(commentToReplace);
+        debugger
+        newState.currentVideo.comments[commentToReplaceIdx] = action.comment;
+        // newState.currentVideo.comments[commentToReplaceIdx].replies = action.comment.comments
+      }
       return newState;
     case REMOVE_COMMENT:
       let commentToRemove = newState.currentVideo.comments.find((obj) => {

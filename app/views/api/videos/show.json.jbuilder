@@ -22,7 +22,7 @@ json.set! :comments do
         json.comment_date reply.created_at.to_time
 
         json.set! :author do
-          json.partial! './api/users/user', { user: comment.user }
+          json.partial! './api/users/user', { user: reply.user }
         end
 
       end

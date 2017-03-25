@@ -1,6 +1,7 @@
 @mixin ui-button {
   line-height: 32px;
   white-space: nowrap;
+  cursor: pointer;
   border-radius: 5px;
   color: #fff;
   border: none;

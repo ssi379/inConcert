@@ -22,9 +22,10 @@ export default class CommentItem extends React.Component{
   }
 
   renderCommentSettings(){
+    let settingsClassName = this.props.type === "Video" ? "parent-settings" : "reply-settings";
     if(this.state.commentSettings){
       return(
-        <div className="update-delete-settings">
+        <div className={`update-delete-settings ${settingsClassName}`}>
           <span className="comment-settings-item" id="edit-comment" onClick={this.toggleForm}>Edit</span>
           <span className="comment-settings-item" id="delete-comment" onClick={this.triggerDeleteModal}>Delete</span>
         </div>
