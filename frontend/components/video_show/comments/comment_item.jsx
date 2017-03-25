@@ -22,12 +22,13 @@ export default class CommentItem extends React.Component{
   }
 
   renderCommentSettings(){
-    let settingsClassName = this.props.type === "Video" ? "parent-settings" : "reply-settings";
+    let containerClassName = this.props.type === "Video" ? "parent-settings" : "reply-settings";
+    let settingsClassName = this.props.type === "Video" ? "comment-settings-item" : "reply-settings-item";
     if(this.state.commentSettings){
       return(
-        <div className={`update-delete-settings ${settingsClassName}`}>
-          <span className="comment-settings-item" id="edit-comment" onClick={this.toggleForm}>Edit</span>
-          <span className="comment-settings-item" id="delete-comment" onClick={this.triggerDeleteModal}>Delete</span>
+        <div className={`update-delete-settings ${containerClassName}`}>
+          <span className={settingsClassName} id="edit-comment" onClick={this.toggleForm}>Edit</span>
+          <span className={settingsClassName} id="delete-comment" onClick={this.triggerDeleteModal}>Delete</span>
         </div>
       )
     } else {
@@ -37,15 +38,30 @@ export default class CommentItem extends React.Component{
 
   showCommentSettings(event){
     if(this.props.currentUser){
+      let matchTarget = this.props.type === "Video" ? "reply" : "comment"
       if(this.props.currentUser.id === this.props.comment.user_id){
-        this.setState( {commentSettings: true } )
+        if(this.props.type === "Comment"){
+          this.setState( {commentSettings: true } )
+        } else if(!event.target.className.includes("reply") && !event.target.parentElement.className.includes("reply")){
+          debugger
+          this.setState( {commentSettings: true } );
+        }
       }
     }
   }
 
   hideCommentSettings(event){
     if(event.relatedTarget){
-      if(event.relatedTarget.className !== "comment-settings-item"){
+      let matchTarget = this.props.type === "Video" ? "comment" : "reply";
+      let oppositeTarget = matchTarget === "comment" ? "reply" : "comment";
+      debugger
+      if(event.relatedTarget.className !== "comment-settings-item"
+          && event.relatedTarget.className !== "reply-settings-item"
+          && !event.relatedTarget.className.includes("ui-button")){
+        this.setState( { commentSettings: false } )
+      }
+
+      if(this.props.type === "Video" && event.currentTarget.className.includes("reply")){
         this.setState( { commentSettings: false } )
       }
     }
@@ -58,14 +74,15 @@ export default class CommentItem extends React.Component{
   }
 
   renderEditModal(){
-    const { comment, updateComment, commentEditForm, toggleCommentEdit } = this.props;
+    const { comment, updateComment, commentEditForm, toggleCommentEdit, type } = this.props;
+    let bodyClass = type === "Video" ? "comment-body" : "reply-body";
     if(this.state.form){
       return(
-        <CommentEdit comment={comment} updateComment={updateComment} toggleForm={this.toggleForm} />
+        <CommentEdit comment={comment} updateComment={updateComment} toggleForm={this.toggleForm} type={type} />
       )
     } else {
       return(
-        <p className="comment-body">{comment.body}</p>
+        <p className={bodyClass}>{comment.body}</p>
       )
     }
   }
@@ -166,7 +183,7 @@ export default class CommentItem extends React.Component{
       return(
         <div className="reply-item" onMouseOver={this.showCommentSettings} onMouseOut={this.hideCommentSettings}>
           <img className="reply-avatar" src={comment.author.comment_avatar_url}/>
-          <div className="reply-body">
+          <div className="reply-body-container">
             {this.renderCommentSettings()}
             <Link to={`/users/${comment.author.id}`} className="reply-author">{comment.author.username}</Link>
             {this.renderTimeAgo()}

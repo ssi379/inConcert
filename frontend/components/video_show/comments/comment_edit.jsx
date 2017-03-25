@@ -11,17 +11,19 @@ export default class CommentEdit extends React.Component{
 
 
   renderSubmit(){
+    const editButtonClass = this.props.type === "Video" ? "comment" : "reply" ;
     if(this.state.body.length === 0 || this.state.body === this.props.comment.body){
       return (
-        <div>
-          <input type="submit" id="edit-comment-save-disabled" value="Edit Comment" disabled/>
+        <div className={`${editButtonClass}-button-container`}>
+          <input type="submit" className={`${editButtonClass}-ui-button edit-comment-save-disabled`} value="Edit Comment" disabled/>
           <br></br>
         </div>
       )
     } else {
+      // debugger
       return(
-        <div>
-          <input type="submit" id="edit-comment-save" value="Edit Comment"/>
+        <div className={`${editButtonClass}-button-container`}>
+          <input type="submit" className={`${editButtonClass}-ui-button edit-comment-save`} value="Edit Comment"/>
           <br></br>
         </div>
       )
@@ -42,16 +44,17 @@ export default class CommentEdit extends React.Component{
   }
 
   render(){
-
+    const editFormClass = this.props.type === "Video" ? "comment" : "reply" ;
     return(
-      <div className="comment-form">
+      <div className={`${editFormClass}-form`}>
 
-        <form onSubmit={this.handleSubmit}>
-          <textarea id="comment-form-body"
+        <form className={`${editFormClass}-form-container`} onSubmit={this.handleSubmit}>
+          <textarea className={`${editFormClass}-form-body`}
             onChange={this.handleInput}
             value={this.state.body}/>
 
           {this.renderSubmit()}
+
         </form>
       </div>
     )

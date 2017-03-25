@@ -37,6 +37,22 @@
   cursor: pointer;
 }
 
+@mixin settings-item-container{
+  padding: 0;
+  font-size: 11px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: 0 0;
+  vertical-align: middle;
+  &:first-child:after{
+    margin-right: .3125rem;
+    color: #D0D8DB;
+    content: ' | ';
+  }
+}
+
 @mixin link-hover-black {
   &:hover{
     color: #000;
