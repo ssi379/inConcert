@@ -38,8 +38,8 @@ class Video < ActiveRecord::Base
   validates :title, :description, :user_id, :views, :videoitem, :thumbnail, presence: true
 
   belongs_to :user
-  has_many :comments, :as => :commentable
-  has_many :likes
+  has_many :comments, :as => :commentable, :dependent => :delete_all
+  has_many :likes, :dependent => :delete_all
 
   def self.destroy_nonseeds
     destroy_these_ids = []

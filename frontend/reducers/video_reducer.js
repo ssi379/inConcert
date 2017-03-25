@@ -48,12 +48,25 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
       }
       return newState;
     case REMOVE_COMMENT:
-      let commentToRemove = newState.currentVideo.comments.find((obj) => {
-        return obj.id === action.comment.id
-      });
+      if(action.comment.commentable_type === "Comment"){
+        let parentComment = newState.currentVideo.comments.find((obj) => {
+          return obj.id === action.comment.commentable_id
+        });
 
-      let commentIdx = newState.currentVideo.comments.indexOf(commentToRemove);
-      newState.currentVideo.comments.splice(commentIdx, 1);
+        let replyToRemove = parentComment.replies.find((obj) => {
+          return obj.id === action.comment.id;
+        });
+
+        let replyToRemoveIdx = parentComment.replies.indexOf(replyToRemove);
+        parentComment.replies.splice(replyToRemoveIdx, 1);
+      } else {
+        let commentToRemove = newState.currentVideo.comments.find((obj) => {
+          return obj.id === action.comment.id
+        });
+
+        let commentIdx = newState.currentVideo.comments.indexOf(commentToRemove);
+        newState.currentVideo.comments.splice(commentIdx, 1);
+      }
       return newState;
     case RECEIVE_LIKE:
       newState.currentVideo.likes.push(action.like);
