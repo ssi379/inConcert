@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentEdit from './comment_edit';
+import CommentForm from './comment_form';
 import TimeAgo from 'react-timeago';
 import { Link } from 'react-router';
 
@@ -10,6 +11,7 @@ export default class CommentItem extends React.Component{
     this.state = ({
       deleteModal: false,
       form: false,
+      replyForm: false,
       commentSettings: false
     })
 
@@ -19,6 +21,8 @@ export default class CommentItem extends React.Component{
     this.showCommentSettings = this.showCommentSettings.bind(this);
     this.hideCommentSettings = this.hideCommentSettings.bind(this);
     this.toggleForm = this.toggleForm.bind(this);
+    this.toggleReplyForm = this.toggleReplyForm.bind(this);
+    this.closeReplyForm = this.closeReplyForm.bind(this);
   }
 
   renderCommentSettings(){
@@ -43,7 +47,6 @@ export default class CommentItem extends React.Component{
         if(this.props.type === "Comment"){
           this.setState( {commentSettings: true } )
         } else if(!event.target.className.includes("reply") && !event.target.parentElement.className.includes("reply")){
-          debugger
           this.setState( {commentSettings: true } );
         }
       }
@@ -54,7 +57,7 @@ export default class CommentItem extends React.Component{
     if(event.relatedTarget){
       let matchTarget = this.props.type === "Video" ? "comment" : "reply";
       let oppositeTarget = matchTarget === "comment" ? "reply" : "comment";
-      debugger
+
       if(event.relatedTarget.className !== "comment-settings-item"
           && event.relatedTarget.className !== "reply-settings-item"
           && !event.relatedTarget.className.includes("ui-button")){
@@ -71,6 +74,16 @@ export default class CommentItem extends React.Component{
   toggleForm() {
     this.setState({form: !this.state.form});
     this.setState({deleteModal: false});
+  }
+
+  //Toggles reply form from link
+  toggleReplyForm(){
+    this.setState({replyForm: !this.state.replyForm});
+  }
+
+  //Closes reply form upon submit
+  closeReplyForm(){
+    this.setState({replyForm: false})
   }
 
   renderEditModal(){
@@ -105,14 +118,15 @@ export default class CommentItem extends React.Component{
 
 
   renderDeleteModal(){
+    const parentType = this.props.type === "Video" ? "comment-deleter" : "reply-deleter"
     if(this.state.deleteModal){
       return(
-        <div className="delete-comment-confirm-container">
-          <div className="delete-notification">
+        <div className={`${parentType} delete-comment-confirm-container`}>
+          <div className={`${parentType} delete-notification`}>
             <i className="fa fa-exclamation-triangle" aria-hidden="true"></i>
             <p>Are you sure you want delete this comment permanently?</p>
           </div>
-          <div className="delete-actions">
+          <div className={`${parentType} delete-actions`}>
             <button id="delete-comment-confirm" onClick={this.handleDelete}>Delete comment</button>
             <button id="delete-comment-cancel" onClick={this.removeDeleteModal}>Cancel</button>
           </div>
@@ -157,6 +171,26 @@ export default class CommentItem extends React.Component{
     }
   }
 
+  renderReplyForm(){
+    if(this.state.replyForm){
+      return(
+        <form onSubmit={this.closeReplyForm}>
+          <CommentForm currentUser={this.props.currentUser}
+            comment={this.props.comment}
+            type={"Comment"}
+            createComment={this.props.createComment}
+            video={this.props.video}
+            errors={this.props.errors}
+            clearErrors={this.props.clearErrors}/>
+
+        </form>
+      )
+    } else {
+      return null;
+    }
+  }
+
+
   render(){
 
     const { comment, type } = this.props;
@@ -174,9 +208,9 @@ export default class CommentItem extends React.Component{
             <br />
             {this.renderDeleteModal()}
             {this.renderReplies()}
+            {this.renderReplyForm()}
           </div>
-
-
+          <span className="reply-activate-link" onClick={this.toggleReplyForm}>Reply</span>
         </div>
       )
     } else if(type === "Comment"){

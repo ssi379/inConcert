@@ -20,7 +20,6 @@ export default class CommentEdit extends React.Component{
         </div>
       )
     } else {
-      // debugger
       return(
         <div className={`${editButtonClass}-button-container`}>
           <input type="submit" className={`${editButtonClass}-ui-button edit-comment-save`} value="Edit Comment"/>

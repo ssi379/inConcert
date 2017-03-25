@@ -23,7 +23,15 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
     case REMOVE_VIDEO:
       return newState;
     case RECEIVE_COMMENT:
-      newState.currentVideo.comments.push(action.comment);
+      if(action.comment.commentable_type === "Comment"){
+        let parentComment = newState.currentVideo.comments.find((obj) => {
+          return obj.id === action.comment.commentable_id
+        });
+
+        parentComment.replies.push(action.comment);
+      } else{
+        newState.currentVideo.comments.push(action.comment);
+      }
       return newState;
     case UPDATE_COMMENT:
       if(action.comment.commentable_type === "Comment"){

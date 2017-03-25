@@ -20,8 +20,12 @@ export default class CommentsIndex extends React.Component{
               updateComment={this.props.updateComment}
               deleteComment={this.props.deleteComment}
               clearErrors={this.props.clearErrors}
+              createComment={this.props.createComment}
+              errors={this.props.errors}
+              clearErrors={this.props.clearErrors}
               toggleCommentEdit={this.props.toggleCommentEdit}
               commentEditForm={this.props.commentEditForm}
+              currentUser ={this.props.currentUser}
               errors={this.props.errors}/>
     })
   }
