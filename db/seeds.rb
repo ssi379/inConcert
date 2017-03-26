@@ -68,25 +68,73 @@ CommentsList = [
   "Glad I tuned in.",
   "Can't stop replaying.",
   "clean refreshing musical sound!",
-  "I can't get enough of this track!"
+  "I can't get enough of this track!",
+  "love this!",
+  "Killer cut. When you comin out west?",
+  "Come to Germany!",
+  "I am OBSESSED. Must have watched this, genuinely, 300+ times! UNREAL.﻿"
 ]
 
+RepliesList = [
+  "I might agree with you",
+  "You have great taste!",
+  "I very much disagree",
+  "I hear you!!",
+  "you were there too??",
+  "Check out my remix!",
+  "You should go to my page if you wanna see more good music",
+  "You should check out my page if you liked this band",
+  "I am a DJ, mate!",
+  "Oh yeah, how long have you played guitar?",
+  "Wanna start a band?",
+  "so jealous!",
+  "Keep it civil now",
+  "What?",
+  "woooh ain't it something yes, yes it is. it was an awesome performance, wow.﻿",
+  "first reply!",
+  "definitely into it",
+  "reply to me if you want to join our band",
+  "more please",
+  "Fantastic!",
+  "Do you have a source on that sir?",
+  "Tremendous energy!!",
+  "Have you heard, have you listened lately?",
+  "I don't think we can be friends",
+  "the voice!",
+  "amazing voice",
+  "every muscle in my body tightened up and tears fell....",
+  "I love music. It always seems to speak for me, and this song speaks perfectly for me.﻿"
+]
+
+comment_ids = []
 125.times do
-  Comment.create!({
+  comment = Comment.create!({
     body: CommentsList.sample,
     user_id: users.sample,
-    video_id: Video.where(seeded: true).sample.id
+    commentable_id: Video.where(seeded: true).sample.id,
+    commentable_type: "Video"
   })
+
+  comment_ids << comment.id
 end
 
-125.times do
-  Like.create!({
+100.times do
+  Comment.create!({
+    body: RepliesList.sample,
     user_id: users.sample,
-    video_id: Video.where(seeded: true).sample.id
+    commentable_id: comment_ids.sample,
+    commentable_type: "Comment"
   })
-
-Video.all.each do |video|
-  title_array = video.title.split("-")
-  video.description = "#{title_array[1][1..-1]} performed by #{title_array[0][0...-1]}"
-  video.save!
 end
+
+# 125.times do
+#   Like.create!({
+#     user_id: users.sample,
+#     video_id: Video.where(seeded: true).sample.id
+#   })
+
+# Video.all.each do |video|
+#   title_array = video.title.split("-")
+#   video.description = "#{title_array[1][1..-1]} performed by #{title_array[0][0...-1]}"
+#   video.save!
+# end
