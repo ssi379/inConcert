@@ -35,7 +35,7 @@ export default class SessionForm extends React.Component {
      e.preventDefault();
      const user = Object.assign({}, this.state);
      let results = this.props.processForm(user).then(() => {
-       hashHistory.push("/");
+      this.props.router.goBack();
      })
 
   }
