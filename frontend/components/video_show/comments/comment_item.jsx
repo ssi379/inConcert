@@ -167,7 +167,7 @@ export default class CommentItem extends React.Component{
   }
 
   renderReplyForm(){
-    const { video, errors, currentUser, createComment, clearErrors } = this.props;
+    const { video, comment, errors, currentUser, createComment, clearErrors } = this.props;
     if(this.state.replyForm){
       return(
         <form onSubmit={this.closeReplyForm}>
@@ -178,7 +178,6 @@ export default class CommentItem extends React.Component{
             video={video}
             errors={errors}
             clearErrors={clearErrors}/>
-
         </form>
       )
     } else {
