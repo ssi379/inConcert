@@ -41,10 +41,10 @@ export default class CommentItem extends React.Component{
   }
 
   showCommentSettings(event){
-    if(this.props.currentUser){
-      let matchTarget = this.props.type === "Video" ? "reply" : "comment"
-      if(this.props.currentUser.id === this.props.comment.user_id){
-        if(this.props.type === "Comment"){
+    const { currentUser, comment, type } = this.props;
+    if(currentUser){
+      if(currentUser.id === comment.user_id){
+        if(type === "Comment"){
           this.setState( {commentSettings: true } )
         } else if(!event.target.className.includes("reply") && !event.target.parentElement.className.includes("reply")){
           this.setState( {commentSettings: true } );
@@ -55,9 +55,6 @@ export default class CommentItem extends React.Component{
 
   hideCommentSettings(event){
     if(event.relatedTarget){
-      let matchTarget = this.props.type === "Video" ? "comment" : "reply";
-      let oppositeTarget = matchTarget === "comment" ? "reply" : "comment";
-
       if(event.relatedTarget.className !== "comment-settings-item"
           && event.relatedTarget.className !== "reply-settings-item"
           && !event.relatedTarget.className.includes("ui-button")){
@@ -87,7 +84,7 @@ export default class CommentItem extends React.Component{
   }
 
   renderEditModal(){
-    const { comment, updateComment, commentEditForm, toggleCommentEdit, type } = this.props;
+    const { comment, updateComment, type } = this.props;
     let bodyClass = type === "Video" ? "comment-body" : "reply-body";
     if(this.state.form){
       return(
@@ -111,8 +108,8 @@ export default class CommentItem extends React.Component{
 
   handleDelete(event){
     event.preventDefault();
-    const { deleteComment } = this.props;
-    deleteComment(this.props.comment.id)
+    const { deleteComment, comment } = this.props;
+    deleteComment(comment.id)
     this.removeDeleteModal();
   }
 
@@ -136,9 +133,9 @@ export default class CommentItem extends React.Component{
   }
 
   renderTimeAgo(){
-
-    if(this.props.comment.comment_date){
-      return(<TimeAgo className="comment-item-timeago" date={this.props.comment.comment_date} />);
+    const { comment } = this.props;
+    if(comment.comment_date){
+      return(<TimeAgo className="comment-item-timeago" date={comment.comment_date} />);
     } else {
       return (<span className="comment-item-timeago">Just Now</span>)
     }
@@ -159,8 +156,6 @@ export default class CommentItem extends React.Component{
               updateComment={this.props.updateComment}
               deleteComment={this.props.deleteComment}
               clearErrors={this.props.clearErrors}
-              toggleCommentEdit={this.props.toggleCommentEdit}
-              commentEditForm={this.props.commentEditForm}
               errors={this.props.errors}/>
           })
         }
@@ -172,16 +167,17 @@ export default class CommentItem extends React.Component{
   }
 
   renderReplyForm(){
+    const { video, errors, currentUser, createComment, clearErrors } = this.props;
     if(this.state.replyForm){
       return(
         <form onSubmit={this.closeReplyForm}>
-          <CommentForm currentUser={this.props.currentUser}
-            comment={this.props.comment}
+          <CommentForm currentUser={currentUser}
+            comment={comment}
             type={"Comment"}
-            createComment={this.props.createComment}
-            video={this.props.video}
-            errors={this.props.errors}
-            clearErrors={this.props.clearErrors}/>
+            createComment={createComment}
+            video={video}
+            errors={errors}
+            clearErrors={clearErrors}/>
 
         </form>
       )

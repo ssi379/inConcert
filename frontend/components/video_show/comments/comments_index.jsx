@@ -9,36 +9,34 @@ export default class CommentsIndex extends React.Component{
 
 
   renderCommentItems(){
-    const { updateComment, deleteComment } = this.props;
+    const { currentUser, video, comments, errors, updateComment, deleteComment, clearErrors, createComment } = this.props;
 
-    return this.props.comments.map((comment, idx) => {
+    return comments.map((comment, idx) => {
       return <CommentItem key={`${this.props.video.id}-${idx}`}
               comment={comment}
               type={"Video"}
               replies={comment.replies}
-              currentUser={this.props.currentUser}
-              updateComment={this.props.updateComment}
-              deleteComment={this.props.deleteComment}
-              clearErrors={this.props.clearErrors}
-              createComment={this.props.createComment}
-              errors={this.props.errors}
-              clearErrors={this.props.clearErrors}
-              toggleCommentEdit={this.props.toggleCommentEdit}
-              commentEditForm={this.props.commentEditForm}
-              currentUser ={this.props.currentUser}
-              errors={this.props.errors}/>
+              currentUser={currentUser}
+              updateComment={updateComment}
+              deleteComment={deleteComment}
+              clearErrors={clearErrors}
+              createComment={createComment}
+              clearErrors={clearErrors}
+              currentUser ={currentUser}
+              errors={errors}/>
     })
   }
 
   renderCommentForm(){
-    if(this.props.currentUser){
+    const { video, errors, currentUser, createComment, clearErrors } = this.props;
+    if(currentUser){
       return(
-        <CommentForm currentUser={this.props.currentUser}
+        <CommentForm currentUser={currentUser}
           type={"Video"}
-          createComment={this.props.createComment}
-          video={this.props.video}
-          errors={this.props.errors}
-          clearErrors={this.props.clearErrors}/>
+          createComment={createComment}
+          video={video}
+          errors={errors}
+          clearErrors={clearErrors}/>
       )
     } else {
       return null
