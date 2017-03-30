@@ -77,7 +77,9 @@ export default class SessionForm extends React.Component {
 
   renderErrors(){
     let errors = this.props.errors
-    if(errors.length === 0){ return null }
+    // 
+    // if(typeof errors === 'undefined'){ return null }
+    if(typeof errors === 'undefined' || errors.length === 0){ return null }
     return(
       <ul className="error-message auth-error">
         {Object.keys(errors).map( (id, idx) => (

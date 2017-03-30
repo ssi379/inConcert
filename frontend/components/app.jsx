@@ -9,11 +9,39 @@ class App extends React.Component{
     super(props);
   }
 
-  determineSplash(){
-    if(["/", "/login", "/signup", "/videos"].includes(this.props.location.pathname)){
+  renderSplash(){
+    let currentPath = this.props.router.location.pathname;
+
+    if(["/", "/videos"].includes(currentPath)){
       return <VideoSplash className="video-splash" />
+    } else if(["/login", "/signup"].includes(currentPath)){
+      return(
+        <video id="splash-video" className="video-js vjs-default-skin" autoPlay loop>
+          <source src="https://s3.amazonaws.com/seed-middle/concert_cut_v2.mp4" type="video/mp4" />
+        </video>
+      )
     } else {
       return <div></div>
+    }
+  }
+
+  renderFooter(){
+    let currentPath = this.props.router.location.pathname;
+
+    if(currentPath.includes('login') || currentPath.includes('signup')){
+      return null;
+    } else {
+      return <Footer />
+    }
+  }
+
+  renderPush(){
+    let currentPath = this.props.router.location.pathname;
+
+    if(currentPath.includes('login') || currentPath.includes('signup')){
+      return null;
+    } else {
+      return <div className="push" />
     }
   }
 
@@ -21,11 +49,10 @@ class App extends React.Component{
     return(
       <div className>
         <NavbarContainer />
-        {this.determineSplash()}
+        {this.renderSplash()}
         { this.props.children }
-
-        <div className="push"></div>
-        <Footer />
+        {this.renderPush()}
+        {this.renderFooter()}
       </div>
     )
   }
