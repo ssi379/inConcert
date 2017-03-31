@@ -166,6 +166,14 @@ export default class CommentItem extends React.Component{
     }
   }
 
+  renderReplyToggle(){
+    if(this.props.currentUser){
+      return <span className="reply-activate-link" onClick={this.toggleReplyForm}>Reply</span>
+    } else {
+      return null;
+    }
+  }
+
   renderReplyForm(){
     const { video, comment, errors, currentUser, createComment, clearErrors } = this.props;
     if(this.state.replyForm){
@@ -205,7 +213,7 @@ export default class CommentItem extends React.Component{
             {this.renderReplies()}
             {this.renderReplyForm()}
           </div>
-          <span className="reply-activate-link" onClick={this.toggleReplyForm}>Reply</span>
+          {this.renderReplyToggle()}
         </div>
       )
     } else if(type === "Comment"){
