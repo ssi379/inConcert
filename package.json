@@ -1,6 +1,7 @@
 {
   "name": "inConcert",
   "version": "1.0.0",
+  "description": "== README",
   "main": "index.js",
   "directories": {
     "doc": "docs",
@@ -34,6 +35,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
     "heroku-postbuild": "webpack --config webpack.config.prod.js"
   },
   "keywords": [],
