@@ -22,15 +22,15 @@ export default class VideoShow extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchSingleVideo(this.props.id);
-    this.props.fetchManyVideos();
+    const { id, fetchSingleVideo, fetchManyVideos} = this.props;
+    fetchSingleVideo(id);
+    fetchManyVideos();
   }
 
   componentWillReceiveProps(nextProps){
-    if(this.props.id !== nextProps.id){
-
-      this.props.fetchSingleVideo(nextProps.id);
-      window.scrollTo(0, 0);
+    const { id, fetchSingleVideo } = this.props;
+    if(id !== nextProps.id){
+      fetchSingleVideo(nextProps.id);
     }
   }
 
@@ -43,26 +43,27 @@ export default class VideoShow extends React.Component{
   }
 
   renderSettingsOrAvatar(){
-    if(this.props.currentUser && this.props.video.user_id === this.props.currentUser.id){
+    const { currentUser, video, params } = this.props;
+    if(currentUser && video.user_id === currentUser.id){
       return(
         <div className="settings-path">
-
-          <Link className="settings-button" to={`/videos/${this.props.params.id}/edit`}>
+          <Link className="settings-button" to={`/videos/${params.id}/edit`}>
             <i className="fa fa-cog" aria-hidden="true"></i> <span>Settings</span>
           </Link>
         </div>
       )
     } else {
       return(
-        <span><img className="uploader-avatar" src={this.props.video.user.avatar_url}/></span>
+        <span><img className="uploader-avatar" src={video.user.avatar_url}/></span>
       )
     }
   }
 
   renderLikeButton(){
-    if(this.props.currentUser){
+    const { currentUser, likedByCurrentUser } = this.props;
 
-      if(this.props.likedByCurrentUser){
+    if(currentUser){
+      if(likedByCurrentUser){
         return(
           <div className="like-button-container">
             <button id="like-button" onClick={this.handleUnlike} disabled={this.state.liking}>
@@ -87,12 +88,13 @@ export default class VideoShow extends React.Component{
   handleLike(event){
     event.preventDefault();
 
+    const { video, currentUser, createLike } = this.props;
     const like = {};
-    like.video_id = this.props.video.id;
-    like.user_id = this.props.currentUser.id
+    like.video_id = video.id;
+    like.user_id = currentUser.id
 
     this.setState({ liking: true });
-    this.props.createLike(like).then(() => {
+    createLike(like).then(() => {
       this.setState({ liking: false });
     });
 
@@ -100,14 +102,16 @@ export default class VideoShow extends React.Component{
 
   handleUnlike(event){
     event.preventDefault();
-    let dupLikes = this.props.video.likes.filter((like) => {
-	     return like.video_id === this.props.video.id && like.user_id === this.props.currentUser.id;
+
+    const { video, currentUser, deleteLike } = this.props;
+    let dupLikes = video.likes.filter((like) => {
+	     return like.video_id === video.id && like.user_id === currentUser.id;
      })
 
      if(!this.state.liking){
        if(dupLikes.length > 0){
          this.setState({ liking: true })
-         this.props.deleteLike(dupLikes[dupLikes.length - 1].id).then(() => {
+         deleteLike(dupLikes[dupLikes.length - 1].id).then(() => {
            this.setState({ liking: false });
          })
        }

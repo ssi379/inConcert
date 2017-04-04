@@ -26,8 +26,10 @@ export default class CommentItem extends React.Component{
   }
 
   renderCommentSettings(){
-    let containerClassName = this.props.type === "Video" ? "parent-settings" : "reply-settings";
-    let settingsClassName = this.props.type === "Video" ? "comment-settings-item" : "reply-settings-item";
+    const { type } = this.props;
+
+    let containerClassName = type === "Video" ? "parent-settings" : "reply-settings";
+    let settingsClassName = type === "Video" ? "comment-settings-item" : "reply-settings-item";
     if(this.state.commentSettings){
       return(
         <div className={`update-delete-settings ${containerClassName}`}>

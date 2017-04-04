@@ -46,11 +46,13 @@ export default class CommentForm extends React.Component{
 
   handleSubmit(event){
     event.preventDefault();
-    const comment = Object.assign({}, this.state);
-    comment.user_id = this.props.currentUser.id;
-    comment.commentable_id = this.props.type === "Video" ? this.props.video.id : this.props.comment.id;
-    comment.commentable_type = this.props.type;
-    this.props.createComment(comment).then(() => {
+
+    const { type, currentUser, video, comment, createComment } = this.props;
+    const newComment = Object.assign({}, this.state);
+    newComment.user_id = currentUser.id;
+    newComment.commentable_id = type === "Video" ? video.id : comment.id;
+    newComment.commentable_type = type;
+    createComment(newComment).then(() => {
       this.setState({body: ""});
     });
   }
@@ -70,12 +72,13 @@ export default class CommentForm extends React.Component{
   }
 
   render(){
-    const placeholderText = this.props.type === "Video" ? "Click here to add a new comment" : "Reply to this comment";
+    const { type, currentUser } = this.props;
+    const placeholderText = type === "Video" ? "Click here to add a new comment" : "Reply to this comment";
     let commentorAvatar
-    if(this.props.type === "Video"){
+    if(type === "Video"){
       commentorAvatar = (
         <div className="current-commentor-info">
-          <img className="current-commentor-avatar" src={this.props.currentUser.comment_avatar_url} />
+          <img className="current-commentor-avatar" src={currentUser.comment_avatar_url} />
         </div>
       )
     } else {

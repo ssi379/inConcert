@@ -11,8 +11,11 @@ export default class CommentEdit extends React.Component{
 
 
   renderSubmit(){
-    const editButtonClass = this.props.type === "Video" ? "comment" : "reply" ;
-    if(this.state.body.length === 0 || this.state.body === this.props.comment.body){
+    const { type, comment } = this.props;
+    const { body } = this.state;
+
+    const editButtonClass = type === "Video" ? "comment" : "reply" ;
+    if(body.length === 0 || body === comment.body){
       return (
         <div className={`${editButtonClass}-button-container`}>
           <input type="submit" className={`${editButtonClass}-ui-button edit-comment-save-disabled`} value="Edit Comment" disabled/>
@@ -35,10 +38,12 @@ export default class CommentEdit extends React.Component{
 
   handleSubmit(event){
     event.preventDefault();
+
+    const { updateComment, toggleForm } = this.props;
     const comment = Object.assign({}, this.state);
-    this.props.updateComment(comment).then(() => {
+    updateComment(comment).then(() => {
       this.setState({body: ""})
-      this.props.toggleForm();
+      toggleForm();
     });
   }
 
