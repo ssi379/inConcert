@@ -212,8 +212,8 @@ export default class CommentItem extends React.Component{
 
             <br />
             {this.renderDeleteModal()}
-            {this.renderReplies()}
             {this.renderReplyForm()}
+            {this.renderReplies()}
           </div>
           {this.renderReplyToggle()}
         </div>

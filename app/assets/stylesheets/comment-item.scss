@@ -29,6 +29,7 @@
   font-size: .875rem;
   line-height: 1.3;
   font-weight: 400;
+  width: 100%;
   overflow-wrap: break-word;
 }
 
@@ -43,7 +44,7 @@
 .reply-body-container{
   background: #F6F7F8;
   padding: .9375rem .8075rem 0 .9375rem;
-  width: 708px;
+  width: 100%;
   max-width: 738px;
   z-index: 999;
 
