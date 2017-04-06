@@ -278,15 +278,17 @@ export default class VideoForm extends React.Component{
   }
 
   render(){
-    const headerText = this.props.formType === "upload" ? "Upload your videos" : "Update video info"
-    const buttonText = this.props.formType === "upload" ? "Upload Video" : "Update Video"
-    const submitHandler = this.props.formType === "upload" ? this.handleSubmit : this.handleUpdate
+    const { formType, location, currentUser, video } = this.props;
 
-    if(this.props.location.pathname.includes("edit")){
-      if(!this.props.video){
+    const headerText = formType === "upload" ? "Upload your videos" : "Update video info"
+    const buttonText = formType === "upload" ? "Upload Video" : "Update Video"
+    const submitHandler = formType === "upload" ? this.handleSubmit : this.handleUpdate
+
+    if(location.pathname.includes("edit")){
+      if(!video){
         return null;
       }
-      if(this.props.currentUser.id !== this.props.video.user_id){
+      if(currentUser.id !== video.user_id){
         return null;
       }
     }
