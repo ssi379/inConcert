@@ -40,6 +40,7 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
         });
 
         let replyToReplaceIdx;
+
         parentComment.replies.find((obj, idx) => {
           if(obj.id === action.comment.id){
             replyToReplaceIdx = idx;
@@ -49,7 +50,7 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
         parentComment.replies[replyToReplaceIdx] = action.comment;
       } else {
         let commentToReplaceIdx;
-        
+
         newState.currentVideo.comments.find((obj, idx) => {
           if(obj.id === action.comment.id){
             commentToReplaceIdx = idx;
@@ -65,19 +66,25 @@ const VideoReducer = (oldState = defaultVideoState, action) => {
           return obj.id === action.comment.commentable_id
         });
 
-        let replyToRemove = parentComment.replies.find((obj) => {
-          return obj.id === action.comment.id;
+        let replyToRemoveIdx;
+
+        parentComment.replies.find((obj, idx) => {
+          if(obj.id === action.comment.id){
+            replyToRemoveIdx = idx;
+          };
         });
 
-        let replyToRemoveIdx = parentComment.replies.indexOf(replyToRemove);
         parentComment.replies.splice(replyToRemoveIdx, 1);
       } else {
-        let commentToRemove = newState.currentVideo.comments.find((obj) => {
-          return obj.id === action.comment.id
+        let commentToRemoveIdx;
+
+        newState.currentVideo.comments.find((obj, idx) => {
+          if(obj.id === action.comment.id){
+            commentToRemoveIdx = idx;
+          }
         });
 
-        let commentIdx = newState.currentVideo.comments.indexOf(commentToRemove);
-        newState.currentVideo.comments.splice(commentIdx, 1);
+        newState.currentVideo.comments.splice(commentToRemoveIdx, 1);
       }
       return newState;
     case RECEIVE_LIKE:
