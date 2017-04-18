@@ -144,7 +144,7 @@ export default class CommentItem extends React.Component{
   }
 
   renderReplies(){
-    const { updateComment, deleteComment } = this.props;
+    const { currentUser, errors, updateComment, deleteComment, clearErrors } = this.props;
 
     if(this.props.replies){
       return (
@@ -154,11 +154,11 @@ export default class CommentItem extends React.Component{
               comment={reply}
               type="Comment"
               replies={null}
-              currentUser={this.props.currentUser}
-              updateComment={this.props.updateComment}
-              deleteComment={this.props.deleteComment}
-              clearErrors={this.props.clearErrors}
-              errors={this.props.errors}/>
+              currentUser={currentUser}
+              updateComment={updateComment}
+              deleteComment={deleteComment}
+              clearErrors={clearErrors}
+              errors={errors}/>
           })
         }
 
@@ -180,21 +180,21 @@ export default class CommentItem extends React.Component{
     const { video, comment, errors, currentUser, createComment, clearErrors } = this.props;
     if(this.state.replyForm){
       return(
-        <form onSubmit={this.closeReplyForm}>
+        <div onSubmit={this.closeReplyForm}>
           <CommentForm currentUser={currentUser}
             comment={comment}
             type={"Comment"}
             createComment={createComment}
             video={video}
             errors={errors}
-            clearErrors={clearErrors}/>
-        </form>
+            clearErrors={clearErrors}
+            onSubmit={this.closeReplyForm}/>
+        </div>
       )
     } else {
       return null;
     }
   }
-
 
   render(){
 
