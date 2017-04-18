@@ -109,6 +109,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    newrelic_rpm (4.1.0.333)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     paperclip (5.0.0)
@@ -236,6 +237,7 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
+  newrelic_rpm
   paperclip (~> 5.0.0)
   paperclip-av-transcoder
   paperclip-ffmpeg

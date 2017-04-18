@@ -36,6 +36,7 @@ gem 'pry-rails'
 
 group :production do
   gem 'rails_12factor'
+  gem 'newrelic_rpm'
 end
 
 group :development do
