@@ -27,6 +27,11 @@ RSpec.describe User, :type => :model do
     end
   end
 
+  it { should have_attached_file(:avatar) }
+  it { should validate_attachment_content_type(:avatar).
+              allowing('image/png', 'image/gif', 'image/jpg').
+              rejecting('text/plain', 'text/xml') }
+
   it { should validate_length_of(:password).is_at_least(6) }
   it { should validate_presence_of(:username) }
   it { should have_db_index(:username).unique(:true) }
