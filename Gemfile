@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.7.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'figaro'
@@ -27,7 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'annotate'
 
 gem 'aws-sdk', '>= 2.0'
-gem "paperclip", '~> 5.0.0'
+gem "paperclip", '~> 5.2.1'
 gem 'paperclip-av-transcoder'
 gem "paperclip-ffmpeg"
 gem 'faker'
