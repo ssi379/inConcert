@@ -1,7 +1,7 @@
 {
   "name": "inConcert",
   "version": "1.0.0",
-  "description": "== README",
+  "description": "",
   "main": "index.js",
   "directories": {
     "doc": "docs",
@@ -41,7 +41,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "eslint": "^3.18.0",
     "eslint-plugin-react": "^6.10.3"
