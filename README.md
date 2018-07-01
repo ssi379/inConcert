@@ -2,7 +2,7 @@
 
 [Live]
 
-[live]: http://www.liveinconcert.co
+[live]: https://liveinconcert.herokuapp.com
 
 <img src="./screenshots/home_animated.gif" alt="home-page"/>
 
