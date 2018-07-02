@@ -1,17 +1,17 @@
-import { connect } from 'react-redux';
-import { fetchManyVideos } from '../../actions/video_actions';
-import VideoIndex from './video_index';
+import { connect } from "react-redux";
+import { fetchManyVideos } from "../../actions/video_actions";
+import VideoIndex from "./video_index";
 
 const mapStateToProps = ({video}) => ({
-  listed_videos: video.listed_videos
+	listed_videos: video.listed_videos
 });
 
 
 const mapDispatchToProps = dispatch => ({
-  fetchManyVideos: () => dispatch(fetchManyVideos())
+	fetchManyVideos: () => dispatch(fetchManyVideos())
 });
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(VideoIndex);

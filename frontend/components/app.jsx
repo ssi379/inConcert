@@ -35,23 +35,12 @@ class App extends React.Component{
     }
   }
 
-  renderPush(){
-    let currentPath = this.props.router.location.pathname;
-
-    if(currentPath.includes('login') || currentPath.includes('signup')){
-      return null;
-    } else {
-      return <div className="push" />
-    }
-  }
-
   render(){
     return(
       <div className>
         <NavbarContainer />
         {this.renderSplash()}
         { this.props.children }
-        {this.renderPush()}
         {this.renderFooter()}
       </div>
     )

@@ -16,36 +16,8 @@ class App extends React.Component {
         slidesToShow={count}
         slidesToScroll={count}
         cellSpacing={1}
-        height={"300px"}
         dragging={false}
-        wrapAround={false}
-        decorators={[{
-          component: React.createClass({
-            render() {
-              return (
-                <button
-                  className="left-button"
-                  onClick={this.props.previousSlide}>
-                  {"<"}
-                </button>
-              );
-            }
-          }),
-          position: 'CenterLeft'
-        },{
-          component: React.createClass({
-            render() {
-              return (
-                <button
-                  className="right-button"
-                  onClick={this.props.nextSlide}>
-                  {">"}
-                </button>
-              );
-            },
-          }),
-          position: 'CenterRight'
-        }]}>
+        renderBottomCenterControls={() => { return null }}>
 
         { videos }
 
