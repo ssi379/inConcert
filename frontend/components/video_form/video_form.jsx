@@ -2,6 +2,7 @@ import React from 'react';
 import Dropzone from 'react-dropzone';
 import Halogen from 'halogen';
 import { hashHistory } from 'react-router';
+import { get } from 'lodash';
 
 export default class VideoForm extends React.Component{
   constructor(props){
@@ -251,7 +252,7 @@ export default class VideoForm extends React.Component{
 
   renderErrors(){
     let errors = this.props.errors
-    if(errors.length === 0){ return null; }
+    if(!get(errors, 'length', 0)){ return null; }
     return(
       <ul className="error-message video-form-error">
         {Object.keys(errors).map( (id, idx) => (

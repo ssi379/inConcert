@@ -34,6 +34,7 @@ class Video < ActiveRecord::Base
 
   has_attached_file :videoitem, processors: [:transcoder], :s3_protocol => :https
   validates_attachment_content_type :videoitem, :content_type => ["video/quicktime", "video/mp4"]
+  process_in_background :videoitem, processing_image_url: "/assets/images/inConcert-logo-black.png"
 
   validates :title, :description, :user_id, :views, :videoitem, :thumbnail, presence: true
 

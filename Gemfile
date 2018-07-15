@@ -25,7 +25,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'annotate'
-
 gem 'aws-sdk', '< 3.0'
 gem "paperclip", '~> 5.2.1'
 gem 'paperclip-av-transcoder'
@@ -33,6 +32,7 @@ gem "paperclip-ffmpeg"
 gem 'faker'
 gem 'streamio-ffmpeg'
 gem 'pry-rails'
+gem "delayed_paperclip"
 
 group :production do
   gem 'rails_12factor'
